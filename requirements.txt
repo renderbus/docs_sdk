@@ -1,0 +1,9 @@
+--index https://pip.renderbus.com/simple/
+sphinx_rtd_theme
+rayvision_log
+rayvision_api
+rayvision_utils
+rayvision_sync
+rayvision_maya
+rayvision_clarisse
+rayvision_houdini
