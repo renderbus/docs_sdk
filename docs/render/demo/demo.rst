@@ -46,7 +46,6 @@ Maya demo
     # Rayvision analysis
     task = RayvisionTask(cg_file=cg_file, **render_para)
     RayvisionAnalyse.execute(task)
-    task.task_info["pre_frame"] = "100"
     RayvisionCheck(task).execute(task.task_info, task.upload_info)
 
     # Upload json file
@@ -129,7 +128,6 @@ Houdini demo
     # Rayvision analysis
     task = RayvisionTask(cg_file=cg_file, **render_para)
     RayvisionAnalyse.execute(task)
-    task.task_info['pre_frames'] = "100"
     RayvisionCheck(task).execute(task.task_info, task.upload_info)
 
     # Upload json file
@@ -211,15 +209,10 @@ Clarisse demo
     # 当前用户配置信息
     print(api.user.query_user_profile())
 
-    # 用户想输入自定参数
-    pixo_env = {
-        "test": 123
-    }
 
     # 开始分析
     task = RayvisionTask(cg_file=cg_file, **render_para)
     RayvisionAnalyse.execute(task)
-    task.task_info['env'] = pixo_env
     RayvisionCheck(task).execute(task.task_info, task.upload_info)
 
     # 上传分析资源
