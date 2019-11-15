@@ -2,7 +2,7 @@
 =====================
 
 .. important::
-    请仔细检查，您正在https://renderbus.readthedocs.io/zh/latest/上阅读本文档的最新版本。
+    请仔细检查，您正在https://renderbus.readthedocs.io/zh/latest/index.html上阅读本文档的最新版本。
 
 有许多方法可以为RenderBusSDK做出贡献。这里是其中的一些：
 
