@@ -5,9 +5,12 @@
 =========
 
 .. important::
-   要使用具体渲染模块之前，比如想使用houdini渲染，请参考以下安装方法依次安装模块
-   `rayvision_log`,`rayvision_api`,`rayvision_utils`, `rayvision_sync`,
-   然后安装`rayvision_houdini`。
+   再使用具体渲染模块之前，比如想使用houdini渲染，请参考以下安装方法依次安装模块
+   `rayvision_log`, `rayvision_api` , `rayvision_utils` , `rayvision_sync`,
+   然后安装 `rayvision_houdini` 。
+
+   ````pip install rayvision_houdini -i https://pip.renderbus.com/simple/````
+
 
 安装方法：
 
