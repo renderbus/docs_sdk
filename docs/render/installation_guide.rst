@@ -9,7 +9,7 @@
    `rayvision_log`, `rayvision_api` , `rayvision_utils` , `rayvision_sync`,
    然后安装 `rayvision_houdini` 。
 
-   ``pip install rayvision_houdini -i https://pip.renderbus.com/simple/``
+   pip install rayvision_houdini -i https://pip.renderbus.com/simple/
 
 
 安装方法：
