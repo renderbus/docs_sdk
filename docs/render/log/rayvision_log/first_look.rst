@@ -17,13 +17,21 @@
 ------------
 1. 默认路径
 
-   - Mac OS X:   ~/Library/Logs/<AppName>/Logs/<username>/<hostname>.log
-   - Unix:       ~/.cache/<AppName>/log/Logs/<username>/<hostname>.log
-   - Vista:      C:\Users\<username>\AppData\Local\<AppAuthor>\<AppName>\Logs\<username>\<hostname>.log
+Mac OS X:
+
+  ~/Library/Logs/<AppName>/Logs/<username>/<hostname>.log
+
+Unix:
+
+  ~/.cache/<AppName>/log/Logs/<username>/<hostname>.log
+
+Window:
+
+  C:\\Users\\<username>\\AppData\\Local\\<AppAuthor>\\<AppName>\\Logs\\<username>\\<hostname>.log
 
 
 2. 自定义路径
 
-   - 定义参数： ``RAYVISION_LOG_ROOT = "xxxx"``
-   - 将 *RAYVISION_LOG_ROOT* 设置为系统环境变量
-   - 日志路径将会保存在 *RAYVISION_LOG_ROOT* 文件夹下
+- 定义参数： ``RAYVISION_LOG_ROOT = "xxxx"``
+- 将 *RAYVISION_LOG_ROOT* 设置为系统环境变量
+- 日志路径将会保存在 *RAYVISION_LOG_ROOT* 文件夹下
