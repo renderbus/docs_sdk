@@ -3,15 +3,15 @@
 Maya 配置文件文档
 =================
 
-   分析：我们将场景中需要的信息分析出来并保存到task.json, asset.json,
-   upload.json, tips.json中，以便进一步解析和处理
+我们将场景中需要的信息分析出来并保存到task.json, asset.json,
+upload.json, tips.json中，以便进一步解析和处理
 
 .. _header-n6:
 
 1.task.json解析
 ---------------
 
-   说明: 存放场景分析结果、渲染设置等信息
+存放场景分析结果、渲染设置等信息.
 
 **task.json示例**
 
@@ -132,7 +132,7 @@ scene_info_render     object 场景的分析结果（场景中的渲染节点、
 ========== ====== ============================================ ======
 cg_name    string 软件名称                                     "Maya"
 cg_version string 软件版本                                     "2016"
-plugins    object 插件对象。key为插件名称，value为插件版本 {}
+plugins    dict   插件对象。key为插件名称，value为插件版本         {}
 ========== ====== ============================================ ======
 
 .. _header-n338:
@@ -210,7 +210,7 @@ animation             string 动画开关             "1"
 renderer              string 渲染器名称           “arnold“
 frames                string 渲染帧               "1-10[1]"
 height                string 分辨率，高           "1080"
-renumber_frames       string 帧覆盖               "1"
+renumber_frames       string 重编号帧             "1"
 by_frame              string 帧间隔               "1"
 ===================== ====== ==================== ==========================================
 
@@ -219,7 +219,7 @@ by_frame              string 帧间隔               "1"
 2.upload.json解析
 -----------------
 
-   说明: 存放需要上传的资产路径信息
+存放需要上传的资产路径信息
 
 **upload.json示例**
 
@@ -258,7 +258,7 @@ server string 服务器端相对路径，一般与local保持一致 "/D/chensr/s
 3.tips.json解析
 ---------------
 
-   说明: 存放分析出的错误、警告信息
+存放分析出的错误、警告信息
 
 .. code:: json
 

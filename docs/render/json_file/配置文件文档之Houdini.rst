@@ -183,7 +183,7 @@ server string 服务器端相对路径，一般与local保持一致 "/D/gitlab/r
 3.tips.json解析
 ---------------
 
-   说明: 存放分析出的错误、警告信息
+说明: 存放分析出的错误、警告信息
 
 .. code:: json
 
