@@ -108,7 +108,7 @@ Clarisse 配置文件文档
 **task.json参数解析**
 
 ===================== ====== ============================================== =================================================================
-参数                  类型   说明                                           示例
+参数                  类型   说明
 ===================== ====== ============================================== =================================================================
 software_config       object 渲染环境（软件类型、版本和用到的插件等）       `见software_config对象解析 <配置文件文档之Clarisse.html#header-n297>`__
 task_info             object 渲染设置（优先帧、渲染帧数、超时时间等）       `见task_info对象解析 <配置文件文档之Clarisse.html#header-n296>`__
@@ -140,7 +140,7 @@ ram                        string 内存要求。64/128                         
 os_name                    string 渲染操作系统, "0":Linux; "1": Windows                                                    "1"
 render_layer_type          string 渲染层方式选择。"0"：renderlayer方式"1"：rendersetup方式                                        "0"
 is_distribute_render       string 是否开启分布式渲染。"0":关闭"1":开启                                                           "0"
-input_cg_file              string 渲染场景本地路径                                                                         "E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project"
+input_cg_file              string 渲染场景本地路径                                                                         "E:\\copy\\DHGB_sc05_zhuta_610-1570_v0102.project"
 job_stop_time              string 小任务超时停止, 单位秒                                                                   "28800"
 user_id                    string 用户ID                                                                                  
 pre_frames                 string 优先渲染                                                                                 "000:1,3-4[1]" 表示：优先渲染首帧：否 优先渲染中间帧：否 优先渲染末帧：否 优先渲染自定义帧：1,3-4[1]
@@ -176,7 +176,7 @@ image_node object 场景普通信息   `见scene_info_render.image_node对象解
 参数             类型   说明                                                                                           示例
 ================ ====== ============================================================================================== ============================================================================================
 renderable       string "0", 不开启渲染，“1”:开启渲染（这个不是场景中的值，平台默认是不开的，平台不建议直接渲染image）             "0"
-output           string 当前image的输出路径                                                                            "D:\temp\cam02"
+output           string 当前image的输出路径                                                                            "D:\\temp\\cam02"
 format           string 当前image的输出格式                                                                            "exr16"
 LUT              string 当前image的输出颜色管理                                                                        "linear"
 save_to_disk     string 当前image的是否要开启保存输出                                                                           "1"

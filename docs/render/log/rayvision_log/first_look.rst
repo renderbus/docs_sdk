@@ -27,7 +27,7 @@ Unix:
 
 Window:
 
-  C:\Users\<username>\AppData\Local\<AppAuthor>\<AppName>\Logs\<username>\<hostname>.log
+  C:\\Users\\<username>\\AppData\\Local\\<AppAuthor>\\<AppName>\\Logs\\<username>\\<hostname>.log
 
 
 2. 自定义路径
