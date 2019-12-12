@@ -142,12 +142,12 @@ plugins    dict   插件对象。key为插件名称，value为插件版本      
 ========================== ====== ======================================================================================== =================================================================================================================
 参数                       类型   说明                                                                                     样例
 ========================== ====== ======================================================================================== =================================================================================================================
-is_layer_rendering         string maya是否开启分层。"0":关闭, "1":开启                                      "1"
+is_layer_rendering         string maya是否开启分层。"0":关闭, "1":开启                                                      "1"
 cg_id                      string 渲染软件id."2000": Maya                                                                  "2000"
 ram                        string 内存要求。64/128                                                                         "64"
 os_name                    string 渲染操作系统, "0":Linux; "1": Windows                                                    "0"
-render_layer_type          string 渲染层方式选择。"0"：renderlayer方式"1"：rendersetup方式                       "0"
-is_distribute_render       string 是否开启分布式渲染。"0":关闭, "1":开启                                           "0"
+render_layer_type          string 渲染层方式选择。"0"：renderlayer方式"1"：rendersetup方式                                   "0"
+is_distribute_render       string 是否开启分布式渲染。"0":关闭, "1":开启                                                     "0"
 input_cg_file              string 渲染场景本地路径
 job_stop_time              string 小任务超时停止, 单位秒                                                                   "28800"
 user_id                    string 用户ID
@@ -157,7 +157,7 @@ is_picture                 string 是否效果图                               
 project_id                 string 项目id
 channel                    string 提交方式。"4":API/SDK提交                                                                "4"
 tiles_type                 string "block(分块),strip(分条)"                                                                "block"
-tiles                      string 分块数量，大于1就分块或者分条，等于1 就是单机                                            "1"
+tiles                      string 分块数量，大于1就分块或者分条，等于1 就是单机                                                "1"
 project_name               string 项目名称                                                                                 "test"
 distribute_render_node     string 分布式渲染机器数                                                                         "3"
 frames_per_task            string 一机渲多帧的帧数量                                                                       "1"
