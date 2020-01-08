@@ -8,6 +8,7 @@
 ======= =================================== ================================
 100     FAIL                                失败
 200     SUCCESS                             接口正常返回
+301     NEED_REDIRECT                       需要跳转地址
 400     APIError                            错误请求
 403     FORBIDDEN                           没有权限
 404     RESOURCE_NOT_FOUND                  资源不存在
@@ -20,6 +21,9 @@
 605     VINSUFFICIENT_PERMISSIONS           权限不足
 606     VALIDATE_COMMOM_CODE_ERROR          验证码错误
 607     VALIDATE_SEND_CODE_ERROR            验证码发送失败
+608     USER_AREA_ERROR                     客户国内外区域不匹配
+610     SIGNATURE_EXPIRED                   签名过期
+611     SIGNATURE_INVALID                   非法签名
 700     DO_NOT_HAVE_ANY_MORE_RECORD         没有更多记录
 800     ACCOUNT_BINDING_USER_NULL           账号不存在
 801     ACCOUNT_NOT_BINDING                 未绑定设备
