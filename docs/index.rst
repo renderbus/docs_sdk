@@ -13,6 +13,7 @@
    render/installation_guide.rst
    render/SDK_tutorial.rst
    render/api/index.rst
+   render/how to use API interface zh.md
    render/log/index.rst
    render/api/rayvision_api/task/check.rst
    render/sync/index.rst
