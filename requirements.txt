@@ -1,5 +1,7 @@
 --index https://pip.renderbus.com/simple/
 sphinx_rtd_theme
+recommonmark
+sphinx-markdown-tables
 rayvision_log
 rayvision_api
 rayvision_utils
