@@ -11,8 +11,8 @@ SDK入门教程
    render_para = {
            "domain": "task.renderbus.com",  # 用戶不需要修改
            "platform": "2",  # 平台号
-           "access_id": "K2lbvJSlPScStv72niHGXZtbQYc5Fp6d",  # 用户自行修改(必填)
-           "access_key": "6b4b6eab841772113113b61c79dbe40e",  # 用户自行修改(必填)
+           "access_id": "xxxxx",  # 用户自行修改(必填)
+           "access_key": "xxxxx",  # 用户自行修改(必填)
            "local_os": 'windows',
            "workspace": "c:/workspace",  # 本地保存根目录自动创建(用户可自行修改,全英文路径)
            "render_software": "Houdini",  # CG软件（Maya, Houdini, Katana, Clarisse）
