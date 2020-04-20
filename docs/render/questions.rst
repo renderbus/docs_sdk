@@ -7,7 +7,7 @@
 1. RenderBus SDK支持那些Python版本呢？
 --------------------------------------
 
-RenderBus SDK 目前支持Python2.7 和Python 3.4+
+RenderBus SDK 目前支持Python2.7.10+ 和Python 3.6, 3.7
 
 .. _header-n5:
 
@@ -21,13 +21,9 @@ RenderBus SDK 目前支持Python2.7 和Python 3.4+
 3. 怎么设置只渲染首帧？
 -----------------------
 
--  获取一个task实例
+-  设置只渲染首帧
 
-   ``task = RayvisionTask(cg_file=cg_file, **render_para)``
 
--  设置只下载首帧
-
-   ``task.task_info['task_info']['pre_frames'] = "100"``
 
 .. _header-n14:
 
