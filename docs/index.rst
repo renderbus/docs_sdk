@@ -11,7 +11,7 @@
 
    render/first_look.rst
    render/installation_guide.rst
-   render/SDK_tutorial.rst
+   render/SDK_tutorial.md
    render/api/index.rst
    render/how to use API interface zh.md
    render/log/index.rst
