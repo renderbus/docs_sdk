@@ -23,20 +23,28 @@ RenderBus SDK 目前支持Python2.7.10+ 和Python 3.6, 3.7
 
 -  设置只渲染首帧
 
+ ::
+
+   from rayvision_api.utils import update_task_info
+   update_task = {
+        "pre_frames": "100",
+    }
+    update_task_info(update_task, task_path=r"C:\workspace\1586932339\task.json")
 
 
 .. _header-n14:
 
 4. 怎么设置渲染完优先帧,让任务自动全速渲染？
 --------------------------------------------
+ ::
 
--  获取一个task实例
+   from rayvision_api.utils import update_task_info
+   update_task = {
+        "pre_frames": "100",
+        "stop_after_test": "1"
+    }
+   update_task_info(update_task, task_path=r"C:\workspace\1586932339\task.json")
 
-   ``task = RayvisionTask(cg_file=cg_file, **render_para)``
-
--  设置自动全速渲染
-
-   ``task.task_info['task_info']['stop_after_test'] = "2"``
 
 详细配置请参考 `详细参数配置 <json_file>`__
 

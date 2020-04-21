@@ -204,5 +204,87 @@ download.auto_download_after_task_completed([18164087], download_filename_format
 ```
 说明: 此方法任务ID不能为空
 
+### 附加: 传输配置文件
 
+
+**1. 传输配置设置包括:**
+
+选择数据库类型，数据库文件路径设置，传输日志路径设置
+
+**2. 默认使用的传输配置文件：db_config.ini， 如下图**
+
+   ![db_config.ini](https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200415114705.png)
+
+   用户也可根据默认配置为模板修改配置并指定数据库配置文件位置,指定自定义配置文件方法如下
+
+```
+from rayvision_sync.upload import RayvisionUpload
+
+UPLOAD = RayvisionUpload(api, db_config_path=r"D:\test\upload\db_config.ini")
+```
+
+**3. db_config.ini 参数说明:**
+
+| 参数              | 说明                                                         | 默认值    |
+| ----------------- | ------------------------------------------------------------ | --------- |
+| transfer_log_path | 传输引擎日志文件路径                                         | 无        |
+| on                | 是否使用本地数据库, true / false: 是 / 否                    | true      |
+| type              | 选择数据库, 目前仅支持"redis" 和 "sqlite"                    | sqlite    |
+| db_path           | 数据库文件保存路径                                           | 无        |
+| host              | redis数据库host                                              | 127.0.0.1 |
+| port              | redis数据库port                                              | 6379      |
+| password          | redis数据库password                                          | 无        |
+| table_index       | redis数据库保存文件的仓库名，选择redis数据库则不能为空       | 无        |
+| timeout           | redis客户端连接超时时间,客户端在这段时间内没有发出任何指令，那么关闭该连接,单位ms | 5000      |
+| temporary         | 使用sqlite数据库时，上传的记录数据是否在完成上传后删除, 默认"false"不删除 | false     |
+
+
+**4. transfer_log_path 和 db_path 取值的优先级规则如下：**
+
+- db_config.ini有设置自定义路径则优先使用自定义路径；
+
+- 无自定义路径则如下:
+
+  transfer_log_path
+
+  > - 优先使用环境变量'RAYVISION_LOG'
+  >
+  > - 次之使用:  
+  >
+  >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
+  >     Linux：环境变量"HOME"位置/<renderfarm_sdk>  
+
+  db_path
+
+  > - 优先使用环境变量'RAYVISION_LOG'
+  >
+  > - 次之使用:  
+  >
+  >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
+  >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
+  
+  
+**5. rayvision_houdini 分析生成的db数据库位置**
+
+> houdini脚本在分析的时候会将一些分析命令和文件保存在sqlite数据库文件中
+
+- 优先使用自定义自定义路径,自定义路径设置方法如下:
+  
+  调用"AnalyzeHoudini"分析类的时候设置`custom_db_path`参数值即可
+```
+class AnalyzeHoudini(object):
+    def __init__(self, cg_file, software_version, project_name=None,
+                 plugin_config=None, render_software="Houdini",
+                 local_os=None, workspace=None, custom_exe_path=None,
+                 platform="2", custom_db_path=None):
+```
+
+- 未设置自定义路径则使用以下规则:
+
+> - 优先使用环境变量'RAYVISION_HOUDINI'
+  >
+  > - 次之使用:  
+  >
+  >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
+  >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
 
