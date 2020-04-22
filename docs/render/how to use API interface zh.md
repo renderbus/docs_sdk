@@ -6,12 +6,10 @@
 
 ```python
 user_info = {
-    "domain_name": "task.renderbus.com",   # 国外：www.foxrenderfarm.com
+    "domain_name": "task.renderbus.com",
     "platform": "2",
     "access_id": "xxxxxxxxxxxxxxxxxxxxxx",
     "access_key": "xxxxxxxxxxxxxxxxxxxxx",
-    "local_os": 'windows',
-    "workspace": "c:/workspace",
 }
 
 api = RayvisionAPI(access_id=user_info['access_id'],
@@ -19,6 +17,7 @@ api = RayvisionAPI(access_id=user_info['access_id'],
                    domain=user_info['domain_name'],
                    platform=user_info['platform'])
 ```
+
 
 **说明**：
 

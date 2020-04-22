@@ -58,5 +58,8 @@
 916     RECEIPT_TYPE_ERROR                  发票类型不匹配
 920     NO_LATEST_VERSION                   暂无客户端最新版本
 1000    REDIS_CACHE_FAIL                    redis缓存异常
+20004   JSON_FILE_UPLOAD_FAILED             上传json文件多次都失败,请检查网络环境
+200024  ARGUMENT_FORMAT_INVALID             传输参数名设置错误，请检查传输cmd命令
+200025  NON-UPLOADABLE FILES                不可上传的文件,检查文件是否存在或者文件是否损坏
 1000000 RayvisionError                      python抛出异常
 ======= =================================== ================================
