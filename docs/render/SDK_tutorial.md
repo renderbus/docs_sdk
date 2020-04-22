@@ -120,8 +120,17 @@ custom_info_to_upload = [
 append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 ```
 
+### 四. 校验json文件
 
-### 四. 上传
+校验的时候会检查task.json中是否有`user_id`,`project_id`,`task_id`,
+如果没有则会调用接口从服务器获取相关参数并写入task.json
+
+```
+check_obj = RayvisionCheck(api, analyze_obj)
+task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+```
+
+### 五. 上传
 > 现在提供2种方式:
 
 ##### 1.先上传json文件再根据“upload.json”上传资源文件:
@@ -160,14 +169,19 @@ UPLOAD.upload_config("5165465", CONFIG_PATH)
 【注意】:上传json文件的时候需要任务ID，上传资源文件则不需要任务ID;  
 `upload_asset`中`is_db`参数用来控制是否需要使用本地数据库，默认使用本地数据库;
 
+### 六. 提交任务
 
-### 五. 下载
+```
+api.submit(int(task_id))
+```
+
+
+### 七. 下载
 > 下载现在提供3种方式:
 
 ##### 1. 支持自定义下载每个渲染任务底下的层级目录结构
 
 `download(self, task_id_list=None, max_speed=None, print_log=True, download_filename_format="true",local_path=None, server_path=None)`
-
 
 ```
 download = RayvisionDownload(api)
@@ -203,7 +217,7 @@ download.auto_download_after_task_completed([18164087], download_filename_format
 ```
 说明: 此方法任务ID不能为空
 
-### 附加: 传输配置文件
+### 八. 附加: 传输配置文件
 
 
 **1. 传输配置设置包括:**
