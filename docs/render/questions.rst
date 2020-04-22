@@ -40,7 +40,6 @@ RenderBus SDK 目前支持Python2.7.10+ 和Python 3.6, 3.7
 
    from rayvision_api.utils import update_task_info
    update_task = {
-        "pre_frames": "100",
         "stop_after_test": "1"
     }
    update_task_info(update_task, task_path=r"C:\workspace\1586932339\task.json")
@@ -70,4 +69,4 @@ RenderBus SDK 目前支持Python2.7.10+ 和Python 3.6, 3.7
 
 如果不想直接使用而不进行太多的定制，可以直接下载相应的渲染包，
 
-然后选择对应的[常见全流程样例]即可体验全流程渲染，详细过程请参考 `SDK入门教程 <SDK_tutorial.html>`__
+然后选择对应的 `常见全流程样例 <demo/demo.html>`__ 即可体验全流程渲染，详细过程请参考 `SDK入门教程 <SDK_tutorial.html>`__

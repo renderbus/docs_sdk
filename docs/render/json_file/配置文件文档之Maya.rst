@@ -150,9 +150,9 @@ os_name                    string 渲染操作系统, "0":Linux; "1": Windows   
 render_layer_type          string 渲染层方式选择。"0"：renderlayer方式"1"：rendersetup方式                                   "0"
 is_distribute_render       string 是否开启分布式渲染。"0":关闭, "1":开启                                                     "0"
 input_cg_file              string 渲染场景本地路径
-job_stop_time              string 小任务超时停止, 单位秒                                                                   "28800"
+job_stop_time              string 设置帧的超时时间，只会影响当前帧, 单位秒                                                     "28800"
 user_id                    string 用户ID
-pre_frames                 string 优先渲染                                                                                 "000:1,3-4[1]" 表示：优先渲染首帧：否优先渲染中间帧：否优先渲染末帧：否优先渲染自定义帧：1,3-4[1]
+pre_frames                 string 优先渲染(优先帧不建议自定义多个单独帧)                                                      "000:1,3-4[1]" 表示：优先渲染首帧：否优先渲染中间帧：否优先渲染末帧：否优先渲染自定义帧：1,3-4[1]
 platform                   string 提交平台                                                                                 "2"
 is_picture                 string 是否效果图                                                                               "0"
 project_id                 string 项目id
@@ -165,8 +165,8 @@ frames_per_task            string 一机渲多帧的帧数量                   
 stop_after_test            string 优先渲染完成后是否暂停任务. "1":优先渲染完成后暂停任务, "2".优先渲染完成后不暂停任务
 input_project_path         string 项目路径，如用户未设置传空字符串
 task_id                    string 任务号                                                                                  
-task_stop_time             string 大任务超时停止 单位秒                                                                    "86400"
-time_out                   string 超时时间 单位秒                                                                          "43200"
+task_stop_time             string 设置任务超时时间，任务超时停止所有帧,单位秒                                                  "86400"
+time_out                   string 超时提醒时间 单位秒                                                                       "43200"
 ========================== ====== ======================================================================================== =================================================================================================================
 
 .. _header-n337:
