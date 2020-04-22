@@ -23,10 +23,9 @@ RayvisionAPI 参数说明:
 | 参数       | 类型   | 是否必须 | 默认值             | 说明                                                         |
 | ---------- | ------ | -------- | ------------------ | ------------------------------------------------------------ |
 | domain     | string | 否       | task.renderbus.com | 国内用户：task.renderbus.com，国外用户:jop.foxrenderfarm.com |
-| platform   | string | 否       | 4                  | 平台ID，例如: W2:"2", W6/青云:"6", GPU一区:"21"              |
+| platform   | string | 否       | 2                  | 平台ID，例如: W2:"2", W6/青云:"6", GPU一区:"21"              |
 | access_id  | string | 是       |                    | 授权id，用于标识API调用者身份                                |
 | access_key | string | 是       |                    | 授权密钥，用于加密签名字符串和服务器端验证签名字符串         |
-| local_os   | string | 否       | windows            | 平台名, 默认"windows", 可选择: "windows"、"linux"            |
 
 
 
