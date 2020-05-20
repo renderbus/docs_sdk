@@ -13,6 +13,7 @@
 403     FORBIDDEN                           没有权限
 404     RESOURCE_NOT_FOUND                  资源不存在
 500     INTERNAL_ERROR                      服务器处理失败
+503     LABEL_ALREADY_EXISTS                新增label已存在
 600     PARAMETER_INVALID                   非法参数
 601     PARAMETER_CANT_BE_EMPTY             缺少必要参数
 602     NEED_USER_LOGIN                     需要用户登录
@@ -60,6 +61,6 @@
 1000    REDIS_CACHE_FAIL                    redis缓存异常
 20004   JSON_FILE_UPLOAD_FAILED             上传json文件多次都失败,请检查网络环境
 200024  ARGUMENT_FORMAT_INVALID             传输参数名设置错误，请检查传输cmd命令
-200025  NON-UPLOADABLE FILES                不可上传的文件,检查文件是否存在或者文件是否损坏
+200025  NON_UPLOADABLE FILES                不可上传的文件,检查文件是否存在或者文件是否损坏
 1000000 RayvisionError                      python抛出异常
 ======= =================================== ================================
