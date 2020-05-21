@@ -6,8 +6,6 @@
 .. toctree::
    :maxdepth: 4
 
-   rayvision_sync/modules.rst
-   rayvision_sync/core/upload.rst
-   rayvision_sync/core/download.rst
+   rayvision_sync/core/upload_and_download.md
 
 

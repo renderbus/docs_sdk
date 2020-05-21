@@ -7,4 +7,3 @@
 
    core/transfer.rst
    core/manage.rst
-

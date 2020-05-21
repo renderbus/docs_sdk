@@ -1,5 +1,3 @@
-###  *houdini, clarisse, maya Demo*
-
 Maya demo
 -----------
 
