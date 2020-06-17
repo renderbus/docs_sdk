@@ -182,7 +182,7 @@ renderable | string | "0", 不开启渲染      “1”:开启渲染   | "1"
 output | string | 当前layer的输出路径 | "D:\\temp\\cam02_layer02" 
 format | string | 当前layer的输出格式 | "exr16" 
 enable_deep_output | string | 当前layer的是否要开启deep保存输出 | "1" 
-save_to_disk | string |  | "3"
+save_to_disk | string |  | "1"
 enable_deep_output_path | string | 当前layer的deep输出路径 | "D:\\temp\\cam02_layer02_deep" 
 name | string | 当前layer的名字，也是在场景中的路径 | "project://scene/cam02.cam02_layer02" 
 
