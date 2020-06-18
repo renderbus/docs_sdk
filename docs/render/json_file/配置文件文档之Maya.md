@@ -145,7 +145,7 @@ plugins | object | Y | 插件对象。<br> 为插件名称，value为插件版�
 | ram                    | string | Y        | 内存要求: 64 / 128                                           | “64”     | "64"                                                         |
 | os_name                | string | Y        | 渲染操作系统:  "0":Linux; "1": Windows                       | “1”      | "1"                                                          |
 | render_layer_type      | string | Y        | 渲染层方式选择:  "0"：renderlayer方式 "1"：rendersetup方式   | “0”      | "0"                                                          |
-| is_distribute_render   | string | Y        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
+| is_distribute_render   | string | N        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
 | input_cg_file          | string | Y        | 渲染场景本地路径                                             |          | "E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project"             |
 | input_project_path     | string | Y        | 项目路径，如用户未设置传空字符串                             | " "      |                                                              |
 | job_stop_time          | string | Y        | 设置帧的超时时间，只会影响当前帧, 单位秒                     | “259200” | "28800"                                                      |
@@ -158,23 +158,23 @@ plugins | object | Y | 插件对象。<br> 为插件名称，value为插件版�
 | tiles                  | string | Y        | 分块数量，大于1就分块或者分条，等于1 就是单机                | "1"      | "1"                                                          |
 | project_id             | string | Y        | 项目id                                                       |          | "200953"                                                     |
 | project_name           | string | Y        | 项目名称                                                     | " "      | "Project1"                                                   |
-| distribute_render_node | string | Y        | 分布式渲染机器数                                             | "3"      | "3"                                                          |
+| distribute_render_node | string | N        | 分布式渲染机器数                                             | "3"      | "3"                                                          |
 | frames_per_task        | string | Y        | 一机渲多帧的帧数量                                           | "1"      | "1"                                                          |
 | stop_after_test        | string | Y        | 优先渲染完成后是否暂停任务 "1":优先渲染完成后暂停任务 "2".优先渲染完成后不暂停任务 | "2"      | “2”                                                          |
 | task_id                | string | Y        | 任务号                                                       |          |                                                              |
 | task_stop_time         | string | Y        | 大任务超时停止 单位秒,"0"表示不限制                          | "0"      | "86400"                                                      |
 | time_out               | string | Y        | 超时时间 单位秒                                              | “43200”  | "43200"                                                      |
 
-**注意:**
-
-> 开启分层(enable_layered)才可以使用分块渲染，分块渲染模式(tiles_type)和一机多帧渲染模式(frames_per_task)互斥关系，只能同时使用一种模式
+> **注意**:
+> - 开启分层(enable_layered)才可以使用分块渲染，分块渲染模式(tiles_type)和一机多帧渲染模式(frames_per_task)互斥关系，只能同时使用一种模式
+> - Maya暂时不支持分布式渲染(is_distribute_render)。
 
 **<span id="scene_info_render">scene_info_render对象解析</span>**
 
 
-参数 | 类型 | 是否必须 | 说明 | 示例
+**参数** | **类型** | **是否必须** | **说明** | **示例** 
 ---|---|---|---|---
-layer | object | Y | 层信息 | [见scene_info_render.layer对象解析](#scene_info_render.layer)
+**layer** | **object** | **Y** | **层信息** | **[见scene_info_render.layer对象解析](#scene_info_render.layer)** 
 
 **<span id="scene_info_render.layer">scene_info_render.layer对象解析</span>**
 

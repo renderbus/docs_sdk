@@ -131,7 +131,7 @@ plugins | object | 插件对象: <br>key为插件名称，value为插件版本 |
 | ram                    | string | Y        | 内存要求: 64 / 128                                           | “64”     | "64"                                                         |
 | os_name                | string | Y        | 渲染操作系统:  "0":Linux; "1": Windows                       | “1”      | "1"                                                          |
 | render_layer_type      | string | Y        | 渲染层方式选择:  "0"：renderlayer方式 "1"：rendersetup方式   | “0”      | "0"                                                          |
-| is_distribute_render   | string | Y        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
+| is_distribute_render   | string | N        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
 | input_cg_file          | string | Y        | 渲染场景本地路径                                             |          | "E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project"             |
 | input_project_path     | string | Y        | 项目路径，如用户未设置传空字符串                             | " "      |                                                              |
 | job_stop_time          | string | Y        | 设置帧的超时时间，只会影响当前帧, 单位秒                     | “259200” | "28800"                                                      |
@@ -144,47 +144,50 @@ plugins | object | 插件对象: <br>key为插件名称，value为插件版本 |
 | tiles                  | string | Y        | 分块数量，大于1就分块或者分条，等于1 就是单机                | "1"      | "1"                                                          |
 | project_id             | string | Y        | 项目id                                                       |          | "200953"                                                     |
 | project_name           | string | Y        | 项目名称                                                     | " "      | "Project1"                                                   |
-| distribute_render_node | string | Y        | 分布式渲染机器数                                             | "3"      | "3"                                                          |
+| distribute_render_node | string | N        | 分布式渲染机器数                                             | "3"      | "3"                                                          |
 | frames_per_task        | string | Y        | 一机渲多帧的帧数量                                           | "1"      | "1"                                                          |
 | stop_after_test        | string | Y        | 优先渲染完成后是否暂停任务 "1":优先渲染完成后暂停任务 "2".优先渲染完成后不暂停任务 | "2"      | “2”                                                          |
 | task_id                | string | Y        | 任务号                                                       |          |                                                              |
 | task_stop_time         | string | Y        | 大任务超时停止 单位秒,"0"表示不限制                          | "0"      | "86400"                                                      |
 | time_out               | string | Y        | 超时时间 单位秒                                              | “43200”  | "43200"                                                      |
 
+>  **注意:** Clarisse暂时不支持分布式渲染(is_distribute_render)和分块渲染(tiles)。
+
 **<span id="scene_info_render">scene_info_render对象解析</span>**
 
 
 参数 | 类型 | 说明 | 示例
 ---|---|---|---
-image_node | object | 场景普通信息 | [见scene_info_render.image_node对象解析](#scene_info_render.image_node) 
+image_node | List | 在clarisse IFX中包括了场景中所有的image和image下的3dlayer，在clarisse BUiLDER中包括了场景中所有的VariableRange和VariableRange下的ImageNodeWrite | [见scene_info_render.image_node对象解析](#scene_info_render.image_node) 
 
 **<span id="scene_info_render.common">scene_info_render.image_node对象解析</span>**
 
 
 参数 | 类型 | 说明 | 示例
 ---|---|---|---
-renderable | string | "0", 不开启渲染，“1”:开启渲染（这个不是场景中的值，平台默认是不开的，平台不建议直接渲染image） | "0" 
-output | string | 当前image的输出路径 | "D:\temp\cam02" 
-format | string | 当前image的输出格式 | "exr16" 
-LUT | string | 当前image的输出颜色管理 | "linear" 
-save_to_disk | string | 当前image的是否要开启保存输出 | "1" 
-name | string | 当前image的名字，也是在场景中的路径 | "project://scene/cam02" 
-layers | string | 当前image的中的3dlayer，值是list，list的值是dict,当前image中有多少layer,就有几个layer的dict | 见[scene_info_render.image_node.layers对象解析](#scene_info_render.image_node.layers) 
- frames       | string | 帧范围                                                       | "0-50[1]"                                                    
+renderable | string | "0", 不开启渲染，“1”:开启渲染（这个不是场景中的值，平台默认是不开的，平台不建议直接渲染image和VariableRange） | "0" 
+output | string | clarisse IFX中为当前image的输出路径, clarisse BUiLDER下无 | "D:\temp\cam02" 
+format | string | clarisse IFX中为当前image的输出格式，非必须值，clarisse BUiLDER下无 | "exr16" 
+LUT | string | IFX中为当前image的输出颜色管理 非必须值，clarisse BUiLDER下无 | "linear" 
+save_to_disk | string | clarisse IFX中当前image的是否要开启保存输出，clarisse BUiLDER下无 | "1" 
+name | string | clarisse IFX中为当前image的名字，clarisse BUiLDER中为当前VariableRange的名字，也是两者在场景中的路径 | "project://scene/cam02" 
+layers | string | IFX中为当前image的中的3dlayer，值是list，list的值是dict,当前image中有多少layer,就有几个layer的dict，clarisse BUiLDER中为当前VariableRange的中的ImageNodeWrite，值是list，list的值是dict,当前VariableRange中有多少ImageNodeWrite,就有几个ImageNodeWrite的dict 见scene_info_render.image_node.layers对象解析 | 见[scene_info_render.image_node.layers对象解析](#scene_info_render.image_node.layers) 
+ frames       | string | clarisse IFX中为当前image的帧范围，clarisse BUiLDER中为当前VariableRange的F或Frame变量的值 | "0-50[1]"                                                    
 
 **<span id="scene_info_render.image_node.layers">scene_info_render.image_node.layers对象解析</span>**
 
 
 参数 | 类型 | 说明 | 示例
 ---|---|---|---
-frames | string | 起始帧结束帧 | "0-50[1]" 
+frames | string | clarisse IFX中为当前3dlayer起始帧结束帧，clarisse BUiLDER中为当前VariableRange下的ImageNodeWrite的覆盖值 | "0-50[1]" 
 renderable | string | "0", 不开启渲染      “1”:开启渲染   | "1" 
-output | string | 当前layer的输出路径 | "D:\\temp\\cam02_layer02" 
-format | string | 当前layer的输出格式 | "exr16" 
-enable_deep_output | string | 当前layer的是否要开启deep保存输出 | "1" 
-save_to_disk | string |  | "1"
-enable_deep_output_path | string | 当前layer的deep输出路径 | "D:\\temp\\cam02_layer02_deep" 
-name | string | 当前layer的名字，也是在场景中的路径 | "project://scene/cam02.cam02_layer02" 
+output | string | clarisse IFX中为当前layer的输出路径，clarisse BUiLDER下无 | "D:\\temp\\cam02_layer02" 
+inw_output | string | clarisse BUiLDER中为当前ImageNodeWrite的输出路径，clarisse IFX下无 |  
+format | string | c | "exr16" 
+enable_deep_output | string | clarisse IFX中为当前layer的是否要开启deep保存输出，clarisse BUiLDER下暂无 | "1" 
+save_to_disk | string | clarisse IFX中为当前layer的是否要开启保存输出,clarisse BUiLDER下无 | "1"
+enable_deep_output_path | string | clarisse IFX中为当前layer的deep输出路径，clarisse BUiLDER下暂无 | "D:\\temp\\cam02_layer02_deep" 
+name | string | 1：clarisse IFX中为当前当前layer的名字，也是在场景中的路径；<br/>2：clarisse BUiLDER中为当前ImageNodeWrite的名字, 值为当前VariableRange的场景中的路径和当前ImageNodeWrite在场景中的路径，以 ===链接 | 1："project://scene/cam02.cam02_layer02"<br/>2：“build://yt_0080===build://cloudShadow” 
 
 
 
@@ -251,7 +254,7 @@ server | string | 服务器端相对路径，一般与local保持一致 | "/E/wo
 ```json
 {
     "50001":[
-        "Nodes: /obj/flattank_fluid/compressed_cache/file_mode  File name: $HIP/geo/$HIPNAME.$OS.$F.bgeo.sc  miss file: /geo/flip_test_slice4.compressed_cache.1.bgeo.sc ",
+        "Nodes: /obj/flattank_fluid/compressed_cache/file_mode  File name: $HIP/geo/$HIPNAME.$OS.$F.bgeo.sc  miss file: /geo/flip_test_slice4.compressed_cache.1.bgeo.sc "
     ]
 }
 ```
