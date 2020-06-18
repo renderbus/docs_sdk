@@ -72,7 +72,7 @@ Clarisse 配置文件文档
         "user_id":"100150764",
         "cg_id":"2013",
         "input_cg_file":"E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project",
-        "os_name":"1"
+        "os_name":"1",
     },
     "scene_info":{
         "image_node": [
@@ -130,7 +130,7 @@ plugins | object | 插件对象: <br>key为插件名称，value为插件版本 |
 | cg_id                  | string | Y        | 渲染软件id."2013": Clarisse                                  |          | "2013"                                                       |
 | ram                    | string | Y        | 内存要求: 64 / 128                                           | “64”     | "64"                                                         |
 | os_name                | string | Y        | 渲染操作系统:  "0":Linux; "1": Windows                       | “1”      | "1"                                                          |
-| render_layer_type      | string | Y        | 渲染层方式选择:  "0"：renderlayer方式 "1"：rendersetup方式   | “0”      | "0"                                                          |
+| render_layer_type      | string | N        | 渲染层方式选择:  "0"：renderlayer方式 "1"：rendersetup方式   | “0”      | "0"                                                          |
 | is_distribute_render   | string | N        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
 | input_cg_file          | string | Y        | 渲染场景本地路径                                             |          | "E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project"             |
 | input_project_path     | string | Y        | 项目路径，如用户未设置传空字符串                             | " "      |                                                              |
@@ -183,7 +183,7 @@ frames | string | clarisse IFX中为当前3dlayer起始帧结束帧，clarisse B
 renderable | string | "0", 不开启渲染      “1”:开启渲染   | "1" 
 output | string | clarisse IFX中为当前layer的输出路径，clarisse BUiLDER下无 | "D:\\temp\\cam02_layer02" 
 inw_output | string | clarisse BUiLDER中为当前ImageNodeWrite的输出路径，clarisse IFX下无 |  
-format | string | c | "exr16" 
+format | string | 当前layer或ImageNodeWrite的输出格式 | "exr16" 
 enable_deep_output | string | clarisse IFX中为当前layer的是否要开启deep保存输出，clarisse BUiLDER下暂无 | "1" 
 save_to_disk | string | clarisse IFX中为当前layer的是否要开启保存输出,clarisse BUiLDER下无 | "1"
 enable_deep_output_path | string | clarisse IFX中为当前layer的deep输出路径，clarisse BUiLDER下暂无 | "D:\\temp\\cam02_layer02_deep" 

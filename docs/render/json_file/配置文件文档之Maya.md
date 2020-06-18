@@ -79,10 +79,10 @@ Maya 配置文件文档
     }, 
     "layers": [
         "defaultRenderLayer",
-        "mut",
+        "mut"
     ],
     "task_info": {
-        "is_layer_rendering": "1", 
+        "enable_layered": "1", 
         "cg_id": "2000", 
         "ram": "64", 
         "os_name": "1", 
@@ -105,7 +105,8 @@ Maya 配置文件文档
         "input_project_path": "", 
         "task_id": "439800", 
         "task_stop_time": "86400", 
-        "time_out": "12"
+        "time_out": "12",
+        "graphics_cards_num": "2"
     }, 
     "software_config": {
         "cg_version": "2016", 
@@ -141,7 +142,7 @@ plugins | object | Y | 插件对象。<br> 为插件名称，value为插件版�
 | ---------------------- | ------ | -------- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
 | graphics_cards_num     | string | Y        | 1: 开启单卡渲染 2: 开启双卡渲染                              | "2"      | “2”                                                          |
 | enable_layered         | string | Y        | 是否开启分层提交, "0":关闭 "1":开启                          | "0"      | "0"                                                          |
-| cg_id                  | string | Y        | 渲染软件id."2013": Clarisse                                  |          | "2013"                                                       |
+| cg_id                  | string | Y        | 渲染软件id."2000": Maya                                  |          | "2013"                                                       |
 | ram                    | string | Y        | 内存要求: 64 / 128                                           | “64”     | "64"                                                         |
 | os_name                | string | Y        | 渲染操作系统:  "0":Linux; "1": Windows                       | “1”      | "1"                                                          |
 | render_layer_type      | string | Y        | 渲染层方式选择:  "0"：renderlayer方式 "1"：rendersetup方式   | “0”      | "0"                                                          |
@@ -200,7 +201,7 @@ image_file_prefix | string | Y | 输出文件名设置，"<RenderLayer>/<Scence>
 all_camera | array<string> | Y | 所有相机列表 | ["stereoCameraRightShape", "cameraShape1"]
 render_camera | array<string> | Y | 待渲染相机列表 | ["stereoCameraRightShape"]
 start | string | Y | 起始帧 | "1"
-animation | string | N | 动画开关 | "1"
+animation | string | N | 动画开关 | "False"
 renderer | string | Y | 渲染器名称 | “arnold“
 frames | string | Y | 渲染帧 | "1-10[1]"
 height | string | Y | 分辨率，高 | "1080"
