@@ -100,10 +100,10 @@ plugins | object | 插件对象，key为插件名称，value为插件版本 | {}
 | ---------------------- | ------ | -------- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
 | graphics_cards_num     | string | Y        | 1: 开启单卡渲染 2: 开启双卡渲染                              | "2"      | “2”                                                          |
 | enable_layered         | string | Y        | 是否开启分层提交, "0":关闭 "1":开启                          | "0"      | "0"                                                          |
-| cg_id                  | string | Y        | 渲染软件id."2004": Houdini                                  |          | "2013"                                                       |
+| cg_id                  | string | Y        | 渲染软件id."2004": Houdini                                   |          | "2013"                                                       |
 | ram                    | string | Y        | 内存要求: 64 / 128                                           | “64”     | "64"                                                         |
 | os_name                | string | Y        | 渲染操作系统:  "0":Linux; "1": Windows                       | “1”      | "1"                                                          |
-| render_layer_type      | string | N        | 渲染层方式选择:  "0"：renderlayer方式 "1"：rendersetup方式   | “0”      | "0"                                                          |
+| render_layer_type      | string | N        | 渲染层方式选择(支持maya):  "0"：renderlayer方式 "1"：rendersetup方式 | “0”      | "0"                                                          |
 | is_distribute_render   | string | N        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
 | input_cg_file          | string | Y        | 渲染场景本地路径                                             |          | "E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project"             |
 | input_project_path     | string | Y        | 项目路径，如用户未设置传空字符串                             | " "      |                                                              |
