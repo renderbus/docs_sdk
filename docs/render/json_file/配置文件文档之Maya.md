@@ -205,7 +205,7 @@ animation | string | N | 动画开关 | "False"
 renderer | string | Y | 渲染器名称 | “arnold“
 frames | string | Y | 渲染帧 | "1-10[1]"
 height | string | Y | 分辨率，高 | "1080"
-renumber_frames | string | N | 帧覆盖 | "1"
+renumber_frames | string | N | 帧覆盖 | "False" 
 by_frame | string | Y | 帧间隔 | "1"
 
 
