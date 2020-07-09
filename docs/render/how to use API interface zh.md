@@ -1256,7 +1256,7 @@ delete_label_name = api.tag.delete_label(del_name="test_tag2")
 
 **请求参数**：缺省
 
-**返回参数**：缺省
+**返回参数**：
 
 | **参数**           | **类型**       | **说明** | **备注** |
 |--------------------|----------------|----------|----------|
@@ -1287,6 +1287,69 @@ label_list = api.tag.get_label_list()
         ]
     },
     "serverTime": 1546998557770
+}
+```
+
+## 添加任务标签
+
+**接口路径:** /api/render/task/addTaskLabel
+
+**请求参数**：
+
+| **参数** | **类型**  | **说明**     | **备注** |
+| -------- | --------- | ------------ | -------- |
+| tag      | string    | 任务标签     |          |
+| task_ids | list[int] | 任务ID列表集 |          |
+
+**返回参数**：缺省
+
+**请求示例**：缺省
+
+```python
+tag = api.tag.add_task_tag(tag="test_tag", task_ids=[29445045, 29435295])
+```
+
+**返回示例**：
+
+```json
+{
+    "version": "1.0.0",
+    "result": True,
+    "message": "success",
+    "code": 200,
+    "data": None,
+    "serverTime": 1594275174044L
+}
+```
+
+## 删除任务标签
+
+**接口路径:** /api/render/task/deleteTaskLabel
+
+**请求参数**：
+
+| **参数** | **类型**  | **说明**       | **备注** |
+| -------- | --------- | -------------- | -------- |
+| tag_ids  | list[int] | 删除任务标签ID |          |
+
+**返回参数**：缺省
+
+**请求示例**：缺省
+
+```python
+del_tag = api.tag.delete_task_tag(tag_ids=[21205])
+```
+
+**返回示例**：
+
+```python
+{
+    "version": "1.0.0",
+    "result": True,
+    "message": "success",
+    "code": 200,
+    "data": None,
+    "serverTime": 1594276011046L
 }
 ```
 
