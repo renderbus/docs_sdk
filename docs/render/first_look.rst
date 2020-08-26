@@ -41,6 +41,10 @@
 
 -  Clarisse
 
+-  3ds Max
+
+-  Katana
+
 .. _header-n19:
 
 准备工作
