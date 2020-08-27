@@ -13,7 +13,7 @@ Katana 配置文件文档
 
 
 ```json
-
+{
   "scene_info_render": {
     "rendernodes": {
       "Render": {
@@ -33,7 +33,7 @@ Katana 配置文件文档
     "concurrent_tasks": "1",
     "channel": "4",
     "frames_per_task": "1",
-    "task_id": 34333653,
+    "task_id": 34399251,
     "project_name": "Project1",
     "platform": "2",
     "tiles": "1",
