@@ -149,12 +149,12 @@ rendernodes | dict | 渲染输出的节点 | [见scene_info_render.rendernodes�
 **<span id="scene_info_render.rendernodes.Render">scene_info_render.rendernodes.Render对象解析</span>**
 
 
-参数 | 类型 | 说明 | 示例
----|---|---|---
- renderable | string | 是否激活节点，”1“：激活，”0“：不激活                         |                    
- denoise    | string | 降噪（仅gpu平台有效），“0”：不开启降噪，“1”：开启降噪 | "denoise": "0"     
- frames     | string | 当前节点帧范围                                             | "frames": "1-1[1]" 
- aov        | dict   | AOV网，key:aov的名字, value:输出的地址                       |                    
+参数 | 类型 |  | 说明 | 示例
+---|---|---|---|---
+ renderable | string | Y                        | 是否激活节点，”1“：激活，”0“：不激活                         |                    
+ denoise    | string | N | 降噪（仅gpu平台有效），“0”：不开启降噪，“1”：开启降噪 | "denoise": "0"     
+ frames     | string | Y                                            | 当前节点帧范围                                             | "frames": "1-1[1]" 
+ aov        | dict   | Y                      | AOV必须是场景中的路径，key:aov的名字, value:输出的地址       |                    
 
 ### 2.upload.json解析
 
