@@ -24,7 +24,7 @@
    render/exception.rst
    render/para_configration.rst
    render/architecture.rst
-   render/settings.rst
+   render/settings.md
    render/demo/index.rst
    render/questions.rst
    render/error_status.rst

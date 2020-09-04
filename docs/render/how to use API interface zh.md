@@ -33,7 +33,7 @@ api = RayvisionAPI(access_id=user_info['access_id'],
 **返回参数**：
 
 | **参数** | **类型** | **说明**   | **备注** |
-|----------|----------|------------|----------|
+| -------- | -------- | ---------- | -------- |
 | platform | Integer  | 平台号     |          |
 | name     | String   | 平台名描述 |          |
 
@@ -64,7 +64,7 @@ platform = api.query.platforms()
 
 ## 获取用户详情
 
-**接口路径**： /api/render/user/queryUserProfile
+**旧接口路径**：  /api/render/setUp/queryUserProfile
 
 **请求参数**：缺省
 
@@ -137,7 +137,7 @@ user_profile = api.user.query_user_profile()
 
 ## 获取用户设置
 
-**接口路径**：/api/render/user/queryUserSetting
+**接口路径**： /api/render/setUp/queryUserSetting 
 
 **请求参数**：缺省
 
@@ -203,13 +203,13 @@ user_setting = api.user.query_user_setting()
 
 ## 更新用户设置
 
-**接口路径**：/api/render/user/updateUserSetting
+**接口路径**： /api/render/setUp/updateUserSetting 
 
 **请求参数**：
 
-| **参数**       | **类型** | **说明**                   | **备注** |
-| -------------- | -------- | -------------------------- | -------- |
-| task_over_time | Integer  | 任务超时时间设置(单位：秒) |          |
+| **参数**       | **类型** | 是否必须 | **说明**                   | **备注** |
+| -------------- | -------- | -------- | -------------------------- | -------- |
+| task_over_time | Integer  | Y        | 任务超时时间设置(单位：秒) |          |
 
 **返回参数**：缺省
 
@@ -234,17 +234,21 @@ update_user_setting = api.user.update_user_settings(task_over_time=43200)
 
 ## 获取用户传输BID
 
-**接口路径**：/api/render/task/getTransferBid
+**接口路径**： /api/render/transfer/getBid
 
 **请求参数**：缺省
 
 **返回参数**：
 
-| **参数**   | **类型** | **说明**       | **备注** |
-|------------|----------|----------------|----------|
-| config_bid | String   | 配置文件传输ID |          |
-| output_bid | String   | 下载传输ID     |          |
-| input_bid  | String   | 资产上传传输ID |          |
+| **参数**             | **类型** | **说明**                                                     | **备注** |
+| -------------------- | -------- | ------------------------------------------------------------ | -------- |
+| config_bid           | String   | 配置文件传输ID                                               |          |
+| output_bid           | String   | 下载传输ID                                                   |          |
+| parent_input_bid     | String   | 对应主账号Input传输bid                                       |          |
+| input_bid            | String   | 资产上传传输ID                                               |          |
+| sub_user_output_bids | Object   | 子账号outputbids,如果访问用户是主账号，则有子账号值，否则为空 |          |
+| userId               | String   | 子账号ID                                                     |          |
+| output_bid           | String   | 子账号outputbid                                              |          |
 
 **请求示例**：
 
@@ -261,27 +265,33 @@ user_transfer_bid = api.user.get_transfer_bid()
     "message": "success",
     "code": 200,
     "data": {
-        "parent_input_bid": "10206"
         "config_bid": "30201",
+        "input_bid": "10201",
         "output_bid": "20201",
-        "input_bid": "10206"
-    },
+        "parent_input_bid": "10202",
+        "sub_user_output_bids": [{
+            userId:"119776",
+            outputBid:"10401"
+        }]
+	},
     "serverTime": 1535957964631
 }
 ```
 
 ## 创建任务号
 
-**接口路径**：/api/render/task/createTask
+**接口路径**： /api/render/submit/createTask 
 
 **请求参数**：
 
-| **参数**        | **类型**       | **说明**               | **备注**                 |
-| --------------- | -------------- | ---------------------- | ------------------------ |
-| count           | Integer        | 非必须，创建任务号数量 | 默认为 1                 |
-| out_user_id     | Long           | 非必须，外部用户ID     | 用于区分第三方接入的用户 |
-| task_user_level | Integer        | 非必须，任务用户级别   | 可选50和60,默认为50      |
-| labels          | List\<String\> | 非必须，标签           |                          |
+| **参数**          | **类型**       | 是否必须 | **说明**               | **备注**                 |
+| ----------------- | -------------- | -------- | ---------------------- | ------------------------ |
+| count             | Integer        | N        | 非必须，创建任务号数量 | 默认为 1                 |
+| out_user_id       | Long           | N        | 非必须，外部用户ID     | 用于区分第三方接入的用户 |
+| task_user_level   | Integer        | N        | 非必须，任务用户级别   | 可选50和60,默认为50      |
+| labels            | List\<String\> | N        | 非必须，标签列表       |                          |
+| clone_original_id | integer        | N        | 克隆原任务id           |                          |
+| artist            | String         | N        | 制作人                 |                          |
 
 **返回参数**：
 
@@ -289,6 +299,7 @@ user_transfer_bid = api.user.get_transfer_bid()
 | --------------- | --------------- | ---------- | -------- |
 | aliasTaskIdList | List\<String\>  | 任务ID别名 |          |
 | taskIdList      | List\<Integer\> | 任务ID     |          |
+| userId          | Long            | 用户id     |          |
 
 **请求示例**：
 
@@ -321,24 +332,14 @@ create_task_id = api.task.create_task(count=1,
 
 ## 提交任务
 
-**接口路径**：/api/render/task/submitTask
+**接口路径**： /api/render/submit/task
 
 **请求参数**：
 
-| **参数**              | **类型** | **说明**       | **备注**                                                     |
-| --------------------- | -------- | -------------- | ------------------------------------------------------------ |
-| task_id               | Integer  | 提交任务ID     |                                                              |
-| asset_lsolation_model | String   | 资产隔离类型   | 可选值，默认为空，可选值：'TASK_ID_MODEL'、'OUT_USER_MODEL'  |
-| out_user_id           | String   | 资产隔离用户ID | 可选值，asset_lsolation_model='OUT_USER_MODEL' 时out_user_id不能为空 |
-
-**asset_lsolation_model说明**
-
-ASSET_ISOLATION_PATH(资产隔离路径，引用见 **场景文件上传**)
-
-| **模式**       | **说明**                                                                                                                                                                                                               | **适用场景**                                                                                            | **清理规则**                                 |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| TASK_ID_MODEL  | 将taskId分割为三段，每段最少3位，高位不足时补0， 如 taskId=12345, 则 ASSET_ISOLATION_PATH="000/012/345", 如果任务ID超过9位： 如：11223344556677, 最终得到的隔离路径位 ASSET_ISOLATION_PATH="11223344/556/677"          | 效果图API企业用户，针对资产文件没有重复性， 引用平台任务号做资产隔离， 避免文件名冲突导致的渲染效果异常 | 最多保留15天                                 |
-| OUT_USER_MODEL | 将outUserId分割为三段，每段最少3位，高位不足时补0， 如 outUserId=12345, 则 ASSET_ISOLATION_PATH="000/012/345", 如果outUserId超过9位， 如：11223344556677, 最终得到的隔离路径位 ASSET_ISOLATION_PATH="11223344/556/677" | 动画API企业用户，引用第三方用户ID左资产隔离， 避免出现第三方用户的资产文件冲突导致的渲染结果异常        | 目录在连续20天内没有新的渲染任务引用，则删除 |
+| **参数** | **类型** | 是否必须 | **说明**   | **备注** |
+| -------- | -------- | -------- | ---------- | -------- |
+| task_id  | Integer  | Y        | 提交任务ID |          |
+| producer | String   | N        | 制作人     |          |
 
 **返回参数**：缺省
 
@@ -365,14 +366,15 @@ submit_task = api.task.submit_task(task_id=create_task_id[0])
 
 ## 获取分析错误码
 
-**接口路径:** /api/render/common/queryErrorDetail
+**接口路径:**  /api/render/submit/queryAnalyseErrorDetail 
 
 **请求参数**：
 
-| **参数** | **类型** | **说明**       | **备注**                |
-|----------|----------|----------------|-------------------------|
-| code     | String   | 必须值，错误码 |                         |
-| language | String   | 非必须，语言   | 0：中文（默认） 1：英文 |
+| **参数** | **类型** | 是否必须 | **说明**       | **备注**                    |
+| -------- | -------- | -------- | -------------- | --------------------------- |
+| code     | String   | N        | 必须值，错误码 | codes和code任一必填         |
+| codes    | String   | N        | 错误码列表     | codes和code任一必填         |
+| language | String   | N        | 非必须，语言   | “0”：中文（默认） "1"：英文 |
 
 **返回参数**：List\<CodeInfo\>
 
@@ -425,18 +427,18 @@ error_detail = api.query.error_detail(code="50001")
 
 ## 获取任务列表
 
-**接口路径**：/api/render/task/getTaskList
+**接口路径**： /api/render/handle/getTaskList
 
 **请求参数**：
 
-| **参数**       | **类型**        | **说明**                                 | **备注**                 |
-| -------------- | --------------- | ---------------------------------------- | ------------------------ |
-| page_num       | Integer         | 必须值，当前页数                         | 默认:1                   |
-| page_size      | Integer         | 必须值，每页显示数量                     | 默认:2                   |
-| status_list    | List\<Integer\> | 非必须，状态码列表，查询列表中状态的任务 | 参见任务状态说明         |
-| search_keyword | String          | 非必须，场景名或者作业ID                 | 模糊搜索                 |
-| start_time     | String          | 非必须，搜索提交时间下限                 | 格式 yyyy-MM-dd HH:mm:ss |
-| end_time       | String          | 非必须，搜索提交时间上限                 | 格式 yyyy-MM-dd HH:mm:ss |
+| **参数**       | **类型**        | 是否必须 | **说明**                         | **备注**                 |
+| -------------- | --------------- | -------- | -------------------------------- | ------------------------ |
+| page_num       | Integer         | N        | 当前页数                         | 默认:1                   |
+| page_size      | Integer         | N        | 每页显示数量                     | 默认:100                 |
+| status_list    | List\<Integer\> | N        | 状态码列表，查询列表中状态的任务 | 参见任务状态说明         |
+| search_keyword | String          | N        | 场景名或者作业ID                 | 模糊搜索                 |
+| start_time     | String          | N        | 搜索提交时间下限                 | 格式 yyyy-MM-dd HH:mm:ss |
+| end_time       | String          | N        | 搜索提交时间上限                 | 格式 yyyy-MM-dd HH:mm:ss |
 
 **任务状态说明**：
 
@@ -694,13 +696,13 @@ task_list = api.query.get_task_list(page_num=1, page_size=1)
 
 ## 停止任务
 
-**接口路径**： /api/render/task/stopTask
+**接口路径**： /api/render/handle/stopTask 
 
 **请求参数**：
 
-| **参数**        | **类型**        | **说明**   | **备注** |
-| --------------- | --------------- | ---------- | -------- |
-| task_param_list | List\<Integer\> | 任务号集合 |          |
+| **参数**        | **类型**        | 是否必须 | **说明**   | **备注** |
+| --------------- | --------------- | -------- | ---------- | -------- |
+| task_param_list | List\<Integer\> | Y        | 任务号集合 |          |
 
 **返回参数**：缺省
 
@@ -725,13 +727,13 @@ stop_task = api.task.stop_task(task_param_list=[13798105])
 
 ## 开始任务
 
-**接口路径**：/api/render/task/startTask
+**接口路径**： /api/render/handle/startTask 
 
 **请求参数**：
 
-| **参数**        | **类型**        | **说明**   | **备注** |
-| --------------- | --------------- | ---------- | -------- |
-| task_param_list | List\<Integer\> | 任务号集合 |          |
+| **参数**        | **类型**        | 是否必须 | **说明**   | **备注** |
+| --------------- | --------------- | -------- | ---------- | -------- |
+| task_param_list | List\<Integer\> | Y        | 任务号集合 |          |
 
 **返回参数**：缺省
 
@@ -756,13 +758,13 @@ start_task = api.task.start_task(task_param_list=[13798105])
 
 ## 放弃任务
 
-**接口路径**：/api/render/task/abortTask
+**接口路径**： /api/render/handle/abandonTask 
 
 **请求参数**：
 
-| **参数**        | **类型**        | **说明**   | **备注** |
-| --------------- | --------------- | ---------- | -------- |
-| task_param_list | List\<Integer\> | 任务号集合 |          |
+| **参数**        | **类型**        | 是否必须 | **说明**   | **备注** |
+| --------------- | --------------- | -------- | ---------- | -------- |
+| task_param_list | List\<Integer\> | Y        | 任务号集合 |          |
 
 **返回参数**：缺省
 
@@ -787,13 +789,13 @@ abort_task = api.task.abort_task(task_param_list=[13798105])
 
 ## 删除任务
 
-**接口路径**：/api/render/task/deleteTask
+**接口路径**： /api/render/handle/deleteTask
 
 **请求参数**：
 
-| **参数**        | **类型**        | **说明**   | **备注** |
-| --------------- | --------------- | ---------- | -------- |
-| task_param_list | List\<Integer\> | 任务号集合 |          |
+| **参数**        | **类型**        | 是否必须 | **说明**   | **备注** |
+| --------------- | --------------- | -------- | ---------- | -------- |
+| task_param_list | List\<Integer\> | Y        | 任务号集合 |          |
 
 **返回参数**：缺省
 
@@ -818,16 +820,16 @@ delete_task = api.task.delete_task(task_param_list=[13798105])
 
 ## 获取任务渲染帧详情
 
-**接口路径**：/api/render/task/queryTaskFrames
+**接口路径**：  /api/render/handle/queryTaskFrames  
 
 **请求参数**：
 
-| **参数**       | **类型** | **说明**                         | **备注**                                              |
-| -------------- | -------- | -------------------------------- | ----------------------------------------------------- |
-| task_id        | Integer  | 任务ID号                         | 任务ID号，是任务的唯一标识，必填字段                  |
-| search_keyword | String   | 非必须，根据一机渲多帧名进行查询 | 是一个字符串，根据一机渲多帧名这个字段名进行查询,选填 |
-| page_num       | Integer  | 当前页编号                       | \-                                                    |
-| page_size      | Integer  | 每页显示数据大小                 | \-                                                    |
+| **参数**       | **类型** | 是否必须 | **说明**                 | **备注**                                         |
+| -------------- | -------- | -------- | ------------------------ | ------------------------------------------------ |
+| task_id        | Integer  | Y        | 任务ID号                 | 任务ID号，是任务的唯一标识，必填字段             |
+| search_keyword | String   | N        | 根据一机渲多帧名进行查询 | 是一个字符串，根据一机渲多帧名这个字段名进行查询 |
+| page_num       | Integer  | N        | 当前页编号               | 默认1                                            |
+| page_size      | Integer  | N        | 每页显示数据大小         | 默认100                                          |
 
 **返回参数**：List\<FrameInfo\>
 
@@ -935,7 +937,7 @@ task_frame = api.query.task_frames(task_id=13790691, page_num=1, page_size=1)
 
 ## 获取任务总渲染帧概况
 
-**接口路径**：/api/render/task/queryAllFrameStats
+**接口路径**： /api/render/handle/queryAllFrameStats
 
 **请求参数**：缺省
 
@@ -978,13 +980,14 @@ all_frame_status = api.query.all_frame_status()
 
 ## 重提失败帧
 
-**接口路径**： /api/render/task/restartFailedFrames
+**接口路径**：  /api/render/handle/recommitTasks
 
 **请求参数**：
 
-| **参数**        | **类型**        | **说明**   | **备注** |
-| --------------- | --------------- | ---------- | -------- |
-| task_param_list | List\<Integer\> | 任务号集合 |          |
+| **参数**        | **类型**        | 是否必须 | **说明**                                 | **备注** |
+| --------------- | --------------- | -------- | ---------------------------------------- | -------- |
+| task_param_list | List\<Integer\> | Y        | 任务号集合                               |          |
+| status          | List\<Integer>  | N        | 重提的帧任务状态集合，不填表示重提失败帧 |          |
 
 **返回参数**：缺省
 
@@ -1009,15 +1012,16 @@ restart_failed_frames = api.query.restart_failed_frames(task_param_list=[1378898
 
 ## 重提任务指定帧
 
-**接口路径**： /api/render/task/restartFrame
+**接口路径**：  /api/render/handle/recommitTaskFrames
 
 **请求参数**：
 
-| **参数**   | **类型**        | **说明**     | **备注**               |
-| ---------- | --------------- | ------------ | ---------------------- |
-| task_id    | Integer         | 任务ID       |                        |
-| ids_list   | List\<Integer\> | 帧ID集合     | select_all为0时生效    |
-| select_all | Integer         | 是否全部重提 | 1全部重提，0指定帧重提 |
+| **参数**   | **类型**        | 是否必须 | **说明**     | **备注**                                           |
+| ---------- | --------------- | -------- | ------------ | -------------------------------------------------- |
+| task_id    | Integer         | N        | 任务ID       | task_id和ids_list任选其一必填                      |
+| ids_list   | List\<Integer\> | N        | 帧ID集合     | task_id和ids_list任选其一必填, select_all为0时生效 |
+| select_all | Integer         | N        | 是否全部重提 | 1全部重提，0指定帧重提                             |
+| status     | List\<Integer>  | N        | 帧状态       | 只有传taskId才生效                                 |
 
 **返回参数**：缺省
 
@@ -1042,13 +1046,13 @@ restart_frame = api.query.restart_frame(task_id=14362099, select_all=1)
 
 ## 获取任务详情
 
-**接口路径**：/api/render/task/queryTaskInfo
+**接口路径**： /api/render/handle/queryTaskInfo
 
 **请求参数**：
 
-| **参数**      | **类型**        | **说明**     | **备注** |
-| ------------- | --------------- | ------------ | -------- |
-| task_ids_list | List\<Integer\> | 壳任务ID集合 |          |
+| **参数**      | **类型**        | **说明**   | **备注** |
+| ------------- | --------------- | ---------- | -------- |
+| task_ids_list | List\<Integer\> | 任务ID集合 |          |
 
 **返回参数**：List\<TaskInfo>
 
@@ -1189,14 +1193,14 @@ task_info = api.query.task_info(task_ids_list=[14400249])
 
 ## 添加自定义标签
 
-**接口路径**：/api/render/common/addLabel
+**接口路径**： /api/render/project/add
 
 **请求参数**：
 
-| **参数** | **类型** | **说明** | **备注**                 |
-| -------- | -------- | -------- | ------------------------ |
-| new_name | String   | 标签名   | 名称唯一性               |
-| status   | Integer  | 标签状态 | 0:开启，1：关闭，默认为1 |
+| **参数** | **类型** | 是否必须 | **说明** | **备注**                 |
+| -------- | -------- | -------- | -------- | ------------------------ |
+| new_name | String   | N        | 标签名   | 名称唯一性               |
+| status   | Integer  | N        | 标签状态 | 0:开启，1：关闭，默认为1 |
 
 **返回参数**：缺省
 
@@ -1221,7 +1225,7 @@ task_info = api.tag.add_label(new_name="test_tag4", status=0)
 
 ## 删除自定义标签
 
-**接口路径: **/api/render/common/deleteLabel
+**接口路径: ** /api/render/project/delete
 
 **请求参数**：
 
@@ -1252,7 +1256,7 @@ delete_label_name = api.tag.delete_label(del_name="test_tag2")
 
 ## 获取自定义标签
 
-**接口路径:** /api/render/common/getLabelList
+**接口路径:**   /api/render/project/getList
 
 **请求参数**：缺省
 
@@ -1292,14 +1296,14 @@ label_list = api.tag.get_label_list()
 
 ## 添加任务标签
 
-**接口路径:** /api/render/task/addTaskLabel
+**接口路径:**  /api/render/handle/addTaskLabel
 
 **请求参数**：
 
-| **参数** | **类型**  | **说明**     | **备注** |
-| -------- | --------- | ------------ | -------- |
-| tag      | string    | 任务标签     |          |
-| task_ids | list[int] | 任务ID列表集 |          |
+| **参数** | **类型**       | 是否必须 | **说明**     | **备注** |
+| -------- | -------------- | -------- | ------------ | -------- |
+| tag      | string         | Y        | 任务标签     |          |
+| task_ids | List\<integer> | Y        | 任务ID列表集 |          |
 
 **返回参数**：缺省
 
@@ -1324,13 +1328,13 @@ tag = api.tag.add_task_tag(tag="test_tag", task_ids=[29445045, 29435295])
 
 ## 删除任务标签
 
-**接口路径:** /api/render/task/deleteTaskLabel
+**接口路径:**  /api/render/handle/deleteTaskLabel
 
 **请求参数**：
 
-| **参数** | **类型**  | **说明**       | **备注** |
-| -------- | --------- | -------------- | -------- |
-| tag_ids  | list[int] | 删除任务标签ID |          |
+| **参数** | **类型**       | 是否必须 | **说明**       | **备注** |
+| -------- | -------------- | -------- | -------------- | -------- |
+| tag_ids  | List\<integer> | Y        | 删除任务标签ID |          |
 
 **返回参数**：缺省
 
@@ -1355,7 +1359,7 @@ del_tag = api.tag.delete_task_tag(tag_ids=[21205])
 
 ## 获取支持的渲染软件
 
-**接口路径**：/api/render/common/querySupportedSoftware
+**接口路径**： /api/render/plugin/querySoftwareList
 
 **请求参数**：缺省
 
@@ -1478,13 +1482,13 @@ support_software = api.query.supported_software()
 
 ## 获取支持的渲染软件插件
 
-**接口路径**： /api/render/common/querySupportedPlugin
+**接口路径**：  /api/render/plugin/querySoftwareDetail
 
 **请求参数**：
 
-| **参数** | **类型** | **说明**   | **备注** |
-| -------- | -------- | ---------- | -------- |
-| name     | String   | 渲染软件ID |          |
+| **参数** | **类型** | 是否必须 | **说明**   | **备注**              |
+| -------- | -------- | -------- | ---------- | --------------------- |
+| name     | String   | Y        | 渲染软件名 | 参考[DCC软件的ID映射] |
 
 **返回参数**：
 
@@ -1553,31 +1557,32 @@ support_software_plugin = api.query.supported_plugin(name='maya')
 
 ## 新增用户渲染环境配置
 
-**接口路径**： /api/render/common/addRenderEnv
+**接口路径**：  /api/render/plugin/addUserPluginConfig
 
 **请求参数**：
 
-| 参数       | 类型 | 说明 | 备注             |
-| ---------- | ---- | ---- | ---------------- |
-| render_env | Dict |      | 详细参数参考以下 |
+| 参数       | 类型 | 是否必须 | 说明         | 备注             |
+| ---------- | ---- | -------- | ------------ | ---------------- |
+| render_env | Dict | Y        | 渲染环境配置 | 详细参数参考以下 |
 
 **render_env**：
 
-| **参数**        | **类型**        | **说明**         | **备注**                   |
-| --------------- | --------------- | ---------------- | -------------------------- |
-| cgId            | Integer         | 渲染软件ID       | **SoftVersion.cgId**       |
-| cgName          | String          | 渲染软件名称     | **SoftVersion.cgName**     |
-| cgVersion       | String          | 渲染软件版本     | **SoftVersion.cgVersion**  |
-| renderLayerType | Integer         | maya渲染类型     |                            |
-| editName        | String          | 渲染环境自定义名 |                            |
-| renderSystem    | String          | 渲染系统         | 0 linux, 1 windows         |
-| pluginIds       | List\<Integer\> | 渲染插件集合     | **PluginVersion.pluginId** |
+| **参数**        | **类型**        | 是否必须 | **说明**                   | **备注**                   |
+| --------------- | --------------- | -------- | -------------------------- | -------------------------- |
+| cgId            | Integer         | Y        | 渲染软件ID                 | **SoftVersion.cgId**       |
+| cgName          | String          | Y        | 渲染软件名称               | **SoftVersion.cgName**     |
+| cgVersion       | String          | Y        | 渲染软件版本               | **SoftVersion.cgVersion**  |
+| renderLayerType | Integer         | N        | maya渲染类型               |                            |
+| editName        | String          | Y        | 用户设置的渲染环境自定义名 |                            |
+| renderSystem    | String          | Y        | 渲染系统                   | 0 linux, 1 windows         |
+| pluginIds       | List\<Integer\> | Y        | 渲染插件集合               | **PluginVersion.pluginId** |
+| projectPath     | String          | N        | 工程路径                   |                            |
 
 **返回参数**：
 
-| **参数** | **类型** | **说明**         | **备注** |
-|----------|----------|------------------|----------|
-| editName | String   | 渲染环境自定义名 |          |
+| **参数** | **类型** | **说明**                   | **备注** |
+| -------- | -------- | -------------------------- | -------- |
+| editName | String   | 用户设置的渲染环境自定义名 |          |
 
 **请求示例**：
 
@@ -1609,27 +1614,28 @@ add_user_env = api.env.add_render_env(render_env=env)
 }
 ```
 
-## 修改用户渲染环境配置
+## 更新用户渲染环境配置
 
-**接口路径**：/api/render/common/updateRenderEnv
+**接口路径**： /api/render/plugin/editUserPluginConfig
 
 **请求参数**：
 
-| 参数       | 类型 | 说明     | 备注             |
-| ---------- | ---- | -------- | ---------------- |
-| render_env | Dict | 必须参数 | 详细参数参考以下 |
+| 参数       | 类型 | 是否必须 | 说明         | 备注             |
+| ---------- | ---- | -------- | ------------ | ---------------- |
+| render_env | Dict | Y        | 渲染环境配置 | 详细参数参考以下 |
 
 **render_env**：
 
-| **参数**        | **类型**        | **说明**         | **备注**                          |
-|-----------------|-----------------|------------------|-----------------------------------|
-| cgId            | Integer         | 渲染软件ID       | **SoftVersion.cgId**              |
-| cgName          | String          | 渲染软件名称     | **SoftVersion.cgName**            |
-| cgVersion       | String          | 渲染软件版本     | **SoftVersion.cgVersion**         |
-| renderLayerType | Integer         | maya渲染类型     |                                   |
-| editName        | String          | 渲染环境自定义名 |  修改是必须传递已经存在的配置名称 |
-| renderSystem    | Integer         | 渲染系统         | 0 linux, 1 windows                |
-| pluginIds       | List\<Integer\> | 渲染插件集合     | **PluginVersion.pluginId**        |
+| **参数**        | **类型**        | 是否必须 | **说明**         | **备注**                         |
+| --------------- | --------------- | -------- | ---------------- | -------------------------------- |
+| cgId            | Integer         | Y        | 渲染软件ID       | **SoftVersion.cgId**             |
+| cgName          | String          | Y        | 渲染软件名称     | **SoftVersion.cgName**           |
+| cgVersion       | String          | Y        | 渲染软件版本     | **SoftVersion.cgVersion**        |
+| renderLayerType | Integer         | N        | maya渲染类型     |                                  |
+| editName        | String          | Y        | 渲染环境自定义名 | 修改是必须传递已经存在的配置名称 |
+| renderSystem    | Integer         | Y        | 渲染系统         | 0 linux, 1 windows               |
+| pluginIds       | List\<Integer\> | Y        | 渲染插件集合     | **PluginVersion.pluginId**       |
+| projectPath     | String          | N        | 工程路径         |                                  |
 
 **返回参数**：缺省
 
@@ -1663,13 +1669,13 @@ update_user_env = api.env.update_render_env(render_env=update_env)
 
 ## 删除用户渲染环境配置
 
-**接口路径**：/api/render/common/deleteRenderEnv
+**接口路径**： /api/render/plugin/deleteUserPluginConfig
 
 **请求参数**：
 
-| **参数**  | **类型** | **说明**               | **备注** |
-| --------- | -------- | ---------------------- | -------- |
-| edit_name | String   | 必须，渲染环境自定义名 |          |
+| **参数**  | **类型** | 是否必须 | **说明**         | **备注** |
+| --------- | -------- | -------- | ---------------- | -------- |
+| edit_name | String   | Y        | 渲染环境自定义名 |          |
 
 **返回参数**：缺省
 
@@ -1694,13 +1700,13 @@ delete_user_env = api.env.delete_render_env(edit_name="testRenderEnv")
 
 ## 设置默认渲染环境配置
 
-**接口路径**：/api/render/common/setDefaultRenderEnv
+**接口路径**： /api/render/plugin/setDefaultUserPluginConfig
 
 **请求参数**：
 
-| **参数**  | **类型** | **说明**         | **备注** |
-| --------- | -------- | ---------------- | -------- |
-| edit_name | String   | 渲染环境自定义名 |          |
+| **参数**  | **类型** | 是否必须 | **说明**         | **备注** |
+| --------- | -------- | -------- | ---------------- | -------- |
+| edit_name | String   | Y        | 渲染环境自定义名 |          |
 
 **返回参数**：
 
@@ -1723,15 +1729,17 @@ set_default_user_env = api.env.set_default_render_env(edit_name="testRenderEnv")
 }
 ```
 
-## 获取用户渲染环境配置
+##  获取用户插件配置
 
-**接口路径**：/api/render/common/getRenderEnv
+**接口路径**： /api/render/plugin/getUserPluginConfig
 
 **请求参数**：
 
-| **参数** | **类型** | **说明**   | **备注** |
-| -------- | -------- | ---------- | -------- |
-| name     | String   | 渲染软件名 |          |
+| **参数** | **类型**      | 是否必须 | **说明**       | **备注**                 |
+| -------- | ------------- | -------- | -------------- | ------------------------ |
+| name     | String        | N        | 渲染软件名     | cg_names和name必填其一   |
+| cg_names | List\<string> | N        | 渲染软件名列表 | cg_names和name必填其一   |
+| os_name  | Integer       | N        | 选择操作系统   | 0:Linux，1:windows,默认1 |
 
 **返回参数**：List\<RenderEnv>
 
@@ -1823,14 +1831,14 @@ user_render_config = api.env.get_render_env(name='houdini')
 
 ## 任务进度图（仅限Max任务）
 
-**接口路径**：/api/render/task/loadTaskProcessImg
+**接口路径**：  /api/render/handle/loadTaskProcessImg
 
 **请求参数**：
 
-| **参数**   | **类型** | **说明** | **备注**                                                     |
-| ---------- | -------- | -------- | ------------------------------------------------------------ |
-| task_id    | Integer  | 任务号   | 必须                                                         |
-| frame_type | Integer  | 渲染类型 | 非必须，2表示光子帧，5获取主图进度，不传后台将根据渲染任务的阶段动态的返回结果 |
+| **参数**   | **类型** | 是否必须 | **说明** | **备注**                                                     |
+| ---------- | -------- | -------- | -------- | ------------------------------------------------------------ |
+| task_id    | Integer  | Y        | 任务号   |                                                              |
+| frame_type | Integer  | N        | 渲染类型 | 帧类型 2:光子帧; 5:主图; 不传 标识自动识别，默认加载正在渲染中的图列表，如正在渲染主图，则加载图列表为主图，正在渲染光子，加载图为光子 |
 
 **返回参数**：
 
@@ -1914,7 +1922,7 @@ task_processing_img = api.query.get_task_processing_img(task_id=14470635, frame_
 
 ## 设置任务超时停止时间
 
-**接口地址**：/api/render/task/setOverTimeStop
+**接口地址**： /api/render/handle/setTaskOverTimeStop
 
 **请求参数**：
 
@@ -1945,14 +1953,14 @@ set_task_overtime = api.task.set_task_overtime_top(task_id_list=[14684405], over
 
 ## 加载缩略图
 
-**接口地址**：/api/render/task/loadingFrameThumbnail
+**接口地址**： /api/render/handle/loadingFrameThumbnail
 
 **请求参数**：
 
-| **参数**     | **类型** | **是否必须（Y/N）** | **说明**                                  |
-| ------------ | -------- | ------------------- | ----------------------------------------- |
-| frame_id     | Integer  | 是                  | 帧id号,可通过<获取任务渲染帧详情接口>获取 |
-| frame_status | Integer  | 是                  | 这里传4（完成），只有完成有缩略图         |
+| **参数**     | **类型** | 是否必须 | **说明** | 备注                               |
+| ------------ | -------- | -------- | -------- | ---------------------------------- |
+| frame_id     | Integer  | Y        | 帧id号   | 可通过<获取任务渲染帧详情接口>获取 |
+| frame_status | Integer  | N        | 帧状态   | 默认为4（完成），只有完成有缩略图  |
 
 **请求示例**：
 
@@ -1978,7 +1986,7 @@ frame_thumbnall = api.query.get_frame_thumbnall(frame_id=230772361)
 
 ## 获取镭速传输信息
 
-**接口地址**：api/render/task/getTransferServerMsg
+**接口地址**： /api/render/transfer/getServerInfo
 
 **请求参数**：缺省
 
@@ -2061,13 +2069,13 @@ raysync_user_key = api.query.get_raysync_user_key()
 
 ## 全速渲染
 
-**接口地址**：/api/render/task/fullSpeed
+**接口地址**： /api/render/handle/fullSpeedRendering
 
 **请求参数**：
 
-| **参数**     | **类型**        | **是否必须（Y/N）** | **说明** |
-| ------------ | --------------- | ------------------- | -------- |
-| task_id_list | List\<Integer\> | 是                  | 作业id   |
+| **参数**     | **类型**        | 是否必须 | **说明** |
+| ------------ | --------------- | -------- | -------- |
+| task_id_list | List\<Integer\> | Y        | 作业id   |
 
 **请求示例**：
 
@@ -2089,6 +2097,178 @@ full_speed_render = api.task.full_speed(task_id_list=[13652193])
 }
 ```
 
- 
+##  获取传输配置 
 
- 
+**接口地址**：  /api/render/transfer/getConfig
+
+**请求参数**：缺省
+
+**返回参数**：
+
+| **参数**            | **类型** | **说明**                    | **备注** |
+| ------------------- | -------- | --------------------------- | -------- |
+| inputBid            | String   | Input传输bid                |          |
+| outputBid           | String   | output传输bid               |          |
+| configBid           | String   | config bid                  |          |
+| parentInputBid      | String   | 对应主账号Input传输bid      |          |
+| resqEngines         | Object[] | 引擎配置                    |          |
+| engineName          | String   | 引擎名                      |          |
+| checkServer         | String   | 校验服务器                  |          |
+| checkPort           | String   | 校验端口                    |          |
+| checkEnable         | String   | 检查是否可用                |          |
+| checkExcludType     | String   | 检测例外 文件类型 ,隔开     |          |
+| automaticCheck      | number   | 自动检测并切换线路 1是 0:否 |          |
+| isDefault           | number   | 默认 1是 0否                |          |
+| resqEngineAccounts  | Object[] | aspera账户                  |          |
+| bid                 | String   | aspera对应input bid         |          |
+| name                | String   | aspera用户名                |          |
+| password            | String   | aspera密码                  |          |
+| respTaskEngineLines | Object[] | 引擎列表                    |          |
+| name                | String   | 线路名                      |          |
+| server              | String   | 线路IP                      |          |
+| port                | String   | 端口                        |          |
+| isDefault           | Number   | 是否默认 1默认              |          |
+| lineId              | Number   | 线路表ID                    |          |
+| type                | Number   | 线路类型 1.专线 0.通用线路  |          |
+| subUserOutputBids   | Object[] | 子账号outputbid集合         |          |
+| userId              | String   | 子账号ID                    |          |
+| outputBid           | String   | outputBid                   |          |
+
+**请求示例**：
+
+```python
+transfer_config = api.transmit.get_transfer_config()
+```
+
+返回参数示例：
+
+```json
+{
+    "version": "1.0.0",
+    "result": true,
+    "message": "success",
+    "code": 200,
+    "data": {
+        "inputBid": "10202",
+        "outputBid": "20202",
+        "configBid": "30201",
+        "parentInputBid": null,
+        "resqEngines": [
+            {
+                "resqEngineAccounts": [
+                    {
+                        "bid": "20202",
+                        "name": "20202",
+                        "password": "xB9CWAML1qd+k1X9prYHheQUAtZ0hcpmJHxe7mfVw9Q="
+                    }
+                ],
+                "respTaskEngineLines": [
+                    {
+                        "name": "Aspera_main",
+                        "server": "10.60.197.79",
+                        "port": "10221",
+                        "isDefault": 1,
+                        "lineId": 123,
+                        "type":1
+                    }
+                ],
+                "engineName": "trtt",
+                "automaticCheck": 1,
+                "checkServer": "677",
+                "checkPort": "8888",
+                "checkEnable": "1",
+                "checkExcludType": "88",
+                "isDefault": 0
+            },
+            {
+                "resqEngineAccounts": null,
+                "respTaskEngineLines": [
+                    {
+                        "name": "raysync_main",
+                        "server": "10.60.197.79",
+                        "port": "10200",
+                        "isDefault": 1,
+                        "lineId": 121
+                    }
+                ],
+                "engineName": "RaySync",
+                "automaticCheck": 0,
+                "checkServer": "10.60.196.151",
+                "checkPort": "10100",
+                "checkEnable": "0",
+                "checkExcludType": "tx",
+                "isDefault": 1
+            },
+            {
+                "resqEngineAccounts": [
+                    {
+                        "bid": "30201",
+                        "name": "30201",
+                        "password": "ACz/0lNMCgyq/7WjR0QGpaXmR0/Xb0//6UaMn/s8QN4="
+                    }
+                ],
+                "respTaskEngineLines": [
+                    {
+                        "name": "Aspera_main",
+                        "server": "10.60.197.79",
+                        "port": "10221",
+                        "isDefault": 1,
+                        "lineId": 123
+                    }
+                ],
+                "engineName": "Aspera",
+                "automaticCheck": 0,
+                "checkServer": "test2.raysync.cn",
+                "checkPort": "8888",
+                "checkEnable": "0",
+                "checkExcludType": "tx",
+                "isDefault": 0
+            }
+        ],
+        "subUserOutputBids": [
+            {
+                "userId": "119784",
+                "outputBid": "10202"
+            }
+        ]
+    },
+    "serverTime": 1587380763325,
+    "requestId": "K7wW6L-QmV5b25kTGVlZGVNYWNCb29rLVByby5sb2NhbA-1587380762156"
+}
+```
+
+##  上传任务配置文件 
+
+**接口路径**：  /api/render/submit/taskJsonFile 
+
+**请求参数**：
+
+| **参数**  | **类型** | 是否必须 | **说明** | **备注**        |
+| --------- | -------- | -------- | -------- | --------------- |
+| task_id   | Integer  | Y        | 任务号   |                 |
+| content   | String   | Y        | 文件内容 |                 |
+| file_name | String   | N        | 文件名   | 默认“task.json” |
+
+**返回参数**：缺省
+
+**请求示例**：
+
+```Python
+start_task = api.task.start_task(task_param_list=[13798105])
+```
+
+**返回示例**：
+
+```json
+{
+    "version": "2.0.0",
+    "result": true,
+    "message": "success",
+    "code": 200,
+    "data": null,
+    "serverTime": 1589532607599,
+    "requestId": null
+}
+```
+
+
