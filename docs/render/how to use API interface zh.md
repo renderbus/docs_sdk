@@ -818,7 +818,7 @@ delete_task = api.task.delete_task(task_param_list=[13798105])
 }
 ```
 
-## 获取任务渲染帧详情
+## 获取任务单页渲染帧详情
 
 **接口路径**：  /api/render/handle/queryTaskFrames  
 
@@ -935,6 +935,100 @@ task_frame = api.query.task_frames(task_id=13790691, page_num=1, page_size=1)
 }
 ```
 
+## 获取指定任务某几页帧详情
+
+[^api]: Add in v2.4.0
+
+**请求参数**：
+
+| **参数**   | **类型** | 是否必须 | **说明**                            | **备注**                                     |
+| ---------- | -------- | -------- | ----------------------------------- | -------------------------------------------- |
+| task_id    | Integer  | Y        | 子任务号                            | 如作业ID为“2W35736251”，task_id即为 35736251 |
+| start_page | Integer  | N        | 查询起始页， 默认为1                |                                              |
+| end_page   | Integer  | N        | 查询结束页，默认为2000              |                                              |
+| page_size  | Integer  | N        | 指定每一页显示帧数，默认为最大值100 |                                              |
+
+**请求示例**：
+
+```python
+all_frames = api.query.get_all_frames(task_id=35736251)
+```
+
+**返回示例**：
+
+```json
+{
+    "1": {
+        "id": 665078505,
+        "userId": null,
+        "framePrice": null,
+        "feeType": null,
+        "platform": null,
+        "frameIndex": "1",
+        "frameStatus": 1,
+        "feeAmount": 0.0,
+        "startTime": 0,
+        "endTime": 0,
+        "frameExecuteTime": 33,
+        "currentRenderTime": 0,
+        "frameStatusText": "task_frame_status_1",
+        "arrearsFee": null,
+        "munuJobId": "0",
+        "taskId": 37439351,
+        "munuTaskId": "2020092801043",
+        "frameType": 4,
+        "couponFee": 0.037,
+        "recommitFlag": 0,
+        "isCopy": null,
+        "frameBlock": "",
+        "taskOverTime": 259200,
+        "gopName": null,
+        "frameRam": 64,
+        "averageCpu": 9,
+        "averageMemory": 2240647168,
+        "isOverTime": 0,
+        "overOneMonth": null,
+        "renderRam": null,
+        "nodeId": "10.60.3.224",
+        "openRenderRam": null
+    },
+    "2-4[1]": {
+        "id": 665078511,
+        "userId": null,
+        "framePrice": null,
+        "feeType": null,
+        "platform": null,
+        "frameIndex": "2-4[1]",
+        "frameStatus": 1,
+        "feeAmount": null,
+        "startTime": 0,
+        "endTime": 0,
+        "frameExecuteTime": 0,
+        "currentRenderTime": 0,
+        "frameStatusText": "task_frame_status_1",
+        "arrearsFee": null,
+        "munuJobId": "0",
+        "taskId": 37439351,
+        "munuTaskId": "2020092801165",
+        "frameType": 5,
+        "couponFee": null,
+        "recommitFlag": 0,
+        "isCopy": null,
+        "frameBlock": "",
+        "taskOverTime": 259200,
+        "gopName": null,
+        "frameRam": 64,
+        "averageCpu": 0,
+        "averageMemory": 0,
+        "isOverTime": 0,
+        "overOneMonth": null,
+        "renderRam": null,
+        "nodeId": "",
+        "openRenderRam": null
+    }
+}
+```
+
 ## 获取任务总渲染帧概况
 
 **接口路径**： /api/render/handle/queryAllFrameStats
@@ -1010,7 +1104,7 @@ restart_failed_frames = api.query.restart_failed_frames(task_param_list=[1378898
 }
 ```
 
-## 重提任务指定帧
+## 根据帧ID重提任务指定帧
 
 **接口路径**：  /api/render/handle/recommitTaskFrames
 
@@ -1043,6 +1137,25 @@ restart_frame = api.query.restart_frame(task_id=14362099, select_all=1)
     "serverTime": 1535957894211
 }
 ```
+
+## 根据帧序号重提任务指定的帧
+
+[^api]: Add in v2.4.0 
+
+**请求参数**：
+
+| **参数**      | **类型**  | **说明**             | **备注**                                     |
+| ------------- | --------- | -------------------- | -------------------------------------------- |
+| task_id       | Integer   | 子任务ID             | 如作业ID为“2W35736251”，task_id即为 35736251 |
+| restartframes | List[str] | 需要重提的帧序号列表 | 例如：["6", "7-9[1]"]                        |
+
+**请求示例**：
+
+```python
+restart_frame = api.query.get_custome_frames(task_id=37439351, restartframes=["6", "7-9[1]"])
+```
+
+**返回参数**：None
 
 ## 获取任务详情
 
@@ -2270,5 +2383,3 @@ start_task = api.task.start_task(task_param_list=[13798105])
     "requestId": null
 }
 ```
-
-
