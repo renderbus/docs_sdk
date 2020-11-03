@@ -70,8 +70,8 @@ AnalyzeHoudini 参数说明:
 | ---------------- | ------ | -------- | ------ | -------------------------------------------------------- |
 | cg_file          | string | 是       |        | 需要分析的场景文件                                       |
 | software_version | string | 是       |        | 场景使用的软件版本                                       |
-| project_name     | string | 否       | None   | 项目名                                                   |
-| plugin_config    | dict   | 否       | None   | 插件配置，如 {'renderman': '22.6'}                       |
+| project_name     | string | 否       |        | 项目名                                                   |
+| plugin_config    | dict   | 否       |        | 插件配置，如 {'renderman': '22.6'}                       |
 | workspace        | string | 否       | None   | 分析生成json文件位置(避免重复会自动添加一个时间戳文件夹) |
 
 
