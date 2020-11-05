@@ -211,6 +211,35 @@ upload_obj = RayvisionUpload(api)
 upload_obj.upload("5165465", **CONFIG_PATH)
 ```
 
+#### 7. append_to_upload:自定义upload.json文件
+
+```
+from rayvision_api import RayvisionAPI
+from rayvision_sync.upload import RayvisionUpload
+from rayvision_api.utils import append_to_upload
+
+api = RayvisionAPI(access_id="xxxxx",
+                   access_key="xxxxx",
+                   domain="task.renderbus.com",
+                   platform="2")
+UPLOAD = RayvisionUpload(api)
+
+# 1. 可以接受列表，列表可以传入文件夹路径或者文件路径
+custom_info_to_upload = [
+    r"E:\fang\ass_test\static_ass.ass",
+    r"E:\fang",
+    r"D:\houdini\CG file\F"
+]
+# 2.也可以接收单独的一个字符串
+# custom_info_to_upload = r"D:\houdini\CG file\katana_file"
+
+# 需要指定一个存在的upload.json路径
+append_to_upload(custom_info_to_upload, r"D:\test\upload.json")
+UPLOAD.upload_asset(r"D:\test\upload.json")
+```
+
+
+
 ### 下载
 
 #### 1. 以单帧为粒度渲染完成了自动下载(任务号必须)
