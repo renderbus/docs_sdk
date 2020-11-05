@@ -387,3 +387,28 @@ download = RayvisionDownload(api)
 download.download(download_filename_format="true", server_path="18164087_muti_layer_test/l_ayer2")
 ```
 
+### 修改上传服务地址
+
+> 上传服务地址一般是不需要修改，如果用户有特殊需要修改上传服务地址，可以按如下操作进行设置:
+
+   1.定位到“rayvision_sync”模块以下位置
+
+rayvision_sync/rayvision_sync/transmission/transports.json
+
+2. 根据具体上传平台号，修改“server_ip”和“server_port”(engin_type和server_name可以不需要修改)
+
+```json
+"foxrenderfarm_www6": {
+        "engine_type":"aspera",
+        "server_name":"Europe",
+        "server_ip":"18.196.46.13",
+        "server_port":"10621"
+    },
+```
+
+具体路径如下图所示：
+
+![](https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20201105190325.png)
+
+
+
