@@ -227,7 +227,9 @@ download.auto_download_after_task_completed([18164087], download_filename_format
 
    ![db_config.ini](https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200415114705.png)
 
-   db_config.ini 样例:
+   
+
+db_config.ini 样例:
 
 ```ini
 [TRANSFER_LOG_PATH]
