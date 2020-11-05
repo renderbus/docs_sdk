@@ -54,13 +54,12 @@ analyze_obj.analyse()
 说明：
 
 - "workspace"用来控制生成json文件位置,如果不设置workspace,默认生成位置:
-   
+  
    ```
    windows : os.environ["USERPROFILE"] + "renderfarm_sdk"  
    Linux：os.environ["HOME"] + “renderfarm_sdk”
    ```
-     
-     
+   
 - 分析生成的task.json中“task_id”、“user_id”、"project_id"为空，用户可以选择自己写   入这三个参数 ,或者在check的时候自动写入此3个参数。
 
 
@@ -228,7 +227,29 @@ download.auto_download_after_task_completed([18164087], download_filename_format
 
    ![db_config.ini](https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200415114705.png)
 
-   用户也可根据默认配置为模板修改配置并指定数据库配置文件位置,指定自定义配置文件方法如下
+   db_config.ini 样例:
+
+```ini
+[TRANSFER_LOG_PATH]
+transfer_log_path =
+
+[DATABASE_CONFIG]
+on = true
+type = sqlite
+db_path =D:\test\upload
+
+[REDIS]
+host = 127.0.0.1
+port = 6379
+password =
+table_index = 0
+timeout = 5000
+
+[SQLITE]
+temporary = false
+```
+
+用户也可根据默认配置为模板修改配置并指定数据库配置文件位置,指定自定义配置文件方法如下
 
 ```
 from rayvision_sync.upload import RayvisionUpload
@@ -277,6 +298,7 @@ UPLOAD = RayvisionUpload(api, db_config_path=r"D:\test\upload\db_config.ini")
   >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
   
   
+
 **5. rayvision_houdini 分析生成的db数据库位置**
 
 > houdini脚本在分析的时候会将一些分析命令和文件保存在sqlite数据库文件中
