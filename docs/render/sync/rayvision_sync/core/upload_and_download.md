@@ -282,7 +282,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
 
 #### 9. 上传文件类型(transmit_type)
 
-> 上传文件有参数"transmit_type"控制, 支持2中传输文件类型: ”upload_list“ 和”upload_json“
+> 上传文件由参数"transmit_type"控制, 支持2中传输文件类型: ”upload_list“ 和”upload_json“
 
 - upload_list
 
