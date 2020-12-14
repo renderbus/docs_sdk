@@ -14,6 +14,7 @@
 404     RESOURCE_NOT_FOUND                  资源不存在
 500     INTERNAL_ERROR                      服务器处理失败
 503     LABEL_ALREADY_EXISTS                新增label已存在
+513     USER_CACHE_NOTFOUNT                 用户信息查询失败
 600     PARAMETER_INVALID                   非法参数
 601     PARAMETER_CANT_BE_EMPTY             缺少必要参数
 602     NEED_USER_LOGIN                     需要用户登录
