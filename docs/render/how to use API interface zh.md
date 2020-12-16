@@ -1367,7 +1367,7 @@ delete_label_name = api.tag.delete_label(del_name="test_tag2")
 }
 ```
 
-## 获取自定义标签
+## 获取项目名
 
 **接口路径:**   /api/render/project/getList
 
@@ -1392,6 +1392,51 @@ label_list = api.tag.get_label_list()
 ```json
 {
     "version": "1.0.0",
+    "result": true,
+    "message": "success",
+    "code": 200,
+    "data": {
+        "projectNameList": [
+            {
+                "projectId": 3671,
+                "projectName": "myLabel"
+            }
+        ]
+    },
+    "serverTime": 1546998557770
+}
+```
+
+## 获取项目名(根据flag控制)
+
+**接口路径:**   /api/render/project/list
+
+**请求参数**：
+
+| 参数 | 类型 | 是否必须 | 说明                                                         | 备注     |
+| ---- | ---- | -------- | ------------------------------------------------------------ | -------- |
+| flag | int  | 否       | 0:查询本账号下的项目;<br>1:查询本账号下以及主账号下的项目;<br>2:查询相关联所有项目(同一主账号下的所有项目); | 默认为 0 |
+
+**返回参数**：
+
+| **参数**           | **类型**       | **说明** | **备注** |
+| ------------------ | -------------- | -------- | -------- |
+| projectNameList    | List\<Object\> | 项目list |          |
+| Object.projectName | String         | 项目名   |          |
+| Object.projectId   | Integer        | 项目id   |          |
+
+**请求示例**：缺省
+
+```python
+new_projects = api.tag.get_list(flag=0)
+```
+
+**返回示例**：
+
+```
+{
+    "version": "2.0.0",
+    "releaseVersion": "2.5.8/20201215_16_201215(1607)",
     "result": true,
     "message": "success",
     "code": 200,
