@@ -43,12 +43,3 @@
    ``git clone https://github.com/renderbus/rayvision_utils.git``
 
    ``git clone https://github.com/renderbus/rayvision_sync.git``
-
-
-**方法三:**
-
-   - 在IDE中配置PIP源以下地址: ``https://pip.renderbus.com/simple/``
-   - 以pycharm为例::
-.. image:: ../_static/image/pycharm配置PIP地址.png
-
-.. image:: ../_static/image/pycharm安装自定义包.png
