@@ -378,11 +378,6 @@ Clarisse demo
 Katana demo
 ------------
 
-.. warning::
-   katana没有自动分析资产功能，需要客户自己分析资产文件
-
-------------
-
  ::
 
     from rayvision_api.core import RayvisionAPI
