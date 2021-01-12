@@ -17,20 +17,6 @@
 
    ``pip install rayvision_houdini``
 
-- 从自定义PIP服务器安装
-
-   再使用具体渲染模块之前，比如想使用houdini渲染，请参考以下安装方法依次安装模块
-   `rayvision_log`, `rayvision_api` , `rayvision_utils` , `rayvision_sync`,
-   然后安装 `rayvision_houdini` 。
-
-   ``pip install rayvision_log -i https://pip.renderbus.com/simple/``
-
-   ``pip install rayvision_api -i https://pip.renderbus.com/simple/``
-
-   ``pip install rayvision_utils -i https://pip.renderbus.com/simple/``
-
-   ``pip install rayvision_sync -i https://pip.renderbus.com/simple/``
-
 
 **方法二:**
 
