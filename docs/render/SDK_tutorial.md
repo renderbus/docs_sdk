@@ -298,30 +298,5 @@ UPLOAD = RayvisionUpload(api, db_config_path=r"D:\test\upload\db_config.ini")
   >
   >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
   >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
-  
-  
 
-**5. rayvision_houdini 分析生成的db数据库位置**
-
-> houdini脚本在分析的时候会将一些分析命令和文件保存在sqlite数据库文件中
-
-- 优先使用自定义自定义路径,自定义路径设置方法如下:
-  
-  调用"AnalyzeHoudini"分析类的时候设置`custom_db_path`参数值即可
-```
-class AnalyzeHoudini(object):
-    def __init__(self, cg_file, software_version, project_name=None,
-                 plugin_config=None, render_software="Houdini",
-                 local_os=None, workspace=None, custom_exe_path=None,
-                 platform="2", custom_db_path=None):
-```
-
-- 未设置自定义路径则使用以下规则:
-
-> - 优先使用环境变量'RAYVISION_HOUDINI'
-  >
-  > - 次之使用:  
-  >
-  >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
-  >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
 
