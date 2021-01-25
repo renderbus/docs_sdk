@@ -28,36 +28,7 @@ from rayvision_sync.utils import cutting_upload
 upload_pool = cutting_upload(r"D:\test\test_upload\1586250829\upload.json", max_resources_number=800)
 ```
 
-#### 2. 多线程上传
-
-> 多个upload可以使用多线程并发上传
-
-```
-def multi_thread_upload(self, upload_pool, thread_num=10):
-    """muti thread upload resource.
-
-    Args:
-        upload_pool (list or tuple): Store a list or ancestor of uploaded files.
-        thread_num (int): Number of threads, 10 threads are enabled by default.
-    """
-```
-
-使用样例：
-
-```
-from rayvision_api import RayvisionAPI
-from rayvision_sync.upload import RayvisionUpload
-
-api = RayvisionAPI(access_id="xxxxx",
-                   access_key="xxxxx",
-                   domain="task.renderbus.com",
-                   platform="2")
-
-UPLOAD = RayvisionUpload(api)
-UPLOAD.multi_thread_upload(upload_pool, thread_num=20)
-```
-
-#### 3. 使用线程池控制上传
+#### 2. 使用线程池控制上传
 
 > 并发上传还可以使用线程池的方式
 
@@ -92,7 +63,7 @@ UPLOAD = RayvisionUpload(api)
 UPLOAD.thread_pool_upload(upload_pool, pool_size=20)
 ```
 
-#### 4. 只上传upload里面资源
+#### 3. 只上传upload里面资源
 
 > 上传upload资源用户只需要登录即可
 
@@ -127,7 +98,7 @@ UPLOAD = RayvisionUpload(api)
 UPLOAD.upload_asset(r"D:\test\test_upload\1586250829\upload.json")
 ```
 
-#### 5. 只上传分析生成的json配置文件
+#### 4. 只上传分析生成的json配置文件
 
 ```
 def upload_config(self, task_id, config_file_list, max_speed=None):
@@ -167,7 +138,7 @@ UPLOAD = RayvisionUpload(api)
 UPLOAD.upload_config("5165465", CONFIG_PATH)
 ```
 
-#### 6. 先上传配置文件然后自动根据upload文件上传资源(任务号必须)
+#### 5. 先上传配置文件然后自动根据upload文件上传资源(任务号必须)
 
 ```
 def upload(self, task_id, task_json_path, tips_json_path, asset_json_path,
@@ -211,7 +182,7 @@ upload_obj = RayvisionUpload(api)
 upload_obj.upload("5165465", **CONFIG_PATH)
 ```
 
-#### 7. append_to_upload:自定义upload.json文件
+#### 6. append_to_upload:自定义upload.json文件
 
 ```
 from rayvision_api import RayvisionAPI
@@ -238,7 +209,7 @@ append_to_upload(custom_info_to_upload, r"D:\test\upload.json")
 UPLOAD.upload_asset(r"D:\test\upload.json")
 ```
 
-#### 8. 自定义上传服务地址和传输引擎选择
+#### 7. 自定义上传服务地址和传输引擎选择
 
 > 上传服务地址一般是不需要修改，如果线路不佳也支持自定义修改
 
@@ -280,7 +251,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
                     upload_json_path=r"C:\workspace\work\upload.json")
   ```
 
-#### 9. 上传文件类型(transmit_type)
+#### 8. 上传文件类型(transmit_type)
 
 > 上传文件由参数"transmit_type"控制, 支持2中传输文件类型: ”upload_list“ 和”upload_json“
 

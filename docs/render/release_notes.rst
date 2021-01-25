@@ -38,8 +38,28 @@
      - 更新传输aspera引擎
      - 支持raysync引擎传输
 
-1.6 (2020-12-16):
+1.6 :
 ---------------------------
    rayvision_api(tag 2.4.5):
      - 增加新的获取项目名接口(get_list);
      - 优化主子账号获取项目名问题;
+
+1.7 :
+----------------------------------
+   rayvision_houdini (tag 1.3.0)
+      - 更新Houdini分析脚本;
+      - 移除houdini分析本地sql数据库对比功能;
+      - 其它兼容性的优化;
+
+   rayvision_max (tag 1.1.0)
+      - 更新3ds Max分析脚本;
+
+   rayvision_maya (tag 1.3.0)
+      - 更新Maya分析脚本;
+
+   rayvision_clarisse (tag 1.2.0)
+      - 更新Clarissa分析脚本;
+
+   rayvision_sync (tag 2.20)
+      - 去除普通多线程上传，保留和修复线程池上传BUG;
+      - 其它传输逻辑优化;
