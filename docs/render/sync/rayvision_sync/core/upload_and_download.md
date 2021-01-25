@@ -30,11 +30,8 @@ upload_pool = cutting_upload(r"D:\test\test_upload\1586250829\upload.json", max_
 
 #### 2. 使用线程池控制上传
 
-> 并发上传还可以使用线程池的方式
-
-
 ```
-def thread_pool_upload(self, upload_pool, pool_size=10):
+def def thread_pool_upload(self, upload_pool, pool_size=10, **kwargs)::
     """Thread pool upload.
 
     Args:
@@ -42,10 +39,7 @@ def thread_pool_upload(self, upload_pool, pool_size=10):
         pool_size (int): thread pool size, default is 10 threads.
 
     """
-    pool = ThreadPoolExecutor(pool_size)
-    for i in range(len(upload_pool)):
-        pool.submit(self.upload_asset, upload_pool[i])
-    pool.shutdown(wait=True)
+    
 ```
 
 使用样例：
