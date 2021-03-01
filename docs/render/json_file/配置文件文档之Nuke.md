@@ -32,7 +32,6 @@ Nuke配置文件文档
 		"job_stop_time": "259200",
 		"stop_after_test": "1",
 		"multi_node": "0",
-		"test_frames": "",
 		"project_id": "0",
 		"time_out": "86400",
 		"cg_id": "2015",
