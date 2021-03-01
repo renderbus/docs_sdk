@@ -1,4 +1,4 @@
-### 上传
+### 一. 上传
 
 #### 1. Upload文件切割
 
@@ -275,7 +275,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
   }
   ```
 
-### 下载
+### 二。下载
 
 #### 1. 以单帧为粒度渲染完成了自动下载(任务号必须)
 
@@ -438,6 +438,30 @@ api = RayvisionAPI(access_id="xxx",
 download = RayvisionDownload(api)
 download.download(download_filename_format="true", server_path="18164087_muti_layer_test/l_ayer2")
 ```
+
+### 三。自动获取传输线路
+
+#### 1.开启自动获取传输线路(默认关闭)， 设置 automatic_line = True， 例如:
+
+- 上传自动获取传输线路:
+
+  `RayvisionUpload(api, automatic_line=True)`
+
+- 下载自动获取传输线路:
+
+  `RayvisionDownload(api, automatic_line=True)`
+
+#### 2.开启自动获取传输线路并选择网络提供商
+
+网络商名称可以通过接口`get_transfer_config`获取)
+
+- 上传自动获取传输线路并自定义网络商
+
+  `RayvisionUpload(api, automatic_line=True, internet_provider="移动")`
+
+- 下载自动获取传输线路并自定义网络商
+
+  `RayvisionDownload(api, automatic_line=True, internet_provider="移动")`
 
 
 
