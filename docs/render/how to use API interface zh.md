@@ -2428,3 +2428,79 @@ start_task = api.task.start_task(task_param_list=[13798105])
     "requestId": null
 }
 ```
+
+##  获取用户存储文件结构 
+
+[^2021/1/18]: Add New Interface
+
+**接口路径**：  /api/render/file/operate/getOutputUserDirFile 
+
+**请求参数**：
+
+| **参数**  | **类型** | 是否必须 | **说明**                                               | **备注**  |
+| --------- | -------- | -------- | ------------------------------------------------------ | --------- |
+| task_id   | Integer  | N        | 任务号,如果是分层任务则是指的子任务号,即每一层的任务号 |           |
+| tree_path | String   | N        | 相对用户存储(output)根的路径                           | 默认为“/” |
+
+**返回参数[data]**：
+
+| 参数       | 类型   | 说明                                            |
+| ---------- | ------ | ----------------------------------------------- |
+| fileName   | string | 当前文件名或文件夹名                            |
+| fileSize   | int    | 文件大小，如果是文件夹则为“null”                |
+| iconPath   | string | 图表路径(可忽略此参数)                          |
+| lastModify | string | 文件或文件夹更新日期                            |
+| fileType   | string | 文件后缀，如果是文件夹则为"null"                |
+| filePath   | string | 文件或文件夹相对用户存储output根的相对路径      |
+| directory  | bool   | 是否为文件夹, "true":是文件夹，“false”:非文件夹 |
+| isArrears  | int    | 是否欠费, 0：未欠费，1：欠费                    |
+
+**请求示例**：
+
+```Python
+paths = api.transmit.get_output_files(task_id=1484861)
+```
+
+**返回示例**：
+
+```json
+[
+    {
+        "fileName": "1484861_muti_layer_test",
+        "fileSize": null,
+        "iconPath": null,
+        "lastModify": "2021-01-15 12:11:59",
+        "fileType": null,
+        "filePath": "/1484861_muti_layer_test",
+        "directory": true,
+        "isArrears": 0
+    }
+]
+```
+
+##  获取任务的所有子任务号 
+
+[^2021/1/18]: Add New Interface
+
+**接口路径**：
+
+**请求参数**：
+
+| **参数** | **类型**          | 是否必须 | **说明**                                                   |
+| -------- | ----------------- | -------- | ---------------------------------------------------------- |
+| task_id  | Integer or string | Y        | 获取主帐户下的所有子帐户，如果没有子帐户，则返回当前账号ID |
+
+**返回参数[data]**：
+
+**请求示例**：
+
+```json
+ids = api.query.get_small_task_id(task_id=1521323)
+```
+
+**返回示例**：
+
+```
+[1521325, 1521327, 1521329]
+```
+
