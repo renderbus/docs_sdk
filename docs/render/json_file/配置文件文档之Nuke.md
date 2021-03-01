@@ -84,7 +84,6 @@ plugins | object | Y | 插件对象。<br> 为插件名称，value为插件版�
 | graphics_cards_num | string | Y        | 1: 开启单卡渲染 2: 开启双卡渲染                              | "2"      | “2”                                                          |
 | cg_id              | string | Y        | 渲染软件id."Nuke": "2015"                                    |          | "2015"                                                       |
 | ram                | string | Y        | 内存要求: 64 / 128                                           | “64”     | "64"                                                         |
-| concurrent_tasks   | string | Y        |                                                              |          |                                                              |
 | input_cg_file      | string | Y        | 渲染场景本地路径                                             |          | "D:/Myx/nuke_project/test_new_pipeline.nk"                   |
 | job_stop_time      | string | Y        | 设置帧的超时时间，只会影响当前帧, 单位秒                     | “259200” | "28800"                                                      |
 | user_id            | string | N        | 用户ID                                                       |          |                                                              |
