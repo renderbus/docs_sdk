@@ -203,49 +203,7 @@ append_to_upload(custom_info_to_upload, r"D:\test\upload.json")
 UPLOAD.upload_asset(r"D:\test\upload.json")
 ```
 
-#### 7. 自定义上传服务地址和传输引擎选择
-
-> 上传服务地址一般是不需要修改，如果线路不佳也支持自定义修改
-
-#####    1. 以下上传接口支持自定义服务器地址和传输引擎设置
-
-> 传输引擎支持：aspera 和 raysync
-
-- upload_asset
-
-  > ```python
-  > UPLOAD.upload_asset(r"D:\test\upload.json", engine_type='aspera', server_ip="45.251.92.16", server_port="12121")
-  > ```
-
-- upload_config
-
-  ```python
-  CONFIG_PATH = [
-      r"C:\workspace\work\tips.json",
-      r"C:\workspace\work\task.json",
-      r"C:\workspace\work\asset.json",
-      r"C:\workspace\work\upload.json",
-  ]
-  UPLOAD.upload_config(task_id="5165465",
-                       config_file_list=config_list,
-                       server_ip="45.251.92.16",
-                       server_port="12121")
-  ```
-
-- upload
-
-  ```python
-  UPLOAD.upload(task_id="41235091",
-                    engine_type='aspera',
-                    server_ip="45.251.92.16",
-                    server_port="12121",
-                    task_json_path=r"C:\workspace\work\task.json",
-                    tips_json_path=r"C:\workspace\work\tips.json",
-                    asset_json_path=r"C:\workspace\work\asset.json",
-                    upload_json_path=r"C:\workspace\work\upload.json")
-  ```
-
-#### 8. 上传文件类型(transmit_type)
+#### 7. 上传文件类型(transmit_type)
 
 > 上传文件由参数"transmit_type"控制, 支持2中传输文件类型: ”upload_list“ 和”upload_json“
 
@@ -275,7 +233,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
   }
   ```
 
-### 二。下载
+### 二. 下载
 
 #### 1. 以单帧为粒度渲染完成了自动下载(任务号必须)
 
@@ -439,7 +397,7 @@ download = RayvisionDownload(api)
 download.download(download_filename_format="true", server_path="18164087_muti_layer_test/l_ayer2")
 ```
 
-### 三。自动获取传输线路
+### 三. 自动获取传输线路、指定网络提供商
 
 #### 1.开启自动获取传输线路(默认关闭)， 设置 automatic_line = True， 例如:
 
@@ -463,5 +421,79 @@ download.download(download_filename_format="true", server_path="18164087_muti_la
 
   `RayvisionDownload(api, automatic_line=True, internet_provider="移动")`
 
+### 四. 选择传输模式:tcp or udp
 
+network_mode: 控制网络传输模式
+     0: 自动选择(默认值为0)
+     1: tcp 传输
+     2：udp 传输
+
+```
+# 以下载为例:
+download.auto_download([49240085], network_mode=2)
+```
+
+### 五. 自定义传输服务地址和传输引擎选择
+
+> 上传服务地址一般是不需要修改，如果线路不佳也支持自定义修改
+
+#####    1. 上传自定义传输地址和自定义传输引擎设置
+
+> 传输引擎支持：aspera 和 raysync
+
+- upload_asset
+
+  > ```python
+  > UPLOAD.upload_asset(r"D:\test\upload.json", engine_type='aspera', server_ip="45.251.92.16", server_port="12121")
+  > ```
+
+- upload_config
+
+  ```python
+  CONFIG_PATH = [
+      r"C:\workspace\work\tips.json",
+      r"C:\workspace\work\task.json",
+      r"C:\workspace\work\asset.json",
+      r"C:\workspace\work\upload.json",
+  ]
+  UPLOAD.upload_config(task_id="5165465",
+                       config_file_list=config_list,
+                       server_ip="45.251.92.16",
+                       server_port="12121")
+  ```
+
+- upload
+
+  ```python
+  UPLOAD.upload(task_id="41235091",
+                    engine_type='aspera',
+                    server_ip="45.251.92.16",
+                    server_port="12121",
+                    task_json_path=r"C:\workspace\work\task.json",
+                    tips_json_path=r"C:\workspace\work\tips.json",
+                    asset_json_path=r"C:\workspace\work\asset.json",
+                    upload_json_path=r"C:\workspace\work\upload.json")
+  ```
+
+##### 2. 下载自定义传输地址和自定义传输引擎设置
+
+- download
+
+  ```
+  download.download([49240085], server_ip="45.251.92.16", server_port="12121")
+  ```
+
+- auto_download
+
+  ```
+  download.auto_download([49240085], server_ip="45.251.92.16", server_port="12121")
+  ```
+
+- auto_download_after_task_completed
+
+  ```
+  download.auto_download_after_task_completed([49228557], server_ip="45.251.92.16", server_port="12121")
+  ```
+
+  
 
