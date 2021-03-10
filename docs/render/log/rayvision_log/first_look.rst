@@ -13,25 +13,43 @@
     logging.info('test')
 
 
-日志路径设置
-------------
-1. 默认路径
+默认路径
+-------------
 
-Mac OS X:
+Centos:
 
-  ~/Library/Logs/<AppName>/Logs/<username>/<hostname>.log
-
-Unix:
-
-  ~/.cache/<AppName>/log/Logs/<username>/<hostname>.log
+  ~/.cache/<AppName>/log/Logs/<hostname>.log
 
 Window:
 
-  C:\\Users\\<username>\\AppData\\Local\\<AppAuthor>\\<AppName>\\Logs\\<username>\\<hostname>.log
+  C:\\Users\\<username>\\AppData\\Local\\<AppAuthor>\\<AppName>\\Logs\\<hostname>.log
 
 
-2. 自定义路径
+自定义路径分2中设置方式
+-------------------------
 
-- 定义参数： ``RAYVISION_LOG_ROOT = "xxxx"``
-- 将 *RAYVISION_LOG_ROOT* 设置为系统环境变量
-- 日志路径将会保存在 *RAYVISION_LOG_ROOT* 文件夹下
+   - 通过设置环境变量来自定义: `RAYVISION_LOG_ROOT`
+
+    定义参数： ``RAYVISION_LOG_ROOT = "xxxx"``,
+    将 *RAYVISION_LOG_ROOT* 设置为系统环境变量,
+    日志路径将会保存在 *RAYVISION_LOG_ROOT* 文件夹下。
+
+   - 通过参数设置日志路径:`log_folder`, 以maya为例：
+
+    `analyze_obj = AnalyzeMaya(**analyze_info, log_folder=r"D:\test\vs")`
+
+
+自定义日志文件名
+--------------------
+
+   - 通过参数设置日志文件名(包括文件后缀): `log_name`, 以maya为例:
+
+    `analyze_obj = AnalyzeMaya(**analyze_info, log_name=r"api.log")`
+
+
+自定义日志等级
+------------------
+
+   - 通过参数设置日志等级: `log_level`, 以maya为例:
+
+   `analyze_obj = AnalyzeMaya(**analyze_info, log_level=r"api.log")`

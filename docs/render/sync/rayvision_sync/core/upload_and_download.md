@@ -1,4 +1,4 @@
-### 一. 上传
+### 上传
 
 #### 1. Upload文件切割
 
@@ -233,7 +233,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
   }
   ```
 
-### 二. 下载
+### 下载
 
 #### 1. 以单帧为粒度渲染完成了自动下载(任务号必须)
 
@@ -397,7 +397,7 @@ download = RayvisionDownload(api)
 download.download(download_filename_format="true", server_path="18164087_muti_layer_test/l_ayer2")
 ```
 
-### 三. 自动获取传输线路、指定网络提供商
+### 自动获取传输线路、指定网络提供商
 
 #### 1.开启自动获取传输线路(默认关闭)， 设置 automatic_line = True， 例如:
 
@@ -421,7 +421,7 @@ download.download(download_filename_format="true", server_path="18164087_muti_la
 
   `RayvisionDownload(api, automatic_line=True, internet_provider="移动")`
 
-### 四. 选择传输模式:tcp or udp
+### 选择传输模式:tcp or udp
 
 network_mode: 控制网络传输模式
      0: 自动选择(默认值为0)
@@ -435,7 +435,7 @@ download.auto_download([49240085], network_mode=2)
 
 
 
-### 五. 自定义传输服务地址和传输引擎选择
+### 自定义传输服务地址和传输引擎选择
 
 > 上传服务地址一般是不需要修改，如果线路不佳也支持自定义修改
 
