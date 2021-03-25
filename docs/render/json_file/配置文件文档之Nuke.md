@@ -25,7 +25,6 @@ Nuke配置文件文档
 		"graphics_cards_num": "2",
 		"tiles": "1",
 		"project_name": "",
-		"concurrent_tasks": "1",
 		"edit_name": "test02",
 		"frames_per_task": "1",
 		"ram": "64",
@@ -66,6 +65,7 @@ Nuke配置文件文档
 software_config | object | Y | 渲染环境（软件类型、版本和用到的插件等） | [见software_config对象解析](#software_config)
 task_info | object | Y | 渲染设置（优先帧、渲染帧数、超时时间等） | [见task_info对象解析](#task_info)
 scene_info_render | object | Y | 场景的分析结果（场景中的渲染节点、输出路径等） | [见scene_info_render对象解析](#scene_info_render)
+concurrent_tasks | string | Y | 并发任务数 | “1” 
 
 **<span id="software_config">software_config对象解析</span>**
 
@@ -95,7 +95,6 @@ plugins | object | Y | 插件对象。<br> 为插件名称，value为插件版�
 | task_id            | string | N        | 任务号                                                       |          |                                                              |
 | task_stop_time     | string | Y        | 大任务超时停止 单位秒,"0"表示不限制                          | "0"      | "86400"                                                      |
 | time_out           | string | Y        | 超时时间 单位秒                                              | “43200”  | "43200"                                                      |
-| concurrent_tasks   | string | Y        | 并发任务数                                                   | “1”      | “1”                                                          |
 
 **<span id="scene_info_render">scene_info_render对象解析</span>**
 
