@@ -31,7 +31,6 @@ Nuke配置文件文档
 		"ram": "64",
 		"job_stop_time": "259200",
 		"stop_after_test": "1",
-		"multi_node": "0",
 		"project_id": "0",
 		"time_out": "86400",
 		"cg_id": "2015",
@@ -93,9 +92,10 @@ plugins | object | Y | 插件对象。<br> 为插件名称，value为插件版�
 | project_name       | string | Y        | 项目名称                                                     | " "      | ""                                                           |
 | frames_per_task    | string | Y        | 一机渲多帧的帧数量                                           | "1"      | "1"                                                          |
 | stop_after_test    | string | Y        | 优先渲染完成后是否暂停任务 "1":优先渲染完成后暂停任务 "2".优先渲染完成后不暂停任务 | "2"      | “2”                                                          |
-| task_id            | string | Y        | 任务号                                                       |          |                                                              |
+| task_id            | string | N        | 任务号                                                       |          |                                                              |
 | task_stop_time     | string | Y        | 大任务超时停止 单位秒,"0"表示不限制                          | "0"      | "86400"                                                      |
 | time_out           | string | Y        | 超时时间 单位秒                                              | “43200”  | "43200"                                                      |
+| concurrent_tasks   | string | Y        | 并发任务数                                                   | “1”      | “1”                                                          |
 
 **<span id="scene_info_render">scene_info_render对象解析</span>**
 
