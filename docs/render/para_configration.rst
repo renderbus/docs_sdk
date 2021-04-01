@@ -10,3 +10,4 @@
    json_file/配置文件文档之Max.md
    json_file/配置文件文档之Katana.md
    json_file/配置文件文档之Nuke.md
+   json_file/配置文件文档之VR Standalone.md
