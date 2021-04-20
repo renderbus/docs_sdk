@@ -93,7 +93,24 @@ update_task = {
 update_task_info(update_task, analyze_obj.task_json)
 ```
 
-##### 2. task.json添加自定义参数
+##### 2. 指定硬件配置
+
+硬件配置由参数"hardwareConfigId"控制, 可以通过api接口获取("API接口使用方法" --> "获取平台硬件配置信息")
+
+如果同时在“task_info”中设置了"ram"和“hardwareConfigId”, 
+
+以“hardwareConfigId”为主, 没有则以"ram"设置为主.
+
+```
+from rayvision_api.utils import update_task_info, append_to_task, append_to_upload
+update_task = {
+    "hardwareConfigId": "27"  # 指定硬件配置
+}
+update_task_info(update_task, analyze_obj.task_json)
+```
+
+##### 3. task.json添加自定义参数
+
 > 添加的自定义参数将会集成到key为"additional_info"的字典中  
  【注意】：自定义参数不会立即生效，如果有这种需求的客户请联系公司客服。
 
