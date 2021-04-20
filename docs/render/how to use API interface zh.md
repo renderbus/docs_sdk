@@ -2490,7 +2490,7 @@ paths = api.transmit.get_output_files(task_id=1484861)
 | -------- | ----------------- | -------- | ---------------------------------------------------------- |
 | task_id  | Integer or string | Y        | 获取主帐户下的所有子帐户，如果没有子帐户，则返回当前账号ID |
 
-**返回参数[data]**：
+
 
 **请求示例**：
 
@@ -2502,5 +2502,104 @@ ids = api.query.get_small_task_id(task_id=1521323)
 
 ```
 [1521325, 1521327, 1521329]
+```
+
+##  获取平台硬件配置信息 
+
+[^2021/4/12]: add new interface in rayvision_api 2.8.0 
+
+**接口路径**：/api/render/hardwareConfig/list
+
+**请求参数**：
+
+| **参数** | **类型**  | 是否必须 | **说明**                           |
+| -------- | --------- | -------- | ---------------------------------- |
+| task_ids | List[str] | N        | 任务号集合，查询指定任务的配置参数 |
+
+**返回参数[data]**：
+
+| 参数           | 类型      | 说明                                                         |
+| -------------- | --------- | ------------------------------------------------------------ |
+| id             | int       | 硬件配置id（hardwareConfigId）                               |
+| type           | int       | 1:CPU;<br>2: GPU                                             |
+| model          | string    | 硬件型号, 默认"Default"                                      |
+| ram            | String    | 内存                                                         |
+| gpuNum         | String    | GPU卡数，CPU平台为"null"                                     |
+| platform       | int       | 平台号                                                       |
+| current        | bool      | false/ true，当传任务号时，查询的是任务当前的硬件配置        |
+| notSupportCgId | list[int] | 不支持的cgId,（cgid对应软件可以查询“常用参数设置”-->"DCC软件ID映射"） |
+| status         | int       | 状态<br>1: 启用;<br>0: 禁用                                  |
+
+**请求示例**：
+
+```json
+hardware_config = api.user.get_hardware_config(task_ids=["6306543"])
+```
+
+**返回示例**：
+
+```json
+[
+    {
+        "id": 301,
+        "type": 1,
+        "model": "Default",
+        "gpuNum": null,
+        "ram": "64GB",
+        "platform": 2,
+        "current": false,
+        "notSupportCgId": [],
+        "status": 1
+    },
+    {
+        "id": 303,
+        "type": 1,
+        "model": "Default",
+        "gpuNum": null,
+        "ram": "128GB",
+        "platform": 2,
+        "current": false,
+        "notSupportCgId": [],
+        "status": 1
+    },
+    {
+        "id": 337,
+        "type": 1,
+        "model": "1080Ti",
+        "gpuNum": null,
+        "ram": "64GB",
+        "platform": 2,
+        "current": true,
+        "notSupportCgId": [
+            2005,
+            2000
+        ],
+        "status": 1
+    },
+    {
+        "id": 339,
+        "type": 1,
+        "model": "2080Ti",
+        "gpuNum": null,
+        "ram": "64GB",
+        "platform": 2,
+        "current": false,
+        "notSupportCgId": [],
+        "status": 1
+    },
+    {
+        "id": 341,
+        "type": 1,
+        "model": "1080Ti",
+        "gpuNum": null,
+        "ram": "128GB",
+        "platform": 2,
+        "current": false,
+        "notSupportCgId": [
+            2005
+        ],
+        "status": 1
+    }
+]
 ```
 
