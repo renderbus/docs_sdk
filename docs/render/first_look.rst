@@ -47,8 +47,10 @@
 
 - VR Standalone
 
+- C4D
+
 .. note::
-   如果客户自行分析场景，理论还可以支持Blender, c4d, Arnold Standalone, KeyShot等渲染软件。
+   如果客户自行分析场景，理论还可以支持Blender, Arnold Standalone, KeyShot等渲染软件。
 
 .. _header-n19:
 

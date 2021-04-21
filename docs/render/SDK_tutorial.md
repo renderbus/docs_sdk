@@ -123,7 +123,7 @@ custom_info_to_task = {
 append_to_task(custom_info_to_task, analyze_obj.task_json)
 ```
 
-##### 3. 自定义upload.json
+##### 4. 自定义upload.json
 > 支持自定义添加文件路径到upload.json，会自动去重
 `append_to_upload(files_paths, upload_path)`
 
