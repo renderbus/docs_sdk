@@ -45,12 +45,14 @@
 
 -  Katana
 
-- VR Standalone
-
 - C4D
 
+- Blender
+
+- VR Standalone (无独立分析)
+
 .. note::
-   如果客户自行分析场景，理论还可以支持Blender, Arnold Standalone, KeyShot等渲染软件。
+   如果客户自行分析场景，理论上可以支所有瑞云平台客户端和网页端支持的渲染软件。
 
 .. _header-n19:
 
