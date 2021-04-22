@@ -464,7 +464,7 @@ error_detail = api.query.error_detail(code="50001")
 | sceneName             | String               | 场景名                     |                                                              |
 | id                    | Integer              | 任务id                     |                                                              |
 | taskAlias             | String               | 任务别名                   |                                                              |
-| taskStatus            | Byte                 | 任务状态                   | 1/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败 |
+| taskStatus            | Byte                 | 任务状态                   | 0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中 |
 | statusText            | String               | 任务状态文本               |                                                              |
 | preTaskStatus         | Byte                 | 预处理任务状态             |                                                              |
 | preStatusText         | String               | 预处理状态文本             |                                                              |
@@ -842,7 +842,7 @@ delete_task = api.task.delete_task(task_param_list=[13798105])
 | platform         | Integer  | 平台                |                                                                                                                                                                    |
 | frameIndex       | String   | 帧序列名            |                                                                                                                                                                    |
 | frameBlock       | String   | 当前帧块数          |                                                                                                                                                                    |
-| frameStatus      | Integer  | 当前帧状态          | 1/等待中,2/正在执行中,3/停止,4/完成,5/失败,6/等待预处理完成,7/等待光子帧渲染完成,8/等待优先渲染完成,9/等待光子作业渲染完成,10/等待结算作业渲染完成,11/任务超时     |
+| frameStatus      | Integer  | 当前帧状态          | 0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中 |
 | feeAmount        | Double   | 余额扣费            |                                                                                                                                                                    |
 | couponFee        | Double   | 代金券扣费          |                                                                                                                                                                    |
 | startTime        | Long     | 开始时间（毫秒）    |                                                                                                                                                                    |
@@ -1174,7 +1174,7 @@ restart_frame = api.query.get_custome_frames(task_id=37439351, restartframes=["6
 | sceneName             | String               | 场景名                     |                                                                                                               |
 | id                    | Integer              | 任务id                     |                                                                                                               |
 | taskAlias             | String               | 任务别名                   |                                                                                                               |
-| taskStatus            | Byte                 | 任务状态                   | 1/等待中,5/渲染中,10/停止中,15/用户停止, 20/欠费停止,25/已完成,30/已完成有失败帧, 35/放弃,40/测试完成,45/失败 |
+| taskStatus            | Byte                 | 任务状态                   | 0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中 ||
 | statusText            | String               | 任务状态文本               |                                                                                                               |
 | preTaskStatus         | Byte                 | 预处理任务状态             |                                                                                                               |
 | preStatusText         | String               | 预处理状态文本             |                                                                                                               |
