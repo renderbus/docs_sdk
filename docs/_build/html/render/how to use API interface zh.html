@@ -1,0 +1,5352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>} &mdash; RenderBus SDK latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="日志管理" href="log/index.html" />
+    <link rel="prev" title="Connect" href="api/rayvision_api/main/connect.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RenderBus SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="first_look.html">初窥SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n2">概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n5">为什么要使用渲染SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n8">支持的软件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n19">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n26">安装相应模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n29">开始使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n33">参数设置请参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n37">更多</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation_guide.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">rayvision_api包</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/task/hand.html">任务模块(RayvisionTask)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/env.html">环境配置(RenderEnv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/query.html">查询(Query)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/tag.html">任务自定义标记(Tag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/task.html">任务(Task)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/user.html">用户信息(User)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/main/core.html">RayvisionAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/main/connect.html">Connect</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id26">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id31">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id36">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id49">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id54">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id59">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id64">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id69">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id74">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id84">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id89">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id94">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id99">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id104">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id109">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id114">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id119">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id126">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id131">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id134">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id139">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id144">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id149">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id154">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id167">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id180">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id185">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id190">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id195">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id200">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id205">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id210">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id215">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id220">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id225">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id230">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id235">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id240">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id245">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log/index.html">日志管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html">演示demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id1">默认路径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id2">自定义路径分2中设置方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id3">自定义日志文件名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id4">自定义日志等级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/core/core.html">日志接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/rayvision_api/task/check.html">任务的信息校验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maya/rayvision_maya/core/analyze_maya_handle.html">Maya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clarisse/rayvision_clarisse/core/analyse_clarisse.html">Clarisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="houdini/rayvision_houdini/core/cg.html">Houdini</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/rayvision_utils/core/analyse_handle.html">RayvisionAnalyse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/rayvision_utils/core/json_handle.html">JsonHandle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exception.html">异常管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="para_configration.html">详细参数配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html">Clarisse 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html">Houdini 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html">Maya 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html#id10">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html">Max 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html">Katana 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BNuke.html">Nuke配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BNuke.html#id5">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html">**VR Standalone**配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html#id7">}</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构概览</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id2">组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id3">流程图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo/index.html">Demo使用解析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html">Maya demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#houdini-demo">Houdini demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#clarisse-demo">Clarisse demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#ds-max-demo">3ds Max demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#katana-demo">Katana demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="questions.html">常见问题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#renderbus-sdkpython">1. RenderBus SDK支持那些Python版本呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#pycharmsdk">2. 使用pycharm应该怎么下载SDK包呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n13">3. 怎么设置只渲染首帧？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n14">4. 怎么设置渲染完优先帧,让任务自动全速渲染？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n34">5. 怎么设置当前渲染帧结束立即下载渲染结果呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n9">6. 最简单的使用方式是怎么样的呢？</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="error_status.html">异常码参照</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">发行说明(Release notes)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id1">0.1.0 (2019-11-10):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id2">1.1.0 (2020-04-06):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id3">1.2 (2020-05-21):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id4">1.3 (2020-09-10):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id5">1.4 (2020-11-12):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id6">1.5 (2020-11-24):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id7">1.6 :</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id8">1.7 :</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing_to_sdk.html">为RenderBusSDK做贡献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing_to_sdk.html#id1">报告错误</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RenderBus SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>}</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/render/how to use API interface zh.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p># API接口使用方法</p>
+<p>## 准备工作</p>
+<p>所有的接口调用都是通过rayvision_api模块，在使用前必须先实例化一个api对象：</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+user_info = {</p>
+<blockquote>
+<div><p>“domain_name”: “task.renderbus.com”,
+“platform”: “2”,
+“access_id”: “xxxxxxxxxxxxxxxxxxxxxx”,
+“access_key”: “xxxxxxxxxxxxxxxxxxxxx”,</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>api = RayvisionAPI(access_id=user_info[‘access_id’],</dt><dd><p>access_key=user_info[‘access_key’],
+domain=user_info[‘domain_name’],
+platform=user_info[‘platform’])</p>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p><strong>说明</strong>：</p>
+<ol class="arabic simple">
+<li><p>以下接口调用会直接使用以上实例的api进行调用；</p></li>
+<li><p>返回示例中显示的是原始接口结果，实际在rayvision_api中接口返回给用户的只是“data”参数值；</p></li>
+</ol>
+<p>## 获取平台列表</p>
+<p><strong>接口路径</strong>：  /api/render/common/queryPlatforms</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;platform&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;平台号&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;平台名描述&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">#</span> <span class="pre">自动根据“domain”参数内容区分国内外</span>
+<span class="pre">platform</span> <span class="pre">=</span> <span class="pre">api.query.platforms()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“platform”: 2,
+“name”: “query_platform_w2”</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“serverTime”: 1535949047370</p>
+</div></blockquote>
+<div class="section" id="id13">
+<h1>}<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
+<p>## 获取用户详情</p>
+<p><strong>旧接口路径</strong>：  /api/render/setUp/queryUserProfile</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">user_profile</span> <span class="pre">=</span> <span class="pre">api.user.query_user_profile()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a><a href="#id16"><span class="problematic" id="id17">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“userId”: 10001136,
+“userName”: “rayvision”,
+“platform”: 2,
+“phone”: “173333333333”,
+“email”: “”,
+“company”: “”,
+“name”: “”,
+“job”: “”,
+“communicationNumber”: “”,
+“softType”: 2000,
+“softStatus”: 1,
+“businessType”: 1,
+“status”: 1,
+“infoStatus”: 0,
+“accountType”: 1,
+“userType”: 1,
+“mainUserId”: 0,
+“level”: 49,
+“pictureLever”: null,
+“zone”: 1,
+“rmbbalance”: 0,
+“usdbalance”: 0,
+“rmbCumulative”: 0,
+“usdCumulative”: 0,
+“credit”: 0,
+“coupon”: 49.93,
+“description”: “”,
+“country”: “中国”,
+“city”: “广东 中山”,
+“address”: “”,
+“cpuPrice”: 0.67,
+“gpuPrice”: 20,
+“shareMainCapital”: 0,
+“subDeleteTask”: 0,
+“useMainBalance”: 0,
+“hideBalance”: 0,
+“hideJobCharge”: 0,
+“useLevelDirectory”: 1,
+“downloadDisable”: 0,
+“displaySubaccount”: 1,
+“subaccountLimits”: 5,
+“houdiniFlag”: 0,
+“c4dFlag”: 0,
+“blenderFlag”: 0,
+“keyshotFlag”: 0,
+“studentEndTime”: null</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1535953580730</p>
+</div></blockquote>
+<p>}</p>
+<p><a href="#id18"><span class="problematic" id="id19">``</span></a><a href="#id20"><span class="problematic" id="id21">`</span></a></p>
+<p>## 获取用户设置</p>
+<p><strong>接口路径</strong>： /api/render/setUp/queryUserSetting</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;infoStatus&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountType&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;shareMainCapital&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;共用主账号资产 0 不共用 1共用&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;subDeleteTask&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否允许子账号删除任务 0不允许 1 允许&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;useMainBalance&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否允许子账号使用主账号余额或信用额度 &lt;/td&gt;
+&lt;td&gt;0不允许 1 允许&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;singleNodeRenderFrames&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;一机渲多帧&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;maxIgnoreMapFlag&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;是否忽略max错误贴图&lt;/td&gt;
+&lt;td&gt;0不忽略，1忽略&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;autoCommit&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;是否启动场景参数渲染&lt;/td&gt;
+&lt;td&gt;1不启用，2启用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;separateAccountFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;主子账号分离设置&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mifileSwitchFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;mi文件分析风险开关&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assfileSwitchFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;不分析ass文件开关标识&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;manuallyStartAnalysisFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;手动开启分析开关&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;downloadDisable&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;禁用下载&lt;/td&gt;
+&lt;td&gt;1禁用，0不禁用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskOverTime&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;超时时间-小时&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskOverTimeSec&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;超时时间-秒&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ignoreMapFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;本地分析忽略贴图丢失&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isVrayLicense&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;使用付费版vray渲染&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;justUploadConfigFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;本地分析max只上传配置文件&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;justUploadCgFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;maya渲染只上传cg文件&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mandatoryAnalyseAllAgent&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;本地分析强制分析所有代理&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">user_setting</span> <span class="pre">=</span> <span class="pre">api.user.query_user_setting()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id22"><span class="problematic" id="id23">``</span></a><a href="#id24"><span class="problematic" id="id25">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“infoStatus”: null,
+“accountType”: null,
+“shareMainCapital”: 0,
+“subDeleteTask”: 0,
+“useMainBalance”: 0,
+“singleNodeRenderFrames”: “1”,
+“maxIgnoreMapFlag”: “1”,
+“autoCommit”: “2”,
+“separateAccountFlag”: 0,
+“mifileSwitchFlag”: 0,
+“assfileSwitchFlag”: 0,
+“manuallyStartAnalysisFlag”: 0,
+“downloadDisable”: 0,</p>
+<blockquote>
+<div><p>“taskOverTime”: 12,
+“taskOverTimeSec”: 3600</p>
+</div></blockquote>
+</div></blockquote>
+<p>},
+“serverTime”: 1535954828406</p>
+</div></blockquote>
+</div>
+<div class="section" id="id26">
+<h1>}<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h1>
+<p>## 更新用户设置</p>
+<p><strong>接口路径</strong>： /api/render/setUp/updateUserSetting</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_over_time&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务超时时间设置(单位：秒)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">update_user_setting</span> <span class="pre">=</span> <span class="pre">api.user.update_user_settings(task_over_time=43200)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id31">
+<h1>}<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h1>
+<p>## 获取用户传输BID</p>
+<p><strong>接口路径</strong>： /api/render/transfer/getBid</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;config_bid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;配置文件传输ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;output_bid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;下载传输ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parent_input_bid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;对应主账号Input传输bid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;input_bid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;资产上传传输ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sub_user_output_bids&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;子账号outputbids,如果访问用户是主账号，则有子账号值，否则为空&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;子账号ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;output_bid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;子账号outputbid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">user_transfer_bid</span> <span class="pre">=</span> <span class="pre">api.user.get_transfer_bid()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id32"><span class="problematic" id="id33">``</span></a><a href="#id34"><span class="problematic" id="id35">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“config_bid”: “30201”,
+“input_bid”: “10201”,
+“output_bid”: “20201”,
+“parent_input_bid”: “10202”,
+“sub_user_output_bids”: [{</p>
+<blockquote>
+<div><p>userId:”119776”,
+outputBid:”10401”</p>
+</div></blockquote>
+<p>}]
+},</p>
+</div></blockquote>
+<p>“serverTime”: 1535957964631</p>
+</div></blockquote>
+</div>
+<div class="section" id="id36">
+<h1>}<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h1>
+<p>## 创建任务号</p>
+<p><strong>接口路径</strong>： /api/render/submit/createTask</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;count&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;非必须，创建任务号数量&lt;/td&gt;
+&lt;td&gt;默认为 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;out_user_id&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;非必须，外部用户ID&lt;/td&gt;
+&lt;td&gt;用于区分第三方接入的用户&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task_user_level&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;非必须，任务用户级别&lt;/td&gt;
+&lt;td&gt;可选50和60,默认为50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;labels&lt;/td&gt;
+&lt;td&gt;List&amp;lt;String&gt;&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;非必须，标签列表&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;clone_original_id&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;克隆原任务id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;artist&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;制作人&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;aliasTaskIdList&lt;/td&gt;
+&lt;td&gt;List&amp;lt;String&gt;&lt;/td&gt;
+&lt;td&gt;任务ID别名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskIdList&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;任务ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;用户id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">`</span></a>Python
+create_task_id = api.task.create_task(count=1,</p>
+<blockquote>
+<div><p>task_user_level=50,
+labels=[“label_test1”, “label_test2”])</p>
+</div></blockquote>
+<p><a href="#id41"><span class="problematic" id="id42">``</span></a><a href="#id43"><span class="problematic" id="id44">`</span></a></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id45"><span class="problematic" id="id46">``</span></a><a href="#id47"><span class="problematic" id="id48">`</span></a>python
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“aliasTaskIdList”: [</dt><dd><p>“2W19097”</p>
+</dd>
+</dl>
+<p>],
+“taskIdList”: [</p>
+<blockquote>
+<div><p>19097</p>
+</div></blockquote>
+<p>],
+“userId”: 10007893</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1535959487092</p>
+</div></blockquote>
+</div>
+<div class="section" id="id49">
+<h1>}<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h1>
+<p>## 提交任务</p>
+<p><strong>接口路径</strong>： /api/render/submit/task</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;提交任务ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;producer&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;制作人&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">submit_task</span> <span class="pre">=</span> <span class="pre">api.task.submit_task(task_id=create_task_id[0])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id50"><span class="problematic" id="id51">``</span></a><a href="#id52"><span class="problematic" id="id53">`</span></a>Python
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id54">
+<h1>}<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h1>
+<p> 注意：进行提交之前需要先调用传输接口上传相关的分析配置文件</p>
+<p>## 获取分析错误码</p>
+<p><strong>接口路径:</strong>  /api/render/submit/queryAnalyseErrorDetail</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;code&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;必须值，错误码&lt;/td&gt;
+&lt;td&gt;codes和code任一必填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;codes&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;错误码列表&lt;/td&gt;
+&lt;td&gt;codes和code任一必填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;language&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;非必须，语言&lt;/td&gt;
+&lt;td&gt;“0”：中文（默认） “1”：英文&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：List&lt;CodeInfo&gt;</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;code&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;错误码&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;type&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;类型&lt;/td&gt;
+&lt;td&gt;0警告-可忽略，1错误-不可忽略&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;languageFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;语言类型&lt;/td&gt;
+&lt;td&gt;0中文，1英文&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;desDescriptionCn&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;中文描述&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;desSolutionCn&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;解决方案&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;solutionPath&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;解决方案连接&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isRepair&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否可修复&lt;/td&gt;
+&lt;td&gt;1 可修复，0不可修复&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isOpen&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;错误是否开启拦截&lt;/td&gt;
+&lt;td&gt;0 不开启，1 开启&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;updateTime&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;最后更新时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">error_detail</span> <span class="pre">=</span> <span class="pre">api.query.error_detail(code=&quot;50001&quot;)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id55"><span class="problematic" id="id56">``</span></a><a href="#id57"><span class="problematic" id="id58">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“id”: 5,
+“code”: “15000”,
+“type”: 1,
+“languageFlag”: 0,
+“desDescriptionCn”: “启动3ds max卡住或者失败”,
+“desSolutionCn”: “1.检查启用对应版本的3ds max是否有特殊弹窗，有的话手动关闭；n2.检查操作系统是否设置了高级别的权限”,
+“solutionPath”: “<a class="reference external" href="http://note.youdao.com/noteshare?id=d8f1ea0c46dfb524af798f6b1d31cf6f">http://note.youdao.com/noteshare?id=d8f1ea0c46dfb524af798f6b1d31cf6f</a>”,
+“isRepair”: 0,
+“isDelete”: 1,
+“isOpen”: 1,
+“lastModifyAdmin”: “”,
+“updateTime”: 1534387709000</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“serverTime”: 1535962451356</p>
+</div></blockquote>
+</div>
+<div class="section" id="id59">
+<h1>}<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h1>
+<p>## 获取任务列表</p>
+<p><strong>接口路径</strong>： /api/render/handle/getTaskList</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;page_num&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;当前页数&lt;/td&gt;
+&lt;td&gt;默认:1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;page_size&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;每页显示数量&lt;/td&gt;
+&lt;td&gt;默认:100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;状态码列表，查询列表中状态的任务&lt;/td&gt;
+&lt;td&gt;参见任务状态说明&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;search_keyword&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;场景名或者作业ID&lt;/td&gt;
+&lt;td&gt;模糊搜索&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;start_time&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;搜索提交时间下限&lt;/td&gt;
+&lt;td&gt;格式 yyyy-MM-dd HH:mm:ss&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;end_time&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;搜索提交时间上限&lt;/td&gt;
+&lt;td&gt;格式 yyyy-MM-dd HH:mm:ss&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>任务状态说明</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;状态&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;状态码&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;WAITING&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;等待&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RENDERING&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;渲染中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PRE_RENDERING&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;预处理中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;STOP&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;停止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ARREARAGE_STOP&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;欠费停止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TIME_OUT_STOP&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;超时停止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FINISHED&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;已完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FINISHED_HAS_FAILED&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;已完成有失败帧&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ABANDON&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;放弃&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FINISHED_TEST&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;测试完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;FAILED&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;td&gt;失败&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ANALYSE&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;分析中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：List&lt;TaskInfo&gt;</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sceneName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;场景名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskAlias&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务别名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskStatus&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;任务状态&lt;/td&gt;
+&lt;td&gt;0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;statusText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务状态文本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;preTaskStatus&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;预处理任务状态&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;preStatusText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;预处理状态文本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;totalFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;总帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abortFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;放弃帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;executingFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;正在运行的帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;doneFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;完成的帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failedFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;失败帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;framesRange&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧范围&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;projectName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;项目名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderConsume&lt;/td&gt;
+&lt;td&gt;BigDecimal&lt;/td&gt;
+&lt;td&gt;任务渲染消费的总费用&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskArrears&lt;/td&gt;
+&lt;td&gt;BigDecimal&lt;/td&gt;
+&lt;td&gt;任务欠费金额&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;submitDate&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;提交时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;startTime&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;开始时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;completedDate&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;完成时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderDuration&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;任务渲染总时长&lt;/td&gt;
+&lt;td&gt;单位：秒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;用户名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;producer&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;制作人&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskLevel&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;任务优先级&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskUserLevel&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;用户层面的优先级&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskLimit&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务机器限制&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskOverTime&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;任务超时提醒&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outputFileName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;输出文件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;munuTaskId&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;调度器id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;layerParentId&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;针对maya任务，层父id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务类型&lt;/td&gt;
+&lt;td&gt;2001/maya，2000/max&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskKeyValueVo&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;任务关键字集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userAccountConsume&lt;/td&gt;
+&lt;td&gt;Bigdecimal&lt;/td&gt;
+&lt;td&gt;用户账户扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;couponConsume&lt;/td&gt;
+&lt;td&gt;Bigdecimal&lt;/td&gt;
+&lt;td&gt;优惠券扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isOpen&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;前端的展开按钮是否展开&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskType&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务类型&lt;/td&gt;
+&lt;td&gt;/预处理,/光子渲染,/渲染主图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderCamera&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染相机&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cloneParentId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;克隆任务挂在那个任务下的id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cloneOriginalId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;从哪个任务克隆的&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;shareMainCapital&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;该任务是否共享主账号资产&lt;/td&gt;
+&lt;td&gt;0 不共享 ,  1 共享&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskRam&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务渲染内存&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;respRenderingTaskList&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;List&amp;lt;TaskInfo&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;展开的任务的子任务&lt;/td&gt;
+&lt;td&gt;跟此对象一样&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;layerName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;层名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskTypeText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务类型&lt;/td&gt;
+&lt;td&gt;光子/主图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isDelete&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;是否删除&lt;/td&gt;
+&lt;td&gt;0：已删除，1：未删除&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>taskKeyValueVo实体</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tiles&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;分块数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;allCamera&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;全部相机&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderableCamera&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染相机&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">task_list</span> <span class="pre">=</span> <span class="pre">api.query.get_task_list(page_num=1,</span> <span class="pre">page_size=1)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id60"><span class="problematic" id="id61">``</span></a><a href="#id62"><span class="problematic" id="id63">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“pageCount”: 32,
+“pageNum”: 1,
+“total”: 32,
+“size”: 1,
+“items”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“sceneName”: “衣帽间.max”,
+“id”: 18278,
+“taskAlias”: “P18278”,
+“taskStatus”: 0,
+“statusText”: “render_task_status_0”,
+“preTaskStatus”: 25,
+“preStatusText”: “render_task_status_25”,
+“totalFrames”: 0,
+“abortFrames”: null,
+“executingFrames”: null,
+“doneFrames”: null,
+“failedFrames”: 0,
+“framesRange”: “0”,
+“projectName”: “”,
+“renderConsume”: null,
+“taskArrears”: 0,
+“submitDate”: 1535602289000,
+“startTime”: null,
+“completedDate”: null,
+“renderDuration”: null,
+“userName”: “xiaoguotu_ljian”,
+“producer”: null,
+“taskLevel”: 79,
+“taskUserLevel”: 0,
+“taskLimit”: 200,
+“taskOverTime”: null,
+“userId”: 10001520,
+“outputFileName”: null,
+“munuTaskId”: “”,
+“layerParentId”: 0,
+“cgId”: 2001,
+“taskKeyValueVo”: {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“tiles”: null,
+“allCamera”: null,
+“renderableCamera”: null</p>
+</div></blockquote>
+<p>},</p>
+</div></blockquote>
+<p>“userAccountConsume”: null,
+“couponConsume”: null,
+“isOpen”: 1,
+“taskType”: “”,
+“renderCamera”: “VRayCam003”,
+“cloneParentId”: null,
+“cloneOriginalId”: null,
+“shareMainCapital”: 0,
+“taskRam”: null,
+“respRenderingTaskList”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“sceneName”: “衣帽间.max”,
+“id”: 18280,
+“taskAlias”: “P18280”,
+“taskStatus”: 25,
+“statusText”: “render_task_status_25”,
+“preTaskStatus”: null,
+“preStatusText”: null,
+“totalFrames”: 1,
+“abortFrames”: 0,
+“executingFrames”: 0,
+“doneFrames”: 1,
+“failedFrames”: 0,
+“framesRange”: “0”,
+“projectName”: “”,
+“renderConsume”: 1.57,
+“taskArrears”: 0,
+“submitDate”: 1535602289000,
+“startTime”: 1535602601000,
+“completedDate”: 1535603874000,
+“renderDuration”: 1176,
+“userName”: “xiaoguotu_ljian”,
+“producer”: null,
+“taskLevel”: 79,
+“taskUserLevel”: 0,
+“taskLimit”: 200,
+“taskOverTime”: 86400000,
+“userId”: 10001520,
+“outputFileName”: “18280_衣帽间”,
+“munuTaskId”: “2018083000075”,
+“layerParentId”: 18278,
+“cgId”: 2001,
+“taskKeyValueVo”: {</p>
+<blockquote>
+<div><p>“tiles”: null,
+“allCamera”: null,
+“renderableCamera”: null</p>
+</div></blockquote>
+<p>},
+“userAccountConsume”: 0,
+“couponConsume”: 1.57,
+“isOpen”: 0,
+“taskType”: “RenderPhoton”,
+“renderCamera”: “VRayCam003”,
+“cloneParentId”: 0,
+“cloneOriginalId”: 0,
+“shareMainCapital”: 0,
+“taskRam”: null,
+“respRenderingTaskList”: null,
+“layerName”: null,
+“taskTypeText”: “render_photons_task”,
+“isDelete”: 1</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“sceneName”: “衣帽间.max”,
+“id”: 18281,
+“taskAlias”: “P18281”,
+“taskStatus”: 25,
+“statusText”: “render_task_status_25”,
+“preTaskStatus”: null,
+“preStatusText”: null,
+“totalFrames”: 17,
+“abortFrames”: 0,
+“executingFrames”: 0,
+“doneFrames”: 17,
+“failedFrames”: 0,
+“framesRange”: “0”,
+“projectName”: “”,
+“renderConsume”: 6.7,
+“taskArrears”: 0,
+“submitDate”: 1535602289000,
+“startTime”: 1535603885000,
+“completedDate”: 1535604765000,
+“renderDuration”: 5028,
+“userName”: “xiaoguotu_ljian”,
+“producer”: null,
+“taskLevel”: 79,
+“taskUserLevel”: 0,
+“taskLimit”: 200,
+“taskOverTime”: 86400000,
+“userId”: 10001520,
+“outputFileName”: “18281_衣帽间”,
+“munuTaskId”: “2018083000079”,
+“layerParentId”: 18278,
+“cgId”: 2001,
+“taskKeyValueVo”: {</p>
+<blockquote>
+<div><p>“tiles”: null,
+“allCamera”: null,
+“renderableCamera”: null</p>
+</div></blockquote>
+<p>},
+“userAccountConsume”: 0,
+“couponConsume”: 6.7,
+“isOpen”: 0,
+“taskType”: “Render”,
+“renderCamera”: “VRayCam003”,
+“cloneParentId”: 0,
+“cloneOriginalId”: 0,
+“shareMainCapital”: 0,
+“taskRam”: null,
+“respRenderingTaskList”: null,
+“layerName”: null,
+“taskTypeText”: “render_major_picture_task”,
+“isDelete”: 1</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>],
+“layerName”: null,
+“taskTypeText”: null,
+“isDelete”: 1</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1535964116655</p>
+</div></blockquote>
+</div>
+<div class="section" id="id64">
+<h1>}<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h1>
+<p>## 停止任务</p>
+<p><strong>接口路径</strong>： /api/render/handle/stopTask</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_param_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">stop_task</span> <span class="pre">=</span> <span class="pre">api.task.stop_task(task_param_list=[13798105])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id65"><span class="problematic" id="id66">``</span></a><a href="#id67"><span class="problematic" id="id68">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id69">
+<h1>}<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h1>
+<p>## 开始任务</p>
+<p><strong>接口路径</strong>： /api/render/handle/startTask</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_param_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">start_task</span> <span class="pre">=</span> <span class="pre">api.task.start_task(task_param_list=[13798105])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id70"><span class="problematic" id="id71">``</span></a><a href="#id72"><span class="problematic" id="id73">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id74">
+<h1>}<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h1>
+<p>## 放弃任务</p>
+<p><strong>接口路径</strong>： /api/render/handle/abandonTask</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_param_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">abort_task</span> <span class="pre">=</span> <span class="pre">api.task.abort_task(task_param_list=[13798105])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id75"><span class="problematic" id="id76">``</span></a><a href="#id77"><span class="problematic" id="id78">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id79">
+<h1>}<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h1>
+<p>## 删除任务</p>
+<p><strong>接口路径</strong>： /api/render/handle/deleteTask</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_param_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">delete_task</span> <span class="pre">=</span> <span class="pre">api.task.delete_task(task_param_list=[13798105])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id80"><span class="problematic" id="id81">``</span></a><a href="#id82"><span class="problematic" id="id83">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id84">
+<h1>}<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h1>
+<p>## 获取任务单页渲染帧详情</p>
+<p><strong>接口路径</strong>：  /api/render/handle/queryTaskFrames</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务ID号&lt;/td&gt;
+&lt;td&gt;任务ID号，是任务的唯一标识，必填字段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;search_keyword&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;根据一机渲多帧名进行查询&lt;/td&gt;
+&lt;td&gt;是一个字符串，根据一机渲多帧名这个字段名进行查询&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;page_num&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;当前页编号&lt;/td&gt;
+&lt;td&gt;默认1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;page_size&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;每页显示数据大小&lt;/td&gt;
+&lt;td&gt;默认100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：List&lt;FrameInfo&gt;</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;用户ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;framePrice&lt;/td&gt;
+&lt;td&gt;Double&lt;/td&gt;
+&lt;td&gt;渲染价格&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feeType&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;扣费类型&lt;/td&gt;
+&lt;td&gt;0 按量，1 包机，2 包项目&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;platform&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;平台&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameIndex&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧序列名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameBlock&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;当前帧块数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameStatus&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;当前帧状态&lt;/td&gt;
+&lt;td&gt;0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feeAmount&lt;/td&gt;
+&lt;td&gt;Double&lt;/td&gt;
+&lt;td&gt;余额扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;couponFee&lt;/td&gt;
+&lt;td&gt;Double&lt;/td&gt;
+&lt;td&gt;代金券扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;startTime&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;开始时间（毫秒）&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;endTime&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;结束时间（毫秒）&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameExecuteTime&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;渲染帧耗时&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameStatusText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧状态描述&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;arrearsFee&lt;/td&gt;
+&lt;td&gt;Double&lt;/td&gt;
+&lt;td&gt;渲染帧欠费金额&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskId&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;任务ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameType&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;帧类型&lt;/td&gt;
+&lt;td&gt;1/预渲染(只有一帧,多相机情况也只有一帧),2/光子帧,3/合并光子帧,4/优先帧,5/渲染主图帧,6/maya/max优先渲染合成帧,7/maya/max渲染主图合成帧,8/houdini结算帧，9/max通道帧&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;recommitFlag&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;重提次数&lt;/td&gt;
+&lt;td&gt;重提标识默认是0,按次数递增&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskOverTime&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;超时时间&lt;/td&gt;
+&lt;td&gt;帧超时时间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gopName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;houdini结算节点名称&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameRam&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;帧任务渲染内存&lt;/td&gt;
+&lt;td&gt;如果为空说明没有内存要求&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">task_frame</span> <span class="pre">=</span> <span class="pre">api.query.task_frames(task_id=13790691,</span> <span class="pre">page_num=1,</span> <span class="pre">page_size=1)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id85"><span class="problematic" id="id86">``</span></a><a href="#id87"><span class="problematic" id="id88">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“pageCount”: 9,
+“pageNum”: 1,
+“total”: 17,
+“size”: 2,
+“items”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“id”: 1546598,
+“userId”: null,
+“framePrice”: null,
+“feeType”: null,
+“platform”: null,
+“frameIndex”: “0-1”,
+“frameStatus”: 4,
+“feeAmount”: 0.44,
+“startTime”: 1535960273000,
+“endTime”: 1535960762000,
+“frameExecuteTime”: 489,
+“frameStatusText”: “task_frame_status_4”,
+“arrearsFee”: null,
+“munuJobId”: “0”,
+“taskId”: 19088,
+“munuTaskId”: “2018090300040”,
+“frameType”: 5,
+“couponFee”: 0,
+“recommitFlag”: 0,
+“isCopy”: null,
+“frameBlock”: “1”,
+“taskOverTime”: 86400000,
+“gopName”: null,
+“frameRam”: null</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“id”: 1546599,
+“userId”: null,
+“framePrice”: null,
+“feeType”: null,
+“platform”: null,
+“frameIndex”: “0-2”,
+“frameStatus”: 4,
+“feeAmount”: 0.43,
+“startTime”: 1535960856000,
+“endTime”: 1535961338000,
+“frameExecuteTime”: 482,
+“frameStatusText”: “task_frame_status_4”,
+“arrearsFee”: null,
+“munuJobId”: “1”,
+“taskId”: 19088,
+“munuTaskId”: “2018090300040”,
+“frameType”: 5,
+“couponFee”: 0,
+“recommitFlag”: 0,
+“isCopy”: null,
+“frameBlock”: “2”,
+“taskOverTime”: 86400000,
+“gopName”: null,
+“frameRam”: null</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1535966967143</p>
+</div></blockquote>
+</div>
+<div class="section" id="id89">
+<h1>}<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h1>
+<p>## 获取指定任务某几页帧详情</p>
+<p>[^api]: Add in v2.4.0</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;子任务号&lt;/td&gt;
+&lt;td&gt;如作业ID为“2W35736251”，task_id即为 35736251&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;start_page&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;查询起始页， 默认为1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;end_page&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;查询结束页，默认为2000&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;page_size&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;指定每一页显示帧数，默认为最大值100&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">all_frames</span> <span class="pre">=</span> <span class="pre">api.query.get_all_frames(task_id=35736251)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id90"><span class="problematic" id="id91">``</span></a><a href="#id92"><span class="problematic" id="id93">`</span></a>json
+{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“1”: {</dt><dd><p>“id”: 665078505,
+“userId”: null,
+“framePrice”: null,
+“feeType”: null,
+“platform”: null,
+“frameIndex”: “1”,
+“frameStatus”: 1,
+“feeAmount”: 0.0,
+“startTime”: 0,
+“endTime”: 0,
+“frameExecuteTime”: 33,
+“currentRenderTime”: 0,
+“frameStatusText”: “task_frame_status_1”,
+“arrearsFee”: null,
+“munuJobId”: “0”,
+“taskId”: 37439351,
+“munuTaskId”: “2020092801043”,
+“frameType”: 4,
+“couponFee”: 0.037,
+“recommitFlag”: 0,
+“isCopy”: null,
+“frameBlock”: “”,
+“taskOverTime”: 259200,
+“gopName”: null,
+“frameRam”: 64,
+“averageCpu”: 9,
+“averageMemory”: 2240647168,
+“isOverTime”: 0,
+“overOneMonth”: null,
+“renderRam”: null,
+“nodeId”: “10.60.3.224”,
+“openRenderRam”: null</p>
+</dd>
+</dl>
+<p>},
+“2-4[1]”: {</p>
+<blockquote>
+<div><p>“id”: 665078511,
+“userId”: null,
+“framePrice”: null,
+“feeType”: null,
+“platform”: null,
+“frameIndex”: “2-4[1]”,
+“frameStatus”: 1,
+“feeAmount”: null,
+“startTime”: 0,
+“endTime”: 0,
+“frameExecuteTime”: 0,
+“currentRenderTime”: 0,
+“frameStatusText”: “task_frame_status_1”,
+“arrearsFee”: null,
+“munuJobId”: “0”,
+“taskId”: 37439351,
+“munuTaskId”: “2020092801165”,
+“frameType”: 5,
+“couponFee”: null,
+“recommitFlag”: 0,
+“isCopy”: null,
+“frameBlock”: “”,
+“taskOverTime”: 259200,
+“gopName”: null,
+“frameRam”: 64,
+“averageCpu”: 0,
+“averageMemory”: 0,
+“isOverTime”: 0,
+“overOneMonth”: null,
+“renderRam”: null,
+“nodeId”: “”,
+“openRenderRam”: null</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id94">
+<h1>}<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h1>
+<p>## 获取任务总渲染帧概况</p>
+<p><strong>接口路径</strong>： /api/render/handle/queryAllFrameStats</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;executingFramesTotal&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染中帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;doneFramesTotal&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;完成帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failedFramesTotal&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;失败帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;waitingFramesTotal&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;等待帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abandonFramesTotal&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;放弃帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;totalFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染总帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">all_frame_status</span> <span class="pre">=</span> <span class="pre">api.query.all_frame_status()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id95"><span class="problematic" id="id96">``</span></a><a href="#id97"><span class="problematic" id="id98">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“executingFramesTotal”: 1,
+“doneFramesTotal”: 308,
+“failedFramesTotal”: 2,
+“waitingFramesTotal”: 153,
+“abandonFramesTotal”: 113,
+“totalFrames”: 577</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1535968038725</p>
+</div></blockquote>
+</div>
+<div class="section" id="id99">
+<h1>}<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h1>
+<p>## 重提失败帧</p>
+<p><strong>接口路径</strong>：  /api/render/handle/recommitTasks</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_param_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;List&lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;重提的帧任务状态集合，不填表示重提失败帧&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">restart_failed_frames</span> <span class="pre">=</span> <span class="pre">api.query.restart_failed_frames(task_param_list=[13788981])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id100"><span class="problematic" id="id101">``</span></a><a href="#id102"><span class="problematic" id="id103">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id104">
+<h1>}<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h1>
+<p>## 根据帧ID重提任务指定帧</p>
+<p><strong>接口路径</strong>：  /api/render/handle/recommitTaskFrames</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;任务ID&lt;/td&gt;
+&lt;td&gt;task_id和ids_list任选其一必填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ids_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;帧ID集合&lt;/td&gt;
+&lt;td&gt;task_id和ids_list任选其一必填, select_all为0时生效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;select_all&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;是否全部重提&lt;/td&gt;
+&lt;td&gt;1全部重提，0指定帧重提&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;List&lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;帧状态&lt;/td&gt;
+&lt;td&gt;只有传taskId才生效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">restart_frame</span> <span class="pre">=</span> <span class="pre">api.query.restart_frame(task_id=14362099,</span> <span class="pre">select_all=1)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id105"><span class="problematic" id="id106">``</span></a><a href="#id107"><span class="problematic" id="id108">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id109">
+<h1>}<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h1>
+<p>## 根据帧序号重提任务指定的帧</p>
+<p>[^api]: Add in v2.4.0</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;子任务ID&lt;/td&gt;
+&lt;td&gt;如作业ID为“2W35736251”，task_id即为 35736251&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;restartframes&lt;/td&gt;
+&lt;td&gt;List[str]&lt;/td&gt;
+&lt;td&gt;需要重提的帧序号列表&lt;/td&gt;
+&lt;td&gt;例如：[“6”, “7-9[1]”]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">restart_frame</span> <span class="pre">=</span> <span class="pre">api.query.get_custome_frames(task_id=37439351,</span> <span class="pre">restartframes=[&quot;6&quot;,</span> <span class="pre">&quot;7-9[1]&quot;])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回参数</strong>：None</p>
+<p>## 获取任务详情</p>
+<p><strong>接口路径</strong>： /api/render/handle/queryTaskInfo</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_ids_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;任务ID集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：List&lt;TaskInfo&gt;</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sceneName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;场景名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskAlias&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务别名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskStatus&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;任务状态&lt;/td&gt;
+&lt;td&gt;0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;statusText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务状态文本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;preTaskStatus&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;预处理任务状态&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;preStatusText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;预处理状态文本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;totalFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;总帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;abortFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;放弃帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;executingFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;正在运行的帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;doneFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;完成的帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failedFrames&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;失败帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;framesRange&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧范围&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;projectName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;项目名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderConsume&lt;/td&gt;
+&lt;td&gt;BigDecimal&lt;/td&gt;
+&lt;td&gt;任务渲染消费的总费用&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskArrears&lt;/td&gt;
+&lt;td&gt;BigDecimal&lt;/td&gt;
+&lt;td&gt;任务欠费金额&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;submitDate&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;提交时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;startTime&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;开始时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;completedDate&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;完成时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderDuration&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;任务渲染总时长&lt;/td&gt;
+&lt;td&gt;单位：秒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;用户名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;producer&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;制作人&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskLevel&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;任务优先级&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskUserLevel&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;用户层面的优先级&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskLimit&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务机器限制&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskOverTime&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;任务超时提醒&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outputFileName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;输出文件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;munuTaskId&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;调度器id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;layerParentId&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;针对maya任务，层父id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务类型&lt;/td&gt;
+&lt;td&gt;2001/maya，2000/max&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskKeyValueVo&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;任务关键字集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userAccountConsume&lt;/td&gt;
+&lt;td&gt;Bigdecimal&lt;/td&gt;
+&lt;td&gt;用户账户扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;couponConsume&lt;/td&gt;
+&lt;td&gt;Bigdecimal&lt;/td&gt;
+&lt;td&gt;优惠券扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isOpen&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;前端的展开按钮是否展开&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskType&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务类型&lt;/td&gt;
+&lt;td&gt;/预处理,/光子渲染,/渲染主图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderCamera&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染相机&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cloneParentId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;克隆任务挂在那个任务下的id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cloneOriginalId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;从哪个任务克隆的&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;shareMainCapital&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;该任务是否共享主账号资产&lt;/td&gt;
+&lt;td&gt;(0 不共享 1共享)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskRam&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;任务渲染内存&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;respRenderingTaskList&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;List&amp;lt;TaskInfo&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;展开的任务的子任务&lt;/td&gt;
+&lt;td&gt;跟此对象一样&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;layerName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;层名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taskTypeText&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务类型&lt;/td&gt;
+&lt;td&gt;光子/主图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isDelete&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;td&gt;是否删除&lt;/td&gt;
+&lt;td&gt;0：已删除，1：未删除&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">task_info</span> <span class="pre">=</span> <span class="pre">api.query.task_info(task_ids_list=[14400249])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong></p>
+<p><a href="#id110"><span class="problematic" id="id111">``</span></a><a href="#id112"><span class="problematic" id="id113">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“pageCount”: 1,
+“pageNum”: 1,
+“total”: 1,
+“size”: 100,
+“items”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“sceneName”: “test_no_randerman_175.hip”,
+“id”: 14400249,
+“taskAlias”: “2W14400249”,
+“taskStatus”: 25,
+“statusText”: “render_task_status_25”,
+“preTaskStatus”: null,
+“preStatusText”: null,
+“totalFrames”: 1,
+“abortFrames”: 0,
+“executingFrames”: 0,
+“doneFrames”: 1,
+“failedFrames”: 0,
+“framesRange”: “/out/geometry110-200[1]”,
+“projectName”: “analysis_multi_project_empty_placeholder”,
+“renderConsume”: 0.0,
+“taskArrears”: 0.0,
+“submitDate”: 1577765849000,
+“startTime”: 1577765851000,
+“completedDate”: 1577766104000,
+“renderDuration”: 13,
+“userName”: “ding625yutao”,
+“producer”: “丁玉涛”,
+“taskLevel”: 81,
+“taskUserLevel”: 0,
+“taskLimit”: 1,
+“taskOverTime”: 43200,
+“overTimeStop”: 86400,
+“userId”: 100150764,
+“outputFileName”: “14400249_test_no_randerman_175”,
+“munuTaskId”: “2019123100841”,
+“munuTaskIds”: “2019123100841”,
+“layerParentId”: 0,
+“cgId”: 2004,
+“userAccountConsume”: 0.0,
+“couponConsume”: 0.039,
+“qyCouponConsume”: null,
+“isOpen”: 0,
+“taskType”: “GopRender”,
+“renderCamera”: “”,
+“cloneParentId”: 0,
+“cloneOriginalId”: 0,
+“shareMainCapital”: 0,
+“taskRam”: 64,
+“respRenderingTaskList”: null,
+“layerName”: “”,
+“taskTypeText”: null,
+“locationOutput”: “C:/RenderFarm/Download”,
+“isDelete”: 1,
+“channel”: 1,
+“remark”: “”,
+“labels”: “{}”,
+“isOverTime”: 0,
+“taskKeyValueVo”: {</p>
+<blockquote>
+<div><p>“tiles”: null,
+“allCamera”: null,
+“renderableCamera”: null</p>
+</div></blockquote>
+<p>},
+“waitingCount”: null,
+“stopType”: 0</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1578046630345,
+“requestId”: “py6RCN-VGFzay1TZXJ2aWNlMDc-1578046630330”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id114">
+<h1>}<a class="headerlink" href="#id114" title="Permalink to this headline">¶</a></h1>
+<p>## 添加自定义标签</p>
+<p><strong>接口路径</strong>： /api/render/project/add</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;new_name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;标签名&lt;/td&gt;
+&lt;td&gt;名称唯一性&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;标签状态&lt;/td&gt;
+&lt;td&gt;0:开启，1：关闭，默认为1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">task_info</span> <span class="pre">=</span> <span class="pre">api.tag.add_label(new_name=&quot;test_tag4&quot;,</span> <span class="pre">status=0)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id115"><span class="problematic" id="id116">``</span></a><a href="#id117"><span class="problematic" id="id118">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id119">
+<h1>}<a class="headerlink" href="#id119" title="Permalink to this headline">¶</a></h1>
+<p>## 删除自定义标签</p>
+<p><a href="#id120"><span class="problematic" id="id121">**</span></a>接口路径: ** /api/render/project/delete</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;del_name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;label名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">delete_label_name</span> <span class="pre">=</span> <span class="pre">api.tag.delete_label(del_name=&quot;test_tag2&quot;)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id122"><span class="problematic" id="id123">``</span></a><a href="#id124"><span class="problematic" id="id125">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id126">
+<h1>}<a class="headerlink" href="#id126" title="Permalink to this headline">¶</a></h1>
+<p>## 获取项目名</p>
+<p><strong>接口路径:</strong>   /api/render/project/getList</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;projectNameList&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Object&gt;&lt;/td&gt;
+&lt;td&gt;项目list&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Object.projectName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;项目名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Object.projectId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;项目id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：缺省</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">label_list</span> <span class="pre">=</span> <span class="pre">api.tag.get_label_list()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id127"><span class="problematic" id="id128">``</span></a><a href="#id129"><span class="problematic" id="id130">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><dl>
+<dt>“projectNameList”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“projectId”: 3671,
+“projectName”: “myLabel”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1546998557770</p>
+</div></blockquote>
+</div>
+<div class="section" id="id131">
+<h1>}<a class="headerlink" href="#id131" title="Permalink to this headline">¶</a></h1>
+<p>## 获取项目名(根据flag控制)</p>
+<p><strong>接口路径:</strong>   /api/render/project/list</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;flag&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;0:查询本账号下的项目;&lt;br&gt;1:查询本账号下以及主账号下的项目;&lt;br&gt;2:查询相关联所有项目(同一主账号下的所有项目);&lt;/td&gt;
+&lt;td&gt;默认为 0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;projectNameList&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Object&gt;&lt;/td&gt;
+&lt;td&gt;项目list&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Object.projectName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;项目名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Object.projectId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;项目id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：缺省</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">new_projects</span> <span class="pre">=</span> <span class="pre">api.tag.get_list(flag=0)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id132"><span class="problematic" id="id133">``</span></a>`
+{</p>
+<blockquote>
+<div><p>“version”: “2.0.0”,
+“releaseVersion”: “2.5.8/20201215_16_201215(1607)”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><dl>
+<dt>“projectNameList”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“projectId”: 3671,
+“projectName”: “myLabel”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1546998557770</p>
+</div></blockquote>
+</div>
+<div class="section" id="id134">
+<h1>}<a class="headerlink" href="#id134" title="Permalink to this headline">¶</a></h1>
+<p>## 添加任务标签</p>
+<p><strong>接口路径:</strong>  /api/render/handle/addTaskLabel</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tag&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务标签&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task_ids&lt;/td&gt;
+&lt;td&gt;List&lt;integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务ID列表集&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：缺省</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">tag</span> <span class="pre">=</span> <span class="pre">api.tag.add_task_tag(tag=&quot;test_tag&quot;,</span> <span class="pre">task_ids=[29445045,</span> <span class="pre">29435295])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id135"><span class="problematic" id="id136">``</span></a><a href="#id137"><span class="problematic" id="id138">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: True,
+“message”: “success”,
+“code”: 200,
+“data”: None,
+“serverTime”: 1594275174044L</p>
+</div></blockquote>
+</div>
+<div class="section" id="id139">
+<h1>}<a class="headerlink" href="#id139" title="Permalink to this headline">¶</a></h1>
+<p>## 删除任务标签</p>
+<p><strong>接口路径:</strong>  /api/render/handle/deleteTaskLabel</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tag_ids&lt;/td&gt;
+&lt;td&gt;List&lt;integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;删除任务标签ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：缺省</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">del_tag</span> <span class="pre">=</span> <span class="pre">api.tag.delete_task_tag(tag_ids=[21205])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id140"><span class="problematic" id="id141">``</span></a><a href="#id142"><span class="problematic" id="id143">`</span></a>python
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: True,
+“message”: “success”,
+“code”: 200,
+“data”: None,
+“serverTime”: 1594276011046L</p>
+</div></blockquote>
+</div>
+<div class="section" id="id144">
+<h1>}<a class="headerlink" href="#id144" title="Permalink to this headline">¶</a></h1>
+<p>## 获取支持的渲染软件</p>
+<p><strong>接口路径</strong>： /api/render/plugin/querySoftwareList</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;isAutoCommit&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否自动提交&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderInfoList&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Software&gt;&lt;/td&gt;
+&lt;td&gt;渲染器版本信息集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;defaultCgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;默认渲染器ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>Software</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染软件ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染软件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgType&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染文件后缀支持&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iconPath&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染软件图标地址&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isNeedProjectPath&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isNeedAnalyse&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否需要分析&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isSupportLinux&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否支持linux&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">support_software</span> <span class="pre">=</span> <span class="pre">api.query.supported_software()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id145"><span class="problematic" id="id146">``</span></a><a href="#id147"><span class="problematic" id="id148">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“isAutoCommit”: 2,
+“renderInfoList”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“cgId”: 2000,
+“cgName”: “Maya”,
+“cgType”: “ma;mb”,
+“iconPath”: “/img/softimage/maya.png”,
+“isNeedProjectPath”: 1,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 1</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2001,
+“cgName”: “3ds Max”,
+“cgType”: “max”,
+“iconPath”: “/img/softimage/max.png”,
+“isNeedProjectPath”: 1,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 0</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2004,
+“cgName”: “Houdini”,
+“cgType”: “hip;hipnc;hiplc”,
+“iconPath”: “/img/softimage/houdini.png”,
+“isNeedProjectPath”: 2,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 1</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2005,
+“cgName”: “Cinema 4D”,
+“cgType”: “c4d”,
+“iconPath”: “/img/softimage/cinema-4D.png”,
+“isNeedProjectPath”: 1,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 0</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2007,
+“cgName”: “Blender”,
+“cgType”: “blend”,
+“iconPath”: “/img/softimage/blender.png”,
+“isNeedProjectPath”: 1,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 0</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2008,
+“cgName”: “VR Standalone”,
+“cgType”: “vrscene”,
+“iconPath”: “/img/softimage/VR-standalone.png”,
+“isNeedProjectPath”: 3,
+“isNeedAnalyse”: 2,
+“isSupportLinux”: 0</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2012,
+“cgName”: “KeyShot”,
+“cgType”: “bip”,
+“iconPath”: “/img/softimage/keyshot.png”,
+“isNeedProjectPath”: 2,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 0</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2013,
+“cgName”: “Clarisse”,
+“cgType”: “project;render”,
+“iconPath”: “/img/softimage/clarisse.png”,
+“isNeedProjectPath”: 3,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 1</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>],
+“defaultCgId”: 2001</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1578048938715,
+“requestId”: “W12mkM-VGFzay1TZXJ2aWNlMDc-1578048938685”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id149">
+<h1>}<a class="headerlink" href="#id149" title="Permalink to this headline">¶</a></h1>
+<p>## 获取支持的渲染软件插件</p>
+<p><strong>接口路径</strong>：  /api/render/plugin/querySoftwareDetail</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件名&lt;/td&gt;
+&lt;td&gt;参考[DCC软件的ID映射]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cgPlugin&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Plugin&gt;&lt;/td&gt;
+&lt;td&gt;支持插件集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgVersion&lt;/td&gt;
+&lt;td&gt;List&amp;lt;&lt;strong&gt;SoftVersion&lt;/strong&gt;&gt;&lt;/td&gt;
+&lt;td&gt;支持软件版本集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>Plugin</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cvId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染软件版本ID(&lt;strong&gt;SoftVersion.id&lt;/strong&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt; 插件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginVersions&lt;/td&gt;
+&lt;td&gt;List&amp;lt;&lt;strong&gt;PluginVersion&lt;/strong&gt;&gt;&lt;/td&gt;
+&lt;td&gt;插件版本集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>PluginVersion</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;插件版本ID &lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt; 插件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginVersion&lt;/td&gt;
+&lt;td&gt; String&lt;/td&gt;
+&lt;td&gt; 插件版本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>SoftVersion</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染软件版本ID &lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt; 渲染软件ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染软件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgVersion&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染软件版本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">support_software_plugin</span> <span class="pre">=</span> <span class="pre">api.query.supported_plugin(name='maya')</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id150"><span class="problematic" id="id151">``</span></a><a href="#id152"><span class="problematic" id="id153">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“isAutoCommit”: 2,
+“renderInfoList”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“cgId”: 2000,
+“cgName”: “Maya”,
+“cgType”: “ma;mb”,
+“iconPath”: “/img/softimage/maya.png”,
+“isNeedProjectPath”: 3,
+“isNeedAnalyse”: 1,
+“isSupportLinux”: 1</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“defaultCgId”: 2001</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1535973558961</p>
+</div></blockquote>
+</div>
+<div class="section" id="id154">
+<h1>}<a class="headerlink" href="#id154" title="Permalink to this headline">¶</a></h1>
+<p>## 新增用户渲染环境配置</p>
+<p><strong>接口路径</strong>：  /api/render/plugin/addUserPluginConfig</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;render_env&lt;/td&gt;
+&lt;td&gt;Dict&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染环境配置&lt;/td&gt;
+&lt;td&gt;详细参数参考以下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>render_env</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件ID&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;SoftVersion.cgId&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件名称&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;SoftVersion.cgName&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgVersion&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件版本&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;SoftVersion.cgVersion&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderLayerType&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;maya渲染类型&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;editName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;用户设置的渲染环境自定义名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderSystem&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染系统&lt;/td&gt;
+&lt;td&gt;0 linux, 1 windows&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginIds&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染插件集合&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;PluginVersion.pluginId&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;projectPath&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;工程路径&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;editName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;用户设置的渲染环境自定义名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><a href="#id155"><span class="problematic" id="id156">``</span></a><a href="#id157"><span class="problematic" id="id158">`</span></a>python
+env = {</p>
+<blockquote>
+<div><p>“cgId”: 2000,
+“cgName”: “Maya”,
+“cgVersion”: “2020”,
+“renderLayerType”: 0,
+“editName”: “testRenderEnv”,
+“renderSystem”: “0”,
+“pluginIds”: [1166]</p>
+</div></blockquote>
+<p>}
+add_user_env = api.env.add_render_env(render_env=env)
+<a href="#id159"><span class="problematic" id="id160">``</span></a><a href="#id161"><span class="problematic" id="id162">`</span></a></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id163"><span class="problematic" id="id164">``</span></a><a href="#id165"><span class="problematic" id="id166">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“editName”: “testRenderEnv”</p>
+</div></blockquote>
+<p>},</p>
+</div></blockquote>
+<p>“serverTime”: 1535957894211</p>
+</div></blockquote>
+</div>
+<div class="section" id="id167">
+<h1>}<a class="headerlink" href="#id167" title="Permalink to this headline">¶</a></h1>
+<p>## 更新用户渲染环境配置</p>
+<p><strong>接口路径</strong>： /api/render/plugin/editUserPluginConfig</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;render_env&lt;/td&gt;
+&lt;td&gt;Dict&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染环境配置&lt;/td&gt;
+&lt;td&gt;详细参数参考以下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>render_env</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件ID&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;SoftVersion.cgId&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件名称&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;SoftVersion.cgName&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgVersion&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件版本&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;SoftVersion.cgVersion&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderLayerType&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;maya渲染类型&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;editName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染环境自定义名&lt;/td&gt;
+&lt;td&gt;修改是必须传递已经存在的配置名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderSystem&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染系统&lt;/td&gt;
+&lt;td&gt;0 linux, 1 windows&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pluginIds&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染插件集合&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;PluginVersion.pluginId&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;projectPath&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;工程路径&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><a href="#id168"><span class="problematic" id="id169">``</span></a><a href="#id170"><span class="problematic" id="id171">`</span></a>python
+update_env = {</p>
+<blockquote>
+<div><p>“cgId”: 2000,
+“cgName”: “Maya”,
+“cgVersion”: “2020”,
+“renderLayerType”: 0,
+“editName”: “testRenderEnv”,
+“renderSystem”: “0”,
+“pluginIds”: []</p>
+</div></blockquote>
+<p>}
+update_user_env = api.env.update_render_env(render_env=update_env)
+<a href="#id172"><span class="problematic" id="id173">``</span></a><a href="#id174"><span class="problematic" id="id175">`</span></a></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id176"><span class="problematic" id="id177">``</span></a><a href="#id178"><span class="problematic" id="id179">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1536027063801</p>
+</div></blockquote>
+</div>
+<div class="section" id="id180">
+<h1>}<a class="headerlink" href="#id180" title="Permalink to this headline">¶</a></h1>
+<p>## 删除用户渲染环境配置</p>
+<p><strong>接口路径</strong>： /api/render/plugin/deleteUserPluginConfig</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;edit_name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染环境自定义名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">delete_user_env</span> <span class="pre">=</span> <span class="pre">api.env.delete_render_env(edit_name=&quot;testRenderEnv&quot;)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id181"><span class="problematic" id="id182">``</span></a><a href="#id183"><span class="problematic" id="id184">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1536027063801</p>
+</div></blockquote>
+</div>
+<div class="section" id="id185">
+<h1>}<a class="headerlink" href="#id185" title="Permalink to this headline">¶</a></h1>
+<p>## 设置默认渲染环境配置</p>
+<p><strong>接口路径</strong>： /api/render/plugin/setDefaultUserPluginConfig</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;edit_name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染环境自定义名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">set_default_user_env</span> <span class="pre">=</span> <span class="pre">api.env.set_default_render_env(edit_name=&quot;testRenderEnv&quot;)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id186"><span class="problematic" id="id187">``</span></a><a href="#id188"><span class="problematic" id="id189">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1536027063801</p>
+</div></blockquote>
+</div>
+<div class="section" id="id190">
+<h1>}<a class="headerlink" href="#id190" title="Permalink to this headline">¶</a></h1>
+<p>##  获取用户插件配置</p>
+<p><strong>接口路径</strong>： /api/render/plugin/getUserPluginConfig</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;渲染软件名&lt;/td&gt;
+&lt;td&gt;cg_names和name必填其一&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cg_names&lt;/td&gt;
+&lt;td&gt;List&lt;string&gt;&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;渲染软件名列表&lt;/td&gt;
+&lt;td&gt;cg_names和name必填其一&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;os_name&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;选择操作系统&lt;/td&gt;
+&lt;td&gt;0:Linux，1:windows,默认1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：List&lt;RenderEnv&gt;</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cgId&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染软件ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;editName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染环境自定义名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染软件名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cgVersion&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染软件版本&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;osName&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;渲染环境系统&lt;/td&gt;
+&lt;td&gt;0Linux，1windows&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderLayerType&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isDefault&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;是否是默认配置&lt;/td&gt;
+&lt;td&gt;0不是默认配置 1是默认配置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;respUserPluginInfoVos&lt;/td&gt;
+&lt;td&gt;List&amp;lt;&lt;strong&gt;PluginVersion&lt;/strong&gt;&gt;&lt;/td&gt;
+&lt;td&gt;渲染环境插件集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">user_render_config</span> <span class="pre">=</span> <span class="pre">api.env.get_render_env(name='houdini')</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id191"><span class="problematic" id="id192">``</span></a><a href="#id193"><span class="problematic" id="id194">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“cgId”: 2004,
+“editName”: “175”,
+“cgName”: “Houdini”,
+“cgVersion”: “17.5”,
+“osName”: 1,
+“renderLayerType”: 0,
+“isDefault”: 0,
+“projectPath”: “”,
+“isMainUserId”: 1,
+“respUserPluginInfoVos”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“pluginId”: 5304,
+“pluginName”: “renderman”,
+“pluginVersion”: “renderman 22.6”</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2004,
+“editName”: “pianwan”,
+“cgName”: “Houdini”,
+“cgVersion”: “17.5”,
+“osName”: 1,
+“renderLayerType”: 0,
+“isDefault”: 0,
+“projectPath”: “”,
+“isMainUserId”: 1,
+“respUserPluginInfoVos”: []</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2004,
+“editName”: “houdini_test”,
+“cgName”: “Houdini”,
+“cgVersion”: “17.5”,
+“osName”: 0,
+“renderLayerType”: 0,
+“isDefault”: 0,
+“projectPath”: “”,
+“isMainUserId”: 1,
+“respUserPluginInfoVos”: []</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cgId”: 2004,
+“editName”: “16.5”,
+“cgName”: “Houdini”,
+“cgVersion”: “16.5”,
+“osName”: 1,
+“renderLayerType”: 0,
+“isDefault”: 0,
+“projectPath”: “”,
+“isMainUserId”: 1,
+“respUserPluginInfoVos”: []</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>],
+“serverTime”: 1578282315348,
+“requestId”: “23IhQf-VGFzay1TZXJ2aWNlMDQ-1578282315343”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id195">
+<h1>}<a class="headerlink" href="#id195" title="Permalink to this headline">¶</a></h1>
+<p>## 任务进度图（仅限Max任务）</p>
+<p><strong>接口路径</strong>：  /api/render/handle/loadTaskProcessImg</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frame_type&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;渲染类型&lt;/td&gt;
+&lt;td&gt;帧类型 2:光子帧; 5:主图; 不传 标识自动识别，默认加载正在渲染中的图列表，如正在渲染主图，则加载图列表为主图，正在渲染光子，加载图为光子&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt; width&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;图片分辨率高度 &lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;height &lt;/td&gt;
+&lt;td&gt;Integer &lt;/td&gt;
+&lt;td&gt;图片分辨率宽度&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;block&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;分块数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isRenderPhoton&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;td&gt;是否渲染光子&lt;/td&gt;
+&lt;td&gt;true表示任务渲染了光子&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;currentTaskType&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;当前任务的渲染状态&lt;/td&gt;
+&lt;td&gt;Render: 渲染主图 RenderPhoton: 渲染光子&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sceneName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;渲染场景名+相机名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;startTime&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务开始时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;endTime&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;任务结束时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grabInfo&lt;/td&gt;
+&lt;td&gt;List&amp;lt;List&amp;lt;Object&gt;&gt;&lt;/td&gt;
+&lt;td&gt;分块帧详情&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>分块帧详情</strong>：grabInfo</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;startTime&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;开始时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;endTime&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;结束时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameStatus&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧状态&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isMaxPrice&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;是否封顶价&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feeAmount&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;余额扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;couponFee&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;优惠券扣费&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameIndex&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameBlock&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧块数&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;framePercent&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧渲染百分比&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameUsed&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧渲染已消耗时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frameEst&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧渲染预计剩余时间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderInfo&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧渲染进度信息&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grabUrl&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;帧渲染进度图连接地址&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">task_processing_img</span> <span class="pre">=</span> <span class="pre">api.query.get_task_processing_img(task_id=14470635,</span> <span class="pre">frame_type=2)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id196"><span class="problematic" id="id197">``</span></a><a href="#id198"><span class="problematic" id="id199">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“isRenderPhoton”: true,
+“completedTime”: “2020-01-03 10:02:55”,
+“currentTaskType”: “RenderPhoton”,
+“sceneName”: “翻新就沙发.max-Camera001”,
+“grabInfo”: [</p>
+<blockquote>
+<div><dl>
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“couponFee”: “1.04”,
+“frameIndex”: “0”,
+“renderInfo”: “”,
+“frameBlock”: null,
+“frameEst”: “0”,
+“grabUrl”: “/mnt/output/d2_1/small_pic/100033000/100033433/14470635/RenderPhoton_2020010200306_0_rayvision0000[-]tga.jpg”,
+“feeAmount”: “0.00”,
+“frameUsed”: “174”,
+“frameStatus”: “4”,
+“framePercent”: “100”,
+“isMaxPrice”: “0”,
+“startTime”: “2020-01-03 09:57:18”,
+“endTime”: “2020-01-03 10:00:12”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+<p>],
+“width”: 700,
+“block”: 1,
+“startTime”: “2020-01-02 09:35:51”,
+“height”: 518</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1578299393862,
+“requestId”: “qELLr0-VGFzay1TZXJ2aWNlMDc-1578299393837”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id200">
+<h1>}<a class="headerlink" href="#id200" title="Permalink to this headline">¶</a></h1>
+<p>## 设置任务超时停止时间</p>
+<p><strong>接口地址</strong>： /api/render/handle/setTaskOverTimeStop</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;是否必须（Y/N）&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;overtime&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;超时停止时间，单位秒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求参数示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">set_task_overtime</span> <span class="pre">=</span> <span class="pre">api.task.set_task_overtime_top(task_id_list=[14684405],</span> <span class="pre">overtime=60)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id201"><span class="problematic" id="id202">``</span></a><a href="#id203"><span class="problematic" id="id204">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: “SUCCESS”,
+“serverTime”: 1578308287155,
+“requestId”: “8VNTma-VGFzay1TZXJ2aWNlMDc-1578308286842”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id205">
+<h1>}<a class="headerlink" href="#id205" title="Permalink to this headline">¶</a></h1>
+<p>## 加载缩略图</p>
+<p><strong>接口地址</strong>： /api/render/handle/loadingFrameThumbnail</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;frame_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;帧id号&lt;/td&gt;
+&lt;td&gt;可通过&amp;lt;获取任务渲染帧详情接口&amp;gt;获取&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frame_status&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;帧状态&lt;/td&gt;
+&lt;td&gt;默认为4（完成），只有完成有缩略图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">frame_thumbnall</span> <span class="pre">=</span> <span class="pre">api.query.get_frame_thumbnall(frame_id=230772361)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回结果</strong>：</p>
+<p><a href="#id206"><span class="problematic" id="id207">``</span></a><a href="#id208"><span class="problematic" id="id209">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: [</p>
+<blockquote>
+<div><p>“/mnt/output/d2_0/small_pic/100150500/100150764/13652193/2019121801523_10.60.200.102_d_inputdata5_100150500_100150764_D_houdini_CG file_Cam003_render_box_frgbg_render_box_frgbg_render[-]0001[-]exr.jpg”</p>
+</div></blockquote>
+<p>],
+“serverTime”: 1578310367990,
+“requestId”: “QGyi8q-VGFzay1TZXJ2aWNlMDc-1578310367981”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id210">
+<h1>}<a class="headerlink" href="#id210" title="Permalink to this headline">¶</a></h1>
+<p>## 获取镭速传输信息</p>
+<p><strong>接口地址</strong>： /api/render/transfer/getServerInfo</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">transfer_server_msg</span> <span class="pre">=</span> <span class="pre">api.query.get_transfer_server_msg()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回参数</strong>：</p>
+<p><a href="#id211"><span class="problematic" id="id212">``</span></a><a href="#id213"><span class="problematic" id="id214">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“clientVersion”: “3.2.8.2”,
+“protocolVersion”: “3.2.8.2”,
+“raysyncTransfer”: {</p>
+<blockquote>
+<div><p>“serverIp”: “127.0.0.1”,
+“serverPort”: 2121,
+“proxyIp”: “42.123.110.38”,
+“proxyPort”: 32001,
+“sslPort”: 2443,
+“port”: 2442</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1565678980735,
+“requestId”: “YenJW9-1565678980088”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id215">
+<h1>}<a class="headerlink" href="#id215" title="Permalink to this headline">¶</a></h1>
+<p>## 获取镭速验证key</p>
+<p><strong>接口地址</strong>：/api/render/user/getRaySyncUserKey</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">raysync_user_key</span> <span class="pre">=</span> <span class="pre">api.query.get_raysync_user_key()</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回参数</strong>：</p>
+<p><a href="#id216"><span class="problematic" id="id217">``</span></a><a href="#id218"><span class="problematic" id="id219">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“channel”: 2,
+“platform”: 2,
+“signature”: “rayvision2017”,
+“version”: “1.0.0”,
+“userKey”: “5394a44e890557d8d937b92086482dab”,
+“id”: 1868599,
+“userName”: “wsh_12345”,
+“zone”: 1,
+“phone”: “183160224171”,
+“email”: “<a class="reference external" href="mailto:testwangshunhui&#37;&#52;&#48;rayvision">testwangshunhui<span>&#64;</span>rayvision</a>”,
+“loginTime”: 1565682011157,
+“infoStatus”: 0,
+“accountType”: 2,
+“shareMainCapital”: 0,
+“subDeleteTask”: 0,
+“subDeleteCapital”: 1,
+“useMainBalance”: 0,
+“downloadDisable”: 0,
+“raySyncUserKey”: “40d59041f72809ffaa16146a36780595666c681e”</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1565682019430,
+“requestId”: “4lkn0I-1565682010026”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id220">
+<h1>}<a class="headerlink" href="#id220" title="Permalink to this headline">¶</a></h1>
+<p>## 全速渲染</p>
+<p><strong>接口地址</strong>： /api/render/handle/fullSpeedRendering</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id_list&lt;/td&gt;
+&lt;td&gt;List&amp;lt;Integer&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;作业id&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">full_speed_render</span> <span class="pre">=</span> <span class="pre">api.task.full_speed(task_id_list=[13652193])</span>
+<span class="pre">`</span></code></p>
+<p>返回参数示例：</p>
+<p><a href="#id221"><span class="problematic" id="id222">``</span></a><a href="#id223"><span class="problematic" id="id224">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: “成功”,
+“serverTime”: 1578311448826,
+“requestId”: “X81MN5-VGFzay1TZXJ2aWNlMDQ-1578311448620”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id225">
+<h1>}<a class="headerlink" href="#id225" title="Permalink to this headline">¶</a></h1>
+<p>##  获取传输配置</p>
+<p><strong>接口地址</strong>：  /api/render/transfer/getConfig</p>
+<p><strong>请求参数</strong>：缺省</p>
+<p><strong>返回参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;inputBid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Input传输bid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outputBid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;output传输bid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configBid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;config bid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parentInputBid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;对应主账号Input传输bid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;resqEngines&lt;/td&gt;
+&lt;td&gt;Object[]&lt;/td&gt;
+&lt;td&gt;引擎配置&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;engineName&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;引擎名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;checkServer&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;校验服务器&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;checkPort&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;校验端口&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;checkEnable&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;检查是否可用&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;checkExcludType&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;检测例外 文件类型 ,隔开&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;automaticCheck&lt;/td&gt;
+&lt;td&gt;number&lt;/td&gt;
+&lt;td&gt;自动检测并切换线路 1是 0:否&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isDefault&lt;/td&gt;
+&lt;td&gt;number&lt;/td&gt;
+&lt;td&gt;默认 1是 0否&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;resqEngineAccounts&lt;/td&gt;
+&lt;td&gt;Object[]&lt;/td&gt;
+&lt;td&gt;aspera账户&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;aspera对应input bid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;aspera用户名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;aspera密码&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;respTaskEngineLines&lt;/td&gt;
+&lt;td&gt;Object[]&lt;/td&gt;
+&lt;td&gt;引擎列表&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;线路名&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;server&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;线路IP&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;端口&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isDefault&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;是否默认 1默认&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lineId&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;线路表ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;type&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;线路类型 1.专线 0.通用线路&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;subUserOutputBids&lt;/td&gt;
+&lt;td&gt;Object[]&lt;/td&gt;
+&lt;td&gt;子账号outputbid集合&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;子账号ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outputBid&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;outputBid&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">transfer_config</span> <span class="pre">=</span> <span class="pre">api.transmit.get_transfer_config()</span>
+<span class="pre">`</span></code></p>
+<p>返回参数示例：</p>
+<p><a href="#id226"><span class="problematic" id="id227">``</span></a><a href="#id228"><span class="problematic" id="id229">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “1.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: {</p>
+<blockquote>
+<div><p>“inputBid”: “10202”,
+“outputBid”: “20202”,
+“configBid”: “30201”,
+“parentInputBid”: null,
+“resqEngines”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><dl>
+<dt>“resqEngineAccounts”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“bid”: “20202”,
+“name”: “20202”,
+“password”: “xB9CWAML1qd+k1X9prYHheQUAtZ0hcpmJHxe7mfVw9Q=”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>],
+“respTaskEngineLines”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“name”: “Aspera_main”,
+“server”: “10.60.197.79”,
+“port”: “10221”,
+“isDefault”: 1,
+“lineId”: 123,
+“type”:1</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“engineName”: “trtt”,
+“automaticCheck”: 1,
+“checkServer”: “677”,
+“checkPort”: “8888”,
+“checkEnable”: “1”,
+“checkExcludType”: “88”,
+“isDefault”: 0</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“resqEngineAccounts”: null,
+“respTaskEngineLines”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“name”: “raysync_main”,
+“server”: “10.60.197.79”,
+“port”: “10200”,
+“isDefault”: 1,
+“lineId”: 121</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“engineName”: “RaySync”,
+“automaticCheck”: 0,
+“checkServer”: “10.60.196.151”,
+“checkPort”: “10100”,
+“checkEnable”: “0”,
+“checkExcludType”: “tx”,
+“isDefault”: 1</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><dl>
+<dt>“resqEngineAccounts”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“bid”: “30201”,
+“name”: “30201”,
+“password”: “ACz/0lNMCgyq/7WjR0QGpaXmR0/Xb0//6UaMn/s8QN4=”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>],
+“respTaskEngineLines”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“name”: “Aspera_main”,
+“server”: “10.60.197.79”,
+“port”: “10221”,
+“isDefault”: 1,
+“lineId”: 123</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“engineName”: “Aspera”,
+“automaticCheck”: 0,
+“checkServer”: “test2.raysync.cn”,
+“checkPort”: “8888”,
+“checkEnable”: “0”,
+“checkExcludType”: “tx”,
+“isDefault”: 0</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>],
+“subUserOutputBids”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“userId”: “119784”,
+“outputBid”: “10202”</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+“serverTime”: 1587380763325,
+“requestId”: “K7wW6L-QmV5b25kTGVlZGVNYWNCb29rLVByby5sb2NhbA-1587380762156”</p>
+</div></blockquote>
+</div>
+<div class="section" id="id230">
+<h1>}<a class="headerlink" href="#id230" title="Permalink to this headline">¶</a></h1>
+<p>##  上传任务配置文件</p>
+<p><strong>接口路径</strong>：  /api/render/submit/taskJsonFile</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;任务号&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;content&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;文件内容&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;file_name&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;文件名&lt;/td&gt;
+&lt;td&gt;默认“task.json”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数</strong>：缺省</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">start_task</span> <span class="pre">=</span> <span class="pre">api.task.start_task(task_param_list=[13798105])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id231"><span class="problematic" id="id232">``</span></a><a href="#id233"><span class="problematic" id="id234">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“version”: “2.0.0”,
+“result”: true,
+“message”: “success”,
+“code”: 200,
+“data”: null,
+“serverTime”: 1589532607599,
+“requestId”: null</p>
+</div></blockquote>
+</div>
+<div class="section" id="id235">
+<h1>}<a class="headerlink" href="#id235" title="Permalink to this headline">¶</a></h1>
+<p>##  获取用户存储文件结构</p>
+<p>[^2021/1/18]: Add New Interface</p>
+<p><strong>接口路径</strong>：  /api/render/file/operate/getOutputUserDirFile</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;任务号,如果是分层任务则是指的子任务号,即每一层的任务号&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tree_path&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;相对用户存储(output)根的路径&lt;/td&gt;
+&lt;td&gt;默认为“/”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数[data]</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;fileName&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;当前文件名或文件夹名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fileSize&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;文件大小，如果是文件夹则为“null”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iconPath&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;图表路径(可忽略此参数)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lastModify&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;文件或文件夹更新日期&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fileType&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;文件后缀，如果是文件夹则为”null”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;filePath&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;文件或文件夹相对用户存储output根的相对路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;directory&lt;/td&gt;
+&lt;td&gt;bool&lt;/td&gt;
+&lt;td&gt;是否为文件夹, “true”:是文件夹，“false”:非文件夹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isArrears&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;是否欠费, 0：未欠费，1：欠费&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`Python</span>
+<span class="pre">paths</span> <span class="pre">=</span> <span class="pre">api.transmit.get_output_files(task_id=1484861)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id236"><span class="problematic" id="id237">``</span></a><a href="#id238"><span class="problematic" id="id239">`</span></a>json
+[</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“fileName”: “1484861_muti_layer_test”,
+“fileSize”: null,
+“iconPath”: null,
+“lastModify”: “2021-01-15 12:11:59”,
+“fileType”: null,
+“filePath”: “/1484861_muti_layer_test”,
+“directory”: true,
+“isArrears”: 0</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id240">
+<h1>]<a class="headerlink" href="#id240" title="Permalink to this headline">¶</a></h1>
+<p>##  获取任务的所有子任务号</p>
+<p>[^2021/1/18]: Add New Interface</p>
+<p><strong>接口路径</strong>：</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;Integer or string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;获取主帐户下的所有子帐户，如果没有子帐户，则返回当前账号ID&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`json</span>
+<span class="pre">ids</span> <span class="pre">=</span> <span class="pre">api.query.get_small_task_id(task_id=1521323)</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[1521325,</span> <span class="pre">1521327,</span> <span class="pre">1521329]</span>
+<span class="pre">`</span></code></p>
+<p>##  获取平台硬件配置信息</p>
+<p>[^2021/4/12]: add new interface in rayvision_api 2.8.0</p>
+<p><strong>接口路径</strong>：/api/render/hardwareConfig/list</p>
+<p><strong>请求参数</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;task_ids&lt;/td&gt;
+&lt;td&gt;List[str]&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;任务号集合，查询指定任务的配置参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>返回参数[data]</strong>：</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;硬件配置id（hardwareConfigId）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;type&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;1:CPU;&lt;br&gt;2: GPU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;model&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;硬件型号, 默认”Default”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ram&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;内存&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gpuNum&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td&gt;GPU卡数，CPU平台为”null”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;platform&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;平台号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;current&lt;/td&gt;
+&lt;td&gt;bool&lt;/td&gt;
+&lt;td&gt;false/ true，当传任务号时，查询的是任务当前的硬件配置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;notSupportCgId&lt;/td&gt;
+&lt;td&gt;list[int]&lt;/td&gt;
+&lt;td&gt;不支持的cgId,（cgid对应软件可以查询“常用参数设置”–&amp;gt;”DCC软件ID映射”）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;状态&lt;br&gt;1: 启用;&lt;br&gt;0: 禁用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>请求示例</strong>：</p>
+<p><code class="docutils literal notranslate"><span class="pre">`json</span>
+<span class="pre">hardware_config</span> <span class="pre">=</span> <span class="pre">api.user.get_hardware_config(task_ids=[&quot;6306543&quot;])</span>
+<span class="pre">`</span></code></p>
+<p><strong>返回示例</strong>：</p>
+<p><a href="#id241"><span class="problematic" id="id242">``</span></a><a href="#id243"><span class="problematic" id="id244">`</span></a>json
+[</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“id”: 301,
+“type”: 1,
+“model”: “Default”,
+“gpuNum”: null,
+“ram”: “64GB”,
+“platform”: 2,
+“current”: false,
+“notSupportCgId”: [],
+“status”: 1</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“id”: 303,
+“type”: 1,
+“model”: “Default”,
+“gpuNum”: null,
+“ram”: “128GB”,
+“platform”: 2,
+“current”: false,
+“notSupportCgId”: [],
+“status”: 1</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“id”: 337,
+“type”: 1,
+“model”: “1080Ti”,
+“gpuNum”: null,
+“ram”: “64GB”,
+“platform”: 2,
+“current”: true,
+“notSupportCgId”: [</p>
+<blockquote>
+<div><p>2005,
+2000</p>
+</div></blockquote>
+<p>],
+“status”: 1</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“id”: 339,
+“type”: 1,
+“model”: “2080Ti”,
+“gpuNum”: null,
+“ram”: “64GB”,
+“platform”: 2,
+“current”: false,
+“notSupportCgId”: [],
+“status”: 1</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“id”: 341,
+“type”: 1,
+“model”: “1080Ti”,
+“gpuNum”: null,
+“ram”: “128GB”,
+“platform”: 2,
+“current”: false,
+“notSupportCgId”: [</p>
+<blockquote>
+<div><p>2005</p>
+</div></blockquote>
+<p>],
+“status”: 1</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id245">
+<h1>]<a class="headerlink" href="#id245" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="log/index.html" class="btn btn-neutral float-right" title="日志管理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api/rayvision_api/main/connect.html" class="btn btn-neutral float-left" title="Connect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019 Rayvision Core Dev Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,758 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>&lt;no title&gt; &mdash; RenderBus SDK latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rayvision_api包" href="api/index.html" />
+    <link rel="prev" title="安装指南" href="installation_guide.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> RenderBus SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="first_look.html">初窥SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n2">概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n5">为什么要使用渲染SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n8">支持的软件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n19">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n26">安装相应模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n29">开始使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n33">参数设置请参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first_look.html#header-n37">更多</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation_guide.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">rayvision_api包</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/task/hand.html">任务模块(RayvisionTask)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/env.html">环境配置(RenderEnv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/query.html">查询(Query)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/tag.html">任务自定义标记(Tag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/task.html">任务(Task)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/operators/user.html">用户信息(User)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/main/core.html">RayvisionAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/rayvision_api/main/connect.html">Connect</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id26">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id31">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id36">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id49">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id54">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id59">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id64">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id69">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id74">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id84">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id89">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id94">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id99">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id104">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id109">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id114">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id119">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id126">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id131">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id134">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id139">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id144">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id149">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id154">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id167">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id180">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id185">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id190">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id195">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id200">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id205">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id210">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id215">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id220">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id225">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id230">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id235">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id240">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how%20to%20use%20API%20interface%20zh.html#id245">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="log/index.html">日志管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html">演示demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id1">默认路径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id2">自定义路径分2中设置方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id3">自定义日志文件名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/first_look.html#id4">自定义日志等级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="log/rayvision_log/core/core.html">日志接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/rayvision_api/task/check.html">任务的信息校验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maya/rayvision_maya/core/analyze_maya_handle.html">Maya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clarisse/rayvision_clarisse/core/analyse_clarisse.html">Clarisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="houdini/rayvision_houdini/core/cg.html">Houdini</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/rayvision_utils/core/analyse_handle.html">RayvisionAnalyse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/rayvision_utils/core/json_handle.html">JsonHandle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exception.html">异常管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="para_configration.html">详细参数配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html">Clarisse 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html">Houdini 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html">Maya 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html#id10">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html">Max 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html">Katana 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BNuke.html">Nuke配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BNuke.html#id5">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html">**VR Standalone**配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="json_file/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html#id7">}</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">架构概览</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id2">组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id3">流程图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo/index.html">Demo使用解析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html">Maya demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#houdini-demo">Houdini demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#clarisse-demo">Clarisse demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#ds-max-demo">3ds Max demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#katana-demo">Katana demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="questions.html">常见问题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#renderbus-sdkpython">1. RenderBus SDK支持那些Python版本呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#pycharmsdk">2. 使用pycharm应该怎么下载SDK包呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n13">3. 怎么设置只渲染首帧？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n14">4. 怎么设置渲染完优先帧,让任务自动全速渲染？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n34">5. 怎么设置当前渲染帧结束立即下载渲染结果呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html#header-n9">6. 最简单的使用方式是怎么样的呢？</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="error_status.html">异常码参照</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">发行说明(Release notes)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id1">0.1.0 (2019-11-10):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id2">1.1.0 (2020-04-06):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id3">1.2 (2020-05-21):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id4">1.3 (2020-09-10):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id5">1.4 (2020-11-12):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id6">1.5 (2020-11-24):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id7">1.6 :</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#id8">1.7 :</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing_to_sdk.html">为RenderBusSDK做贡献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing_to_sdk.html#id1">报告错误</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RenderBus SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/render/SDK_tutorial.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p># SDK 入门教程</p>
+<p>### 一. 登陆认证</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+render_para = {</p>
+<blockquote>
+<div><p>“domain”: “task.renderbus.com”,
+“platform”: “2”,
+“access_id”: “xxxx”,
+“access_key”: “xxxx”,</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>api = RayvisionAPI(</dt><dd><blockquote>
+<div><p>access_id=render_para[‘access_id’],
+access_key=render_para[‘access_key’],
+domain=render_para[‘domain’],
+platform=render_para[‘platform’]</p>
+</div></blockquote>
+<p>)</p>
+</dd>
+</dl>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>RayvisionAPI 参数说明:</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;默认值&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;domain&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;task.renderbus.com&lt;/td&gt;
+&lt;td&gt;国内用户：task.renderbus.com，国外用户:jop.foxrenderfarm.com&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;platform&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;平台ID，例如: W2:”2”, W6/青云:”6”, GPU一区:”21”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;access_id&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;授权id，用于标识API调用者身份&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;access_key&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;授权密钥，用于加密签名字符串和服务器端验证签名字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p>### 二. 分析场景</p>
+<p>&gt; 分析是独立(Maya / Houdini / Clarisse)</p>
+<p>以分析Houdini为例
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+from rayvision_houdini.analyze_houdini import AnalyzeHoudini</p>
+<dl>
+<dt>analyze_info = {</dt><dd><p>“cg_file”: r”D:filesCG FILEflip_test_slice4.hip”,
+“workspace”: “c:/workspace”,
+“software_version”: “17.5.293”,
+“project_name”: “Project1”,
+“plugin_config”: {</p>
+<blockquote>
+<div><p>‘renderman’: ‘22.6’</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+analyze_obj = AnalyzeHoudini(<a href="#id9"><span class="problematic" id="id10">**</span></a>analyze_info)
+analyze_obj.analyse()
+<a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id13"><span class="problematic" id="id14">`</span></a></p>
+<p>说明：</p>
+<ul>
+<li><p>“workspace”用来控制生成json文件位置,如果不设置workspace,默认生成位置:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">windows</span> <span class="pre">:</span> <span class="pre">os.environ[&quot;USERPROFILE&quot;]</span> <span class="pre">+</span> <span class="pre">&quot;renderfarm_sdk&quot;</span>
+<span class="pre">Linux：os.environ[&quot;HOME&quot;]</span> <span class="pre">+</span> <span class="pre">“renderfarm_sdk”</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p>分析生成的task.json中“task_id”、“user_id”、”project_id”为空，用户可以选择自己写   入这三个参数 ,或者在check的时候自动写入此3个参数。</p></li>
+</ul>
+<p>AnalyzeHoudini 参数说明:</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;默认值&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cg_file&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;需要分析的场景文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;software_version&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;场景使用的软件版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;project_name&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;项目名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;plugin_config&lt;/td&gt;
+&lt;td&gt;dict&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;插件配置，如 {‘renderman’: ‘22.6’}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;workspace&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;None&lt;/td&gt;
+&lt;td&gt;分析生成json文件位置(避免重复会自动添加一个时间戳文件夹)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p>### 三. 添加特殊字段和更新json文件接口
+&gt; 只支持对task.json和upload.json文件参数的更新和修改.</p>
+<p>##### 1. 修改task.json</p>
+<p><cite>update_task_info(update_info, task_path)</cite></p>
+<p>![task_info](<a class="reference external" href="https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200402094336.png">https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200402094336.png</a>)</p>
+<p><a href="#id15"><span class="problematic" id="id16">``</span></a>`
+from rayvision_api.utils import update_task_info, append_to_task, append_to_upload
+update_task = {</p>
+<blockquote>
+<div><p>“pre_frames”: “100”,  # 设置优先渲染首帧
+“stop_after_test”: “1”  # 渲染完优先帧后停止渲染</p>
+</div></blockquote>
+<p>}
+update_task_info(update_task, analyze_obj.task_json)
+<a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a></p>
+<p>##### 2. 指定硬件配置</p>
+<p>硬件配置由参数”hardwareConfigId”控制, 可以通过api接口获取(“API接口使用方法” –&gt; “获取平台硬件配置信息”)</p>
+<p>如果同时在“task_info”中设置了”ram”和“hardwareConfigId”,</p>
+<p>以“hardwareConfigId”为主, 没有则以”ram”设置为主.</p>
+<p><a href="#id21"><span class="problematic" id="id22">``</span></a>`
+from rayvision_api.utils import update_task_info, append_to_task, append_to_upload
+update_task = {</p>
+<blockquote>
+<div><p>“hardwareConfigId”: “27”  # 指定硬件配置</p>
+</div></blockquote>
+<p>}
+update_task_info(update_task, analyze_obj.task_json)
+<a href="#id23"><span class="problematic" id="id24">``</span></a><a href="#id25"><span class="problematic" id="id26">`</span></a></p>
+<p>##### 3. task.json添加自定义参数</p>
+<dl class="simple">
+<dt>&gt; 添加的自定义参数将会集成到key为”additional_info”的字典中</dt><dd><p>【注意】：自定义参数不会立即生效，如果有这种需求的客户请联系公司客服。</p>
+</dd>
+</dl>
+<p>![additional_info](<a class="reference external" href="https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200402094058.png">https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200402094058.png</a>)</p>
+<p><a href="#id27"><span class="problematic" id="id28">``</span></a>`
+custom_info_to_task = {</p>
+<blockquote>
+<div><p>“env”: “houdini_env”</p>
+</div></blockquote>
+<p>}
+append_to_task(custom_info_to_task, analyze_obj.task_json)
+<a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">`</span></a></p>
+<p>##### 3. 自定义upload.json
+&gt; 支持自定义添加文件路径到upload.json，会自动去重
+<cite>append_to_upload(files_paths, upload_path)</cite></p>
+<p>![upload](<a class="reference external" href="https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200402094235.png">https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200402094235.png</a>)</p>
+<p><a href="#id33"><span class="problematic" id="id34">``</span></a>`
+custom_info_to_upload = [</p>
+<blockquote>
+<div><p>r”D:houdiniCG fileCam003cam.abc”,</p>
+</div></blockquote>
+<p>]
+append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
+<a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id37"><span class="problematic" id="id38">`</span></a></p>
+<p>### 四. 校验json文件</p>
+<p>校验的时候会检查task.json中是否有`user_id`,`project_id`,`task_id`,
+如果没有则会调用接口从服务器获取相关参数并写入task.json</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">check_obj</span> <span class="pre">=</span> <span class="pre">RayvisionCheck(api,</span> <span class="pre">analyze_obj)</span>
+<span class="pre">task_id</span> <span class="pre">=</span> <span class="pre">check_obj.execute(analyze_obj.task_json,</span> <span class="pre">analyze_obj.upload_json)</span>
+<span class="pre">`</span></code></p>
+<p>### 五. 上传
+&gt; 现在提供2种方式:</p>
+<p>##### 1.先上传json文件再根据“upload.json”上传资源文件:</p>
+<p>先上传四个json文件，然后传输引擎自动根据upload.json文件开始上传场景、资源等文件</p>
+<p><cite>upload(self,task_id,task_json_path,tips_json_path,asset_json_path,upload_json_path, max_speed=None)</cite></p>
+<p><a href="#id39"><span class="problematic" id="id40">``</span></a>`
+CONFIG_PATH = [</p>
+<blockquote>
+<div><p>r”C:workspaceworktips.json”,
+r”C:workspaceworktask.json”,
+r”C:workspaceworkasset.json”,
+r”C:workspaceworkupload.json”,</p>
+</div></blockquote>
+<p>]
+upload_obj = RayvisionUpload(api)
+upload_obj.upload(str(task_id), <a href="#id41"><span class="problematic" id="id42">*</span></a>CONFIG_PATH)
+<a href="#id43"><span class="problematic" id="id44">``</span></a><a href="#id45"><span class="problematic" id="id46">`</span></a></p>
+<p>##### 2.上传json文件和用户资源完全独立:</p>
+<p>上传资源：<cite>upload_asset(self, upload_json_path, max_speed=None, is_db=True)</cite></p>
+<p>上传json文件: <cite>upload_config(self, task_id, config_file_list, max_speed=None)</cite></p>
+<p><a href="#id47"><span class="problematic" id="id48">``</span></a>`
+CONFIG_PATH = [</p>
+<blockquote>
+<div><p>r”C:workspaceworktips.json”,
+r”C:workspaceworktask.json”,
+r”C:workspaceworkasset.json”,</p>
+</div></blockquote>
+<p>]
+UPLOAD = RayvisionUpload(api)
+UPLOAD.upload_asset(r”C:workspaceworkupload.json”, is_db=False)
+UPLOAD.upload_config(“5165465”, CONFIG_PATH)
+<a href="#id49"><span class="problematic" id="id50">``</span></a>`
+【注意】:上传json文件的时候需要任务ID，上传资源文件则不需要任务ID;
+<a href="#id51"><span class="problematic" id="id52">`</span></a>upload_asset`中`is_db`参数用来控制是否需要使用本地数据库，默认使用本地数据库;</p>
+<p>### 六. 提交任务</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">api.submit(int(task_id))</span>
+<span class="pre">`</span></code></p>
+<p>### 七. 下载
+&gt; 下载现在提供3种方式:</p>
+<p>##### 1. 支持自定义下载每个渲染任务底下的层级目录结构</p>
+<p><cite>download(self, task_id_list=None, max_speed=None, print_log=True, download_filename_format=”true”,local_path=None, server_path=None)</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">download</span> <span class="pre">=</span> <span class="pre">RayvisionDownload(api)</span>
+<span class="pre">download.download(download_filename_format=&quot;true&quot;,</span> <span class="pre">server_path=&quot;18164087_muti_layer_test/l_ayer2&quot;)</span>
+<span class="pre">`</span></code>
+注意：此方法在“server_path”不为空的时候则需要提供任务ID，有自定义“server_path”的时候任务ID不生效</p>
+<p>##### 2. 实时下载，即任务渲染完成一帧即开始下载</p>
+<dl class="simple">
+<dt><a href="#id53"><span class="problematic" id="id54">`</span></a>auto_download(self, task_id_list=None, max_speed=None,</dt><dd><p>print_log=False, sleep_time=10,
+download_filename_format=”true”,
+local_path=None)`</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">download</span> <span class="pre">=</span> <span class="pre">RayvisionDownload(api)</span>
+<span class="pre">download.auto_download([18164087],</span> <span class="pre">download_filename_format=&quot;false&quot;)</span>
+<span class="pre">`</span></code>
+说明：此方法任务ID不能为空</p>
+<p>##### 3. 任务所有帧渲染完成才开始下载</p>
+<dl class="simple">
+<dt><a href="#id55"><span class="problematic" id="id56">`</span></a>auto_download_after_task_completed(self, task_id_list=None,</dt><dd><p>max_speed=None, print_log=True,
+sleep_time=10,
+download_filename_format=”true”,
+local_path=None):`</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">download</span> <span class="pre">=</span> <span class="pre">RayvisionDownload(api)</span>
+<span class="pre">download.auto_download_after_task_completed([18164087],</span> <span class="pre">download_filename_format=&quot;false&quot;)</span>
+<span class="pre">`</span></code>
+说明: 此方法任务ID不能为空</p>
+<p>### 八. 附加: 传输配置文件</p>
+<p><strong>1. 传输配置设置包括:</strong></p>
+<p>选择数据库类型，数据库文件路径设置，传输日志路径设置</p>
+<p><strong>2. 默认使用的传输配置文件：db_config.ini， 如下图</strong></p>
+<blockquote>
+<div><p>![db_config.ini](<a class="reference external" href="https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200415114705.png">https://blog-tao625.oss-cn-shenzhen.aliyuncs.com/izone/blog/20200415114705.png</a>)</p>
+</div></blockquote>
+<p>db_config.ini 样例:</p>
+<p><a href="#id57"><span class="problematic" id="id58">``</span></a><a href="#id59"><span class="problematic" id="id60">`</span></a>ini
+[TRANSFER_LOG_PATH]
+transfer_log_path =</p>
+<p>[DATABASE_CONFIG]
+on = true
+type = sqlite
+db_path =D:testupload</p>
+<p>[REDIS]
+host = 127.0.0.1
+port = 6379
+password =
+table_index = 0
+timeout = 5000</p>
+<p>[SQLITE]
+temporary = false
+<a href="#id61"><span class="problematic" id="id62">``</span></a><a href="#id63"><span class="problematic" id="id64">`</span></a></p>
+<p>用户也可根据默认配置为模板修改配置并指定数据库配置文件位置,指定自定义配置文件方法如下</p>
+<p><a href="#id65"><span class="problematic" id="id66">``</span></a>`
+from rayvision_sync.upload import RayvisionUpload</p>
+<p>UPLOAD = RayvisionUpload(api, db_config_path=r”D:testuploaddb_config.ini”)
+<a href="#id67"><span class="problematic" id="id68">``</span></a><a href="#id69"><span class="problematic" id="id70">`</span></a></p>
+<p><strong>3. db_config.ini 参数说明:</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;默认值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer_log_path&lt;/td&gt;
+&lt;td&gt;传输引擎日志文件路径&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;on&lt;/td&gt;
+&lt;td&gt;是否使用本地数据库, true / false: 是 / 否&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;type&lt;/td&gt;
+&lt;td&gt;选择数据库, 目前仅支持”redis” 和 “sqlite”&lt;/td&gt;
+&lt;td&gt;sqlite&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;db_path&lt;/td&gt;
+&lt;td&gt;数据库文件保存路径&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;host&lt;/td&gt;
+&lt;td&gt;redis数据库host&lt;/td&gt;
+&lt;td&gt;127.0.0.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;redis数据库port&lt;/td&gt;
+&lt;td&gt;6379&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;redis数据库password&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;table_index&lt;/td&gt;
+&lt;td&gt;redis数据库保存文件的仓库名，选择redis数据库则不能为空&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;timeout&lt;/td&gt;
+&lt;td&gt;redis客户端连接超时时间,客户端在这段时间内没有发出任何指令，那么关闭该连接,单位ms&lt;/td&gt;
+&lt;td&gt;5000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;temporary&lt;/td&gt;
+&lt;td&gt;使用sqlite数据库时，上传的记录数据是否在完成上传后删除, 默认”false”不删除&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>4. transfer_log_path 和 db_path 取值的优先级规则如下：</strong></p>
+<ul>
+<li><p>db_config.ini有设置自定义路径则优先使用自定义路径；</p></li>
+<li><p>无自定义路径则如下:</p>
+<p>transfer_log_path</p>
+<p>&gt; - 优先使用环境变量’RAYVISION_LOG’
+&gt;
+&gt; - 次之使用:
+&gt;
+&gt;     window: 环境变量”USERPROFILE”位置/&lt;renderfarm_sdk&gt;
+&gt;     Linux：环境变量”HOME”位置/&lt;renderfarm_sdk&gt;</p>
+<p>db_path</p>
+<p>&gt; - 优先使用环境变量’RAYVISION_LOG’
+&gt;
+&gt; - 次之使用:
+&gt;
+&gt;     window: 环境变量”USERPROFILE”位置/&lt;renderfarm_sdk&gt;
+&gt;     Linux：环境变量”HOME”位置/&lt;renderfarm_sdk&gt;</p>
+</li>
+</ul>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="api/index.html" class="btn btn-neutral float-right" title="rayvision_api包" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation_guide.html" class="btn btn-neutral float-left" title="安装指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019 Rayvision Core Dev Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Nuke配置文件文档 &mdash; RenderBus SDK latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="**VR Standalone**配置文件文档" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html" />
+    <link rel="prev" title="Katana 配置文件文档" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> RenderBus SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../first_look.html">初窥SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n2">概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n5">为什么要使用渲染SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n8">支持的软件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n19">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n26">安装相应模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n29">开始使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n33">参数设置请参考</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first_look.html#header-n37">更多</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation_guide.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">rayvision_api包</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/task/hand.html">任务模块(RayvisionTask)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/operators/env.html">环境配置(RenderEnv)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/operators/query.html">查询(Query)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/operators/tag.html">任务自定义标记(Tag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/operators/task.html">任务(Task)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/operators/user.html">用户信息(User)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/main/core.html">RayvisionAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rayvision_api/main/connect.html">Connect</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id26">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id31">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id36">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id49">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id54">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id59">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id64">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id69">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id74">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id84">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id89">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id94">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id99">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id104">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id109">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id114">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id119">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id126">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id131">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id134">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id139">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id144">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id149">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id154">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id167">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id180">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id185">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id190">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id195">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id200">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id205">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id210">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id215">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id220">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id225">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id230">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id235">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id240">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how%20to%20use%20API%20interface%20zh.html#id245">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../log/index.html">日志管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../log/rayvision_log/first_look.html">演示demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../log/rayvision_log/first_look.html#id1">默认路径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../log/rayvision_log/first_look.html#id2">自定义路径分2中设置方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../log/rayvision_log/first_look.html#id3">自定义日志文件名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../log/rayvision_log/first_look.html#id4">自定义日志等级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../log/rayvision_log/core/core.html">日志接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/rayvision_api/task/check.html">任务的信息校验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maya/rayvision_maya/core/analyze_maya_handle.html">Maya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clarisse/rayvision_clarisse/core/analyse_clarisse.html">Clarisse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../houdini/rayvision_houdini/core/cg.html">Houdini</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/rayvision_utils/core/analyse_handle.html">RayvisionAnalyse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/rayvision_utils/core/json_handle.html">JsonHandle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exception.html">异常管理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../para_configration.html">详细参数配置</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html">Clarisse 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BClarisse.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html">Houdini 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BHoudini.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html">Maya 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMaya.html#id10">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html">Max 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BMax.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html">Katana 配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id5">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id10">}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html#id15">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Nuke配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">}</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html">**VR Standalone**配置文件文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html#id7">}</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">架构概览</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id2">组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id3">流程图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/index.html">Demo使用解析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demo/demo.html">Maya demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demo/demo.html#houdini-demo">Houdini demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demo/demo.html#clarisse-demo">Clarisse demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demo/demo.html#ds-max-demo">3ds Max demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demo/demo.html#katana-demo">Katana demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">常见问题</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../questions.html#renderbus-sdkpython">1. RenderBus SDK支持那些Python版本呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../questions.html#pycharmsdk">2. 使用pycharm应该怎么下载SDK包呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../questions.html#header-n13">3. 怎么设置只渲染首帧？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../questions.html#header-n14">4. 怎么设置渲染完优先帧,让任务自动全速渲染？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../questions.html#header-n34">5. 怎么设置当前渲染帧结束立即下载渲染结果呢？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../questions.html#header-n9">6. 最简单的使用方式是怎么样的呢？</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../error_status.html">异常码参照</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">发行说明(Release notes)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id1">0.1.0 (2019-11-10):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id2">1.1.0 (2020-04-06):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id3">1.2 (2020-05-21):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id4">1.3 (2020-09-10):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id5">1.4 (2020-11-12):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id6">1.5 (2020-11-24):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id7">1.6 :</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#id8">1.7 :</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing_to_sdk.html">为RenderBusSDK做贡献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing_to_sdk.html#id1">报告错误</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">RenderBus SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../para_configration.html">详细参数配置</a> &raquo;</li>
+        
+      <li>Nuke配置文件文档</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/render/json_file/配置文件文档之Nuke.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nuke">
+<h1>Nuke配置文件文档<a class="headerlink" href="#nuke" title="Permalink to this headline">¶</a></h1>
+<p>&gt; 分析：我们将场景中需要的信息分析出来并保存到task.json中，以便进一步解析和处理</p>
+<p>### 1.task.json解析</p>
+<p>&gt; 说明: 存放场景分析结果、渲染设置等信息</p>
+<p><strong>task.json示例</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“concurrent_tasks”: “1”,
+“software_config”: {</p>
+<blockquote>
+<div><p>“cg_version”: “12.1”,
+“cg_name”: “Nuke”,
+“plugins”: {}</p>
+</div></blockquote>
+<p>},
+“task_info”: {</p>
+<blockquote>
+<div><p>“graphics_cards_num”: “2”,
+“tiles”: “1”,
+“project_name”: “”,
+“edit_name”: “test02”,
+“frames_per_task”: “1”,
+“ram”: “64”,
+“job_stop_time”: “259200”,
+“stop_after_test”: “1”,
+“project_id”: “0”,
+“time_out”: “86400”,
+“cg_id”: “2015”,
+“input_cg_file”: “D:/Myx/nuke_project/test_new_pipeline.nk”,
+“pre_frames”: “100”</p>
+</div></blockquote>
+<p>},
+“scene_info”: {</p>
+<blockquote>
+<div><dl>
+<dt>“write_nodes”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“node”: “Write3”,
+“inputs”: “1”,
+“out_file”: “D:/Myx/nuke_project/output/test_bb.mov”,
+“renderable”: “1”,
+“file_type”: “mov”,
+“height”: “1200”,
+“width”: “1920”,
+“proxy”: “”,
+“render_mode”: “0”,
+“option”: “0”,
+“frames”: “1-1[1]”,
+“use_proxy”: “False”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<div class="section" id="id5">
+<h2>}<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>task.json参数解析</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;software_config&lt;/td&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染环境（软件类型、版本和用到的插件等）&lt;/td&gt;
+&lt;td&gt;&lt;a href=”#software_config”&gt;见software_config对象解析&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task_info&lt;/td&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染设置（优先帧、渲染帧数、超时时间等）&lt;/td&gt;
+&lt;td&gt;&lt;a href=”#task_info”&gt;见task_info对象解析&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scene_info_render&lt;/td&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;场景的分析结果（场景中的渲染节点、输出路径等）&lt;/td&gt;
+&lt;td&gt;&lt;a href=”#scene_info_render”&gt;见scene_info_render对象解析&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;concurrent_tasks&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;并发任务数&lt;/td&gt;
+&lt;td&gt;“1”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>&lt;span id=”software_config”&gt;software_config对象解析&lt;/span&gt;</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cg_name&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;软件名称&lt;/td&gt;
+&lt;td&gt;”Nuke”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cg_version&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;软件版本&lt;/td&gt;
+&lt;td&gt;”12.1”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;plugins&lt;/td&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;插件对象。&lt;br&gt; 为插件名称，value为插件版本&lt;/td&gt;
+&lt;td&gt;{}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>&lt;span id=”task_info”&gt;task_info对象解析&lt;/span&gt;</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;是否必须&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;默认值&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;graphics_cards_num&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;1: 开启单卡渲染 2: 开启双卡渲染&lt;/td&gt;
+&lt;td&gt;”2”&lt;/td&gt;
+&lt;td&gt;“2”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cg_id&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染软件id.”Nuke”: “2015”&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;”2015”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ram&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;内存要求: 64 / 128&lt;/td&gt;
+&lt;td&gt;“64”&lt;/td&gt;
+&lt;td&gt;”64”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;input_cg_file&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染场景本地路径&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;”D:/Myx/nuke_project/test_new_pipeline.nk”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;job_stop_time&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;设置帧的超时时间，只会影响当前帧, 单位秒&lt;/td&gt;
+&lt;td&gt;“259200”&lt;/td&gt;
+&lt;td&gt;”28800”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;user_id&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;用户ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pre_frames&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;优先渲染(优先帧不建议自定义多个单独帧)&lt;/td&gt;
+&lt;td&gt;“000”&lt;/td&gt;
+&lt;td&gt;”000:1,3-4[1]” 表示： 优先渲染首帧：否 优先渲染中间帧：否 优先渲染末帧：否 优先渲染自定义帧：1,3-4[1]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tiles&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;分块数量，大于1就分块或者分条，等于1 就是单机&lt;/td&gt;
+&lt;td&gt;”1”&lt;/td&gt;
+&lt;td&gt;”1”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;project_id&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;项目id&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;”0”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;project_name&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;项目名称&lt;/td&gt;
+&lt;td&gt;” “&lt;/td&gt;
+&lt;td&gt;””&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frames_per_task&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;一机渲多帧的帧数量&lt;/td&gt;
+&lt;td&gt;”1”&lt;/td&gt;
+&lt;td&gt;”1”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;stop_after_test&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;优先渲染完成后是否暂停任务 “1”:优先渲染完成后暂停任务 “2”.优先渲染完成后不暂停任务&lt;/td&gt;
+&lt;td&gt;”2”&lt;/td&gt;
+&lt;td&gt;“2”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task_id&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;任务号&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task_stop_time&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;大任务超时停止 单位秒,”0”表示不限制&lt;/td&gt;
+&lt;td&gt;”0”&lt;/td&gt;
+&lt;td&gt;”86400”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;time_out&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;超时时间 单位秒&lt;/td&gt;
+&lt;td&gt;“43200”&lt;/td&gt;
+&lt;td&gt;”43200”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>&lt;span id=”scene_info_render”&gt;scene_info_render对象解析&lt;/span&gt;</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;参数&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;是否必须&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;示例&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;write_nodes&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;object&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Y&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;层信息&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;a href=”#scene_info_render.layer”&gt;见scene_info_render.layer对象解析&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p><strong>&lt;span id=”scene_info_render.write_nodes”&gt;scene_info_render.write_nodes对象解析&lt;/span&gt;</strong></p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;node&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;节点名称&lt;/td&gt;
+&lt;td&gt;”Write3”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;proxy&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;代理输出路径&lt;/td&gt;
+&lt;td&gt;”P:/UW/Update_17/Shot_2/Shot_02_####.png”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;frames&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;是否使用默认相机，默认值为‘1’(使用默认相机)&lt;/td&gt;
+&lt;td&gt;”1-1[1]”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;out_file&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;输出路径&lt;/td&gt;
+&lt;td&gt;”P:/UW/Update_17/Shot_2/Shot_02_####.png”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;inputs&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;当前输出节点是否有输入源&lt;/td&gt;
+&lt;td&gt;”0”: 无， “1”：有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;file_type&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;输出文件格式&lt;/td&gt;
+&lt;td&gt;”mov”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;render_mode&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染输出模式，默认为0;&lt;br /&gt;0 use scene settings；&lt;br /&gt;1  render full resolution；&lt;br /&gt;2 render using proxies&lt;/td&gt;
+&lt;td&gt;“0”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;width&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;输出分辨率宽&lt;/td&gt;
+&lt;td&gt;”9348”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;height&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;输出分辨率高&lt;/td&gt;
+&lt;td&gt;”2242”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;use_proxy&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;场景是否开启了代理模式:&lt;br /&gt; “False”：不开启；&lt;br /&gt;”True”：开启;&lt;/td&gt;
+&lt;td&gt;”False”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;renderable&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;是否渲染:&lt;br /&gt;“0”: 否&lt;br /&gt;“1”：是&lt;/td&gt;
+&lt;td&gt;”1”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;option&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;渲染类型:&lt;br /&gt;”-1”:正常渲染，单机单帧渲染;&lt;br /&gt;”0”:输出视频类型，会单机渲染所有帧;&lt;/td&gt;
+&lt;td&gt;”0”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BVR%20Standalone.html" class="btn btn-neutral float-right" title="**VR Standalone**配置文件文档" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%87%E6%A1%A3%E4%B9%8BKatana.html" class="btn btn-neutral float-left" title="Katana 配置文件文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019 Rayvision Core Dev Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
