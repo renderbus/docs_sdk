@@ -464,7 +464,7 @@ error_detail = api.query.error_detail(code="50001")
 | sceneName             | String               | 场景名                     |                                                              |
 | id                    | Integer              | 任务id                     |                                                              |
 | taskAlias             | String               | 任务别名                   |                                                              |
-| taskStatus            | Byte                 | 任务状态                   | 1/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败 |
+| taskStatus            | Byte                 | 任务状态                   | 0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中 |
 | statusText            | String               | 任务状态文本               |                                                              |
 | preTaskStatus         | Byte                 | 预处理任务状态             |                                                              |
 | preStatusText         | String               | 预处理状态文本             |                                                              |
