@@ -1,5 +1,7 @@
 .. important::
-   使用前请确保本地Python环境和PIP可用,传输功能是独立的，需要使用相应功能请安装`rayvision_sync`包。
+   使用前请确保本地Python环境和PIP可用,传输功能是独立的,
+   完整使用分析、上传、下载自动化流程，除了需要所渲染软件的分析包，还需要安装：
+   `rayvision_log`、`rayvision_api`、`rayvision_utils`、`rayvision_sync`。
 
 安装指南
 =========
