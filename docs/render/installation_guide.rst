@@ -1,31 +1,63 @@
 .. important::
-   使用前请确保本地Python环境和PIP可用。
+   使用前请确保本地Python环境和PIP可用,传输功能是独立的，需要使用相应功能请安装`rayvision_sync`包。
 
 安装指南
 =========
 
+1. 软件分析包
+--------------
+
+SDK Maya:
+    - rayvision_maya
+
+SDK Houdini:
+    - rayvision_houdini
+
+SDK Clarisse:
+    - rayvision_clarisse
+
+SDK 3ds Max:
+    - rayvision_max
+
+SDK Katana
+    - rayvision_katana
+
+SDK C4D
+    - rayvision_c4d
+
+SDK Blender
+    - rayvision_blender
+
+2. 其它包
+----------
+上传下载工具包:
+    - rayvision_sync
+
+日志管理工具包：
+    - rayvision_log
+
+接口/登陆校验等管理工具包：
+    - rayvision_api
+
+公共方法管理工具包:
+    - rayvision_utils
+
+
+
+3. 安装方法
+-----------------
+
 **方法一(推荐):**
 
-.. note::
-   中国用户如果访问Python官方地址网络受限，可以从自定义PIP服务器下载安装。
 
-- 从Python官方pypi下载(推荐)
+- 从Python官方pypi下载(以maya为例)
 
    ``pip install rayvision_maya``
-
-   ``pip install rayvision_clarisse``
-
-   ``pip install rayvision_houdini``
 
 
 **方法二:**
 
-   - 直接从GitHub下载源码:
+   - 直接从GitHub下载源码(以maya为例):
 
-   ``git clone https://github.com/renderbus/rayvision_log.git``
+   ``git clone https://github.com/renderbus/rayvision_maya.git``
 
-   ``git clone https://github.com/renderbus/rayvision_api.git``
-
-   ``git clone https://github.com/renderbus/rayvision_utils.git``
-
-   ``git clone https://github.com/renderbus/rayvision_sync.git``
