@@ -138,21 +138,21 @@ htmlhelp_basename = 'Renderbus SDK'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
+    'preamble': r'''
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=STZhongsong, ItalicFont=STKaiti]{STSong}
+\setCJKsansfont[BoldFont=STHeiti]{STXihei}
+\setCJKmonofont{STFangsong}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\parindent 2em
+\definecolor{VerbatimColor}{rgb}{0.95,0.95,0.95}
+\setcounter{tocdepth}{3}
+\renewcommand\familydefault{\ttdefault}
+\renewcommand\CJKfamilydefault{\CJKrmdefault}
+'''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
