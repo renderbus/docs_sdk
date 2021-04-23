@@ -54,7 +54,7 @@
 
 无独立的分析:
 
-- VR Standalone
+- V-Ray Standalone
 
 - Arnorld Standalone
 
