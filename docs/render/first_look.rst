@@ -35,6 +35,8 @@
 支持的软件
 ----------
 
+支持独立的分析:
+
 -  Maya
 
 -  Houdini
@@ -49,7 +51,12 @@
 
 - Blender
 
-- VR Standalone (无独立分析)
+
+无独立的分析:
+
+- VR Standalone
+
+- Arnorld Standalone
 
 .. note::
    如果客户自行分析场景，理论上可以支所有瑞云平台客户端和网页端支持的渲染软件。

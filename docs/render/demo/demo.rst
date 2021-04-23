@@ -660,3 +660,84 @@ Blender DEMO
     # download.auto_download_after_task_completed([task_id])
     # Poll download (automatic download for each completed frame)
     download.auto_download([int(task_id)])
+
+
+Arnorld Standalone demo
+-------------------------
+
+.. warning::
+   Arnold Standalone没有自动资产分析功能，并要求客户自行分析资产文件。
+
+---------------
+
+ ::
+
+    from rayvision_api.core import RayvisionAPI
+    from rayvision_sync.upload import RayvisionUpload
+    from rayvision_sync.download import RayvisionDownload
+    from rayvision_api.task.check import RayvisionCheck
+    from rayvision_api.utils import update_task_info, append_to_task, append_to_upload
+
+    # API Parameter
+    render_para = {
+        "domain": "task.renderbus.com",  # If it doesn't work, you can use "task.foxrenderfarm.com"
+        "platform": "6",
+        "access_id": "xxxxx",
+        "access_key": "xxxxx",
+    }
+
+    CONFIG_PATH = {
+        "task_json_path": r"D:\test\task.json",
+        "upload_json_path": r"D:\test\upload.json"
+    }
+
+    api = RayvisionAPI(access_id=render_para['access_id'],
+                       access_key=render_para['access_key'],
+                       domain=render_para['domain'],
+                       platform=render_para['platform'])
+
+
+    # step1: Add some custom parameters, or update the original parameter value
+    # Step1 can also be set without setting
+    update_task = {
+        "pre_frames": "000:2,4,6-10[1]",
+        "stop_after_test": "1"
+    }
+    update_task_info(update_task, CONFIG_PATH['task_json_path'])
+
+    custom_info_to_task = {}
+    append_to_task(custom_info_to_task, CONFIG_PATH['task_json_path'])
+
+    custom_info_to_upload = [
+        r"E:\fang\ass_test\static_ass.ass",
+        r"E:\fang\ass_test\animation_ass.0060.ass"
+    ]
+    append_to_upload(custom_info_to_upload, CONFIG_PATH['upload_json_path'])
+
+
+    # step2:Check json files
+    check_obj = RayvisionCheck(api)
+    task_id = check_obj.execute(CONFIG_PATH['task_json_path'])
+
+
+    # Step3: Transmission
+    """
+    task.json files and resources are uploaded separately
+    """
+    upload_obj = RayvisionUpload(api)
+
+    # step3.1: Upload resource file(upload.json)
+    upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
+    # step3.2: Upload task.json
+    upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
+
+
+    # Step4:Submit Task
+    api.submit(int(task_id))
+
+    # Step5:Download
+    download = RayvisionDownload(api)
+    # All complete before the automatic start of uniform download.
+    download.auto_download_after_task_completed([task_id])
+    # Poll download (automatic download for each completed frame)
+    download.auto_download([int(1484947)], local_path=r"E:\test", download_filename_format="false")
