@@ -93,23 +93,7 @@ update_task = {
 update_task_info(update_task, analyze_obj.task_json)
 ```
 
-##### 2. 指定硬件配置
-
-硬件配置由参数"hardwareConfigId"控制, 可以通过api接口获取("API接口使用方法" --> "获取平台硬件配置信息")
-
-如果同时在“task_info”中设置了"ram"和“hardwareConfigId”, 
-
-以“hardwareConfigId”为主, 没有则以"ram"设置为主.
-
-```
-from rayvision_api.utils import update_task_info, append_to_task, append_to_upload
-update_task = {
-    "hardwareConfigId": "27"  # 指定硬件配置
-}
-update_task_info(update_task, analyze_obj.task_json)
-```
-
-##### 3. task.json添加自定义参数
+##### 2. task.json添加自定义参数
 
 > 添加的自定义参数将会集成到key为"additional_info"的字典中  
  【注意】：自定义参数不会立即生效，如果有这种需求的客户请联系公司客服。
@@ -123,7 +107,7 @@ custom_info_to_task = {
 append_to_task(custom_info_to_task, analyze_obj.task_json)
 ```
 
-##### 4. 自定义upload.json
+##### 3. 自定义upload.json
 > 支持自定义添加文件路径到upload.json，会自动去重
 `append_to_upload(files_paths, upload_path)`
 
@@ -136,14 +120,25 @@ custom_info_to_upload = [
 append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 ```
 
-### 四. 校验json文件
+### 四. 设置硬件配置和校验json文件
 
-校验的时候会检查task.json中是否有`user_id`,`project_id`,`task_id`,
+硬件配置由参数"hardwareConfigId"控制, 可以通过api接口获取("API接口使用方法" --> "获取平台硬件配置信息")
+
+通过设置hardware_config的 `model`, `ram`, `gpuNum` 来指定硬件配置
+```
+hardware_config = {
+    "model": "Default",  # CPU平台: 填Default , GPU平台: 填 1080Ti 或 2080Ti
+    "ram": "64GB",  # 内存: 64GB or 128GB
+    "gpuNum": None  # GPU平台需要输入参数 例："2*GPU", CPU平台则填写 None
+}
+```
+
+校验的时候会根据传入的hardware_config设置硬件配置, 还会检查task.json中是 否有`user_id`,`project_id`,`task_id`,
 如果没有则会调用接口从服务器获取相关参数并写入task.json
 
 ```
 check_obj = RayvisionCheck(api, analyze_obj)
-task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
 ```
 
 ### 五. 上传
@@ -315,5 +310,4 @@ UPLOAD = RayvisionUpload(api, db_config_path=r"D:\test\upload\db_config.ini")
   >
   >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
   >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
-
 
