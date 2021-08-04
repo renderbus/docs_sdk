@@ -31,13 +31,14 @@ Maya demo
         "project_name": "Project1",
         "plugin_config": {
             "mtoa": "3.2.1.1"
-        }
+        },
+        "platform": render_para['platform']
     }
     analyze_obj = AnalyzeMaya(**analyze_info)
     analyze_obj.analyse()
 
 
-    # step2: Add some custom parameters, or update the original parameter value
+    # Step2: Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
         "stop_after_test": "1"
@@ -50,13 +51,19 @@ Maya demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # step3:Check json files
+    # Step4:Check json files
     check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
 
 
-    # Step4: Transmission
+    # Step5: Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1: upload four json files and upload the resource file according to upload.json;
@@ -83,11 +90,11 @@ Maya demo
         upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -127,13 +134,14 @@ Houdini demo
         "project_name": "Project1",
         "plugin_config": {
             'renderman': '22.6'
-        }
+        },
+        "platform": render_para['platform']
     }
     analyze_obj = AnalyzeHoudini(**analyze_info)
     analyze_obj.analyse()
 
 
-    # step2: Add some custom parameters, or update the original parameter value
+    # Step2: Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
         "stop_after_test": "1"
@@ -146,13 +154,19 @@ Houdini demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # step3:Check json files
+    # Step4:Check json files
     check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
 
 
-    # Step4: Transmission
+    # Step5: Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1: upload four json files and upload the resource file according to upload.json;
@@ -179,11 +193,11 @@ Houdini demo
         upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -222,13 +236,14 @@ Clarisse demo
         "workspace": "c:/workspace",
         "software_version": "clarisse_ifx_4.0_sp3",
         "project_name": "Project1",
-        "plugin_config": {}
+        "plugin_config": {},
+        "platform": render_para['platform']
     }
     analyze_obj = AnalyzeClarisse(**analyze_info)
     analyze_obj.analyse()
 
 
-    # step2:Add some custom parameters, or update the original parameter value
+    # Step2:Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
         "stop_after_test": "1"
@@ -241,12 +256,19 @@ Clarisse demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # step3:Check json files
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
+
+    # Step4:Check json files
     check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
 
 
-    # Step4:Transmission
+    # Step5:Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1:upload four json files and upload the resource file according to upload.json;
@@ -265,19 +287,19 @@ Clarisse demo
     """
     upload_method = 1
     if upload_method == 1:
-        # step4.1:Json files are uploaded in conjunction with CG resources
+        # Step5.1:Json files are uploaded in conjunction with CG resources
         upload_obj.upload(str(task_id), **CONFIG_PATH)
     elif upload_method == 2:
-        # step4.2:CG resource files and json are uploaded separately
+        # Step5.2:CG resource files and json are uploaded separately
         upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
         upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -317,11 +339,12 @@ Clarisse demo
         "workspace": r"C:\workspace\max",
         "plugin_config": {},
         "renderable_camera": ["Camera001"],  # 渲染需要的相机，不指定则默认渲染所有相机
+        "platform": render_para['platform']
     }
     analyze_obj = AnalyseMax(**analyze_info)
     analyze_obj.analyse()
 
-    # step2: Add some custom parameters, or update the original parameter value
+    # Step2: Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
         "stop_after_test": "1"
@@ -334,11 +357,18 @@ Clarisse demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # step3:Check json files
-    check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # Step4: Transmission
+    # Step4:Check json files
+    check_obj = RayvisionCheck(api, analyze_obj)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
+
+    # Step5: Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1: upload four json files and upload the resource file according to upload.json;
@@ -357,17 +387,17 @@ Clarisse demo
     """
     upload_method = 1
     if upload_method == 1:
-        # step4.1:Json files are uploaded in conjunction with CG resources
+        # Step5.1:Json files are uploaded in conjunction with CG resources
         upload_obj.upload(str(task_id), **CONFIG_PATH)
     elif upload_method == 2:
-        # step4.2:CG resource files and json are uploaded separately
+        # Step5.2:CG resource files and json are uploaded separately
         upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
         upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -408,14 +438,15 @@ Katana demo
         "project_name": "Project1",
         "plugin_config": {
             "KtoA": "2.4.0.3"
-        }
+        },
+        "platform": render_para['platform']
     }
 
     analyze_obj = AnalyzeKatana(**analyze_info)
     analyze_obj.analyse()
 
 
-    # step2: Add some custom parameters, or update the original parameter value
+    # Step2: Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
         "stop_after_test": "1"
@@ -436,13 +467,19 @@ Katana demo
     ]
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # step3:Check json files
+    # Step4:Check json files
     check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
 
 
-    # Step4: Transmission
+    # Step5: Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1: upload four json files and upload the resource file according to upload.json;
@@ -461,19 +498,19 @@ Katana demo
     """
     upload_method = 2
     if upload_method == 1:
-        # step3.1:Json files are uploaded in conjunction with CG resources
+        # Step5.1:Json files are uploaded in conjunction with CG resources
         upload_obj.upload(str(task_id), **CONFIG_PATH)
     elif upload_method == 2:
-        # step3.2:CG resource files and json are uploaded separately
+        # Step5.2:CG resource files and json are uploaded separately
         upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
         upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -517,11 +554,10 @@ C4D demo
     analyze_obj = AnalyzeC4d(**analyze_info)
     analyze_obj.analyse(exe_path=r"C:\Program Files\Maxon Cinema 4D R22\Cinema 4D.exe")
 
-    # step2:Add some custom parameters, or update the original parameter value
+    # Step2:Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
-        "stop_after_test": "1",
-        "hardwareConfigId": "5",
+        "stop_after_test": "1"
     }
     update_task_info(update_task, analyze_obj.task_json)
 
@@ -531,11 +567,18 @@ C4D demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # step3:Check json files
-    check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # Step4:Transmission
+    # Step4:Check json files
+    check_obj = RayvisionCheck(api, analyze_obj)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
+
+    # Step5:Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1:upload four json files and upload the resource file according to upload.json;
@@ -554,17 +597,17 @@ C4D demo
     """
     upload_method = 1
     if upload_method == 1:
-        # step4.1:Json files are uploaded in conjunction with CG resources
+        # Step5.1:Json files are uploaded in conjunction with CG resources
         upload_obj.upload(str(task_id), **CONFIG_PATH)
     elif upload_method == 2:
-        # step4.2:CG resource files and json are uploaded separately
+        # Step5.2:CG resource files and json are uploaded separately
         upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
         upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -572,7 +615,7 @@ C4D demo
     download.auto_download([int(task_id)])
 
 
-Blender DEMO
+Blender demo
 ----------------
 
  ::
@@ -587,7 +630,7 @@ Blender DEMO
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "2",
+        "platform": "6",
         "access_id": "xxxx",
         "access_key": "xxxx",
     }
@@ -603,16 +646,16 @@ Blender DEMO
         "workspace": "c:/workspace",
         "software_version": "2.81",
         "project_name": "Project1",
-        "plugin_config": {}
+        "plugin_config": {},
+        "platform": render_para['platform']
     }
     analyze_obj = AnalyzeBlender(**analyze_info)
     analyze_obj.analyse(exe_path=r"C:\Program Files (x86)\Blender Foundation\Blender\blender.exe")
 
-    # step2:Add some custom parameters, or update the original parameter value
+    # Step2:Add some custom parameters, or update the original parameter value
     update_task = {
         "pre_frames": "100",
-        "stop_after_test": "1",
-        "hardwareConfigId": "5",
+        "stop_after_test": "1"
     }
     update_task_info(update_task, analyze_obj.task_json)
 
@@ -628,11 +671,18 @@ Blender DEMO
 
     append_to_upload(custom_info_to_upload, upload_json_path)
 
-    # step3:Check json files
-    check_obj = RayvisionCheck(api, analyze_obj)
-    task_id = check_obj.execute(analyze_obj.task_json, analyze_obj.upload_json)
+    # Step3: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # Step4:Transmission
+    # Step4:Check json files
+    check_obj = RayvisionCheck(api, analyze_obj)
+    task_id = check_obj.execute(hardware_config, analyze_obj.task_json, analyze_obj.upload_json)
+
+    # Step5:Transmission
     """
     There are two ways to upload the transmission:
     Upload_method: 1:upload four json files and upload the resource file according to upload.json;
@@ -651,10 +701,10 @@ Blender DEMO
     upload_obj.upload_asset(upload_json_path=upload_json_path)
     upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
-    # Step5:Submit Task
+    # Step6:Submit Task
     api.submit(int(task_id))
 
-    # Step6:Download
+    # Step7:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     # download.auto_download_after_task_completed([task_id])
@@ -697,7 +747,7 @@ Arnorld Standalone demo
                        platform=render_para['platform'])
 
 
-    # step1: Add some custom parameters, or update the original parameter value
+    # Step1: Add some custom parameters, or update the original parameter value
     # Step1 can also be set without setting
     update_task = {
         "pre_frames": "000:2,4,6-10[1]",
@@ -714,28 +764,34 @@ Arnorld Standalone demo
     ]
     append_to_upload(custom_info_to_upload, CONFIG_PATH['upload_json_path'])
 
+    # Step2: Set platform hardware configuration information
+    hardware_config = {
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+    }
 
-    # step2:Check json files
+    # Step3:Check json files
     check_obj = RayvisionCheck(api)
-    task_id = check_obj.execute(CONFIG_PATH['task_json_path'])
+    task_id = check_obj.execute(hardware_config, CONFIG_PATH['task_json_path'])
 
 
-    # Step3: Transmission
+    # Step4: Transmission
     """
     task.json files and resources are uploaded separately
     """
     upload_obj = RayvisionUpload(api)
 
-    # step3.1: Upload resource file(upload.json)
+    # Step4.1: Upload resource file(upload.json)
     upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
-    # step3.2: Upload task.json
+    # Step4.2: Upload task.json
     upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
 
-    # Step4:Submit Task
+    # Step5:Submit Task
     api.submit(int(task_id))
 
-    # Step5:Download
+    # Step6:Download
     download = RayvisionDownload(api)
     # All complete before the automatic start of uniform download.
     download.auto_download_after_task_completed([task_id])
