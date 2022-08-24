@@ -31,7 +31,7 @@ upload_pool = cutting_upload(r"D:\test\test_upload\1586250829\upload.json", max_
 #### 2. 使用线程池控制上传
 
 ```
-def def thread_pool_upload(self, upload_pool, pool_size=10, **kwargs)::
+def thread_pool_upload(self, upload_pool, pool_size=10, **kwargs)::
     """Thread pool upload.
 
     Args:
@@ -263,7 +263,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
             local_path (str): Download file locally save path,
                 default Window system is "USERPROFILE" environment variable address splicing "renderfarm_sdk",
                 Linux system is "HOME" environment variable address splicing "renderfarm_sdk".
-            engine_type (str, optional): set engine type, support "aspera" and "raysync", Default "aspera".
+            engine_type (str, optional): set engine type, support "aspera" and "raysyncweb", Default "aspera".
             server_ip (str, optional): transmit server host,
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
@@ -316,7 +316,7 @@ download.auto_download([18164087], download_filename_format="false")
             local_path (str): Download file locally save path,
                 default Window system is "USERPROFILE" environment variable address splicing "renderfarm_sdk",
                 Linux system is "HOME" environment variable address splicing "renderfarm_sdk".
-            engine_type (str, optional): set engine type, support "aspera" and "raysync", Default "aspera".
+            engine_type (str, optional): set engine type, support "aspera" and "raysyncweb", Default "aspera".
             server_ip (str, optional): transmit server host,
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
@@ -370,7 +370,7 @@ download.auto_download_after_task_completed([18164087], download_filename_format
             server_path (str or list): The user customizes the file structure to be downloaded from
                 the output server, and all file structures are downloaded by default,
                 example: "18164087_test/l_layer".
-            engine_type (str, optional): set engine type, support "aspera" and "raysync", Default "aspera".
+            engine_type (str, optional): set engine type, support "aspera" and "raysyncweb", Default "aspera".
             server_ip (str, optional): transmit server host,
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
@@ -441,7 +441,7 @@ download.auto_download([49240085], network_mode=2)
 
 #####    1. 上传自定义传输地址和自定义传输引擎设置
 
-> 传输引擎支持：aspera 和 raysync
+> 传输引擎支持：aspera 和 raysyncweb
 
 - upload_asset
 
@@ -498,4 +498,54 @@ download.auto_download([49240085], network_mode=2)
   ```
 
   
+##### 3. 选择raysyncweb引擎创建传输任务
+```python
+    def start_transfer(self, server_ip, server_port, local_path, server_path, storage_id, 
+                       task_type=None, task_id=None, file_type="normal", 
+                       downstorage="output", max_speed=None, max_timeout=18000, network_mode=1):
+        """Download and update on the start.
 
+        Args:
+            server_ip (str): IP address of the raysyncweb transmission server.
+            server_port (str or int): The transfer service port of the raysyncweb.
+            local_path (str): if task_type is 'upload', the type of local_path is the local file path;
+                              if task_type is 'download', the type of local_path is the local dir path;
+                              if task_type is 'upload-list', the type of local_path is 'upload.json' file path.
+            task_type (str): task_type is "download" or "upload" or "upload-list"
+            server_path (str): if task_type is 'upload', the type of local_path is the local dir path;
+                               if task_type is 'download', the type of local_path is the local file path;
+                               if task_type is 'upload-list', the type of local_path is ''.
+            task_id (str or int): if file_type="json" task_id is not None; else task_id is None.
+                                  if file_type="normal" task_id is default None
+            downstorage (str): Select the storage to download; default "output", optional "input" or "output".
+            max_speed (int): default is 1GB/S.
+            max_timeout(int): Maximum time for querying task status, default is 18000s
+            network_mode(int): Transport Protocol Type, default is 1
+                                0 is "default";
+                                1 is "tcp-only";
+                                2 is "udp-only"
+
+        Returns (int): 0 or 100,101,102,500.....
+              0: sucess
+              100,101,102,500.....: failed
+        """
+```
+使用样例:
+
+```python
+from rayvision_sync.rayvision_raysync.transfer_raysync import RayvisionTransferRaysync
+
+#Instantiating an object
+trans = RayvisionTransferRaysync(user_id, user_name, raysync_key, platform, logger)
+#Creating a Transport Task
+response_code = trans.start_transfer(server_ip, server_port, local_path,
+                     server_path, storage_id, task_type="download",
+                     )
+# 0 is success, else failed
+
+#Querying all Task Status
+response = trans.get_task_list_status()
+
+#Querying one Task Status
+response = trans.get_task_status(task_id)
+```
