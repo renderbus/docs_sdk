@@ -536,7 +536,7 @@ download.auto_download([49240085], network_mode=2)
 from rayvision_sync.rayvision_raysync.transfer_raysync import RayvisionTransferRaysync
 
 #Instantiating an object
-trans = RayvisionTransferRaysync(user_id, user_name, raysync_key, platform, logger)
+trans = RayvisionTransferRaysync(task_domain, user_id, user_name, raysync_key, platform, logger)
 #Creating a Transport Task
 response_code = trans.start_transfer(server_ip, server_port, local_path,
                      server_path, storage_id, task_type="download",
