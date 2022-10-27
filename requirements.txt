@@ -1,4 +1,4 @@
---index https://pip.renderbus.com/simple/
+--index https://pypi.org/simple/
 sphinx_rtd_theme
 recommonmark
 sphinx-markdown-tables

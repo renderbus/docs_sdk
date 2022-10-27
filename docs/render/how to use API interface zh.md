@@ -435,10 +435,11 @@ error_detail = api.query.error_detail(code="50001")
 | -------------- | --------------- | -------- | -------------------------------- | ------------------------ |
 | page_num       | Integer         | N        | 当前页数                         | 默认:1                   |
 | page_size      | Integer         | N        | 每页显示数量                     | 默认:100                 |
-| status_list    | List\<Integer\> | N        | 状态码列表，查询列表中状态的任务 | 参见任务状态说明         |
+| status_list    | List\<Integer\> | N        | 状态码列表，查询列表中状态的任务 | 参见任务状态说明              |
 | search_keyword | String          | N        | 场景名或者作业ID                 | 模糊搜索                 |
 | start_time     | String          | N        | 搜索提交时间下限                 | 格式 yyyy-MM-dd HH:mm:ss |
 | end_time       | String          | N        | 搜索提交时间上限                 | 格式 yyyy-MM-dd HH:mm:ss |
+| recycle_flag   | Integer         | N        | 是否查询已删除任务               | 1                        |
 
 **任务状态说明**：
 
