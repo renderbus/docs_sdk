@@ -32,13 +32,13 @@ api = RayvisionAPI(access_id=user_info['access_id'],
 
 **返回参数**：
 
-| **参数** | **类型** | **说明**   | **备注** |
-| -------- | -------- | ---------- | -------- |
-| platform | Integer  | 平台号     |          |
-| name     | String   | 平台名描述 |          |
-| type     | Integer   | 平台类型 |0:GPU,1:CPU,2:效果图|
+| **参数**    | **类型** | **说明**   | **备注** |
+| --------   | ------- | ---------- | -------- |
+| platform   | Integer | 平台号     |          |
+| name       | String   | 平台名描述 |          |
+| type       | Integer   | 平台类型 |0:GPU,1:CPU,2:效果图|
 | status     | Integer   | 平台状态 |0:未启用,1:正常,2:繁忙,3:爆满 |
-| taskPrefix     | String   | 任务号的平台前缀 |    "W"      |
+| taskPrefix | String   | 任务号的平台前缀 |    "W"      |
 | isShow     | Integer   | 是否显示 | 1:显示,0:不显示   |
 
 **请求示例:** 
