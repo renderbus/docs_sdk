@@ -36,10 +36,10 @@ api = RayvisionAPI(access_id=user_info['access_id'],
 | -------- | -------- | ---------- | -------- |
 | platform | Integer  | 平台号     |          |
 | name     | String   | 平台名描述 |          |
-| type     | String   | 平台类型 |0:GPU,1:CPU,2:效果图|
-| status     | String   | 平台状态 |0:未启用,1:正常,2:繁忙,3:爆满 |
-| taskPrefix     | String   | 任务号的平台前缀 |    "6W"      |
-| isShow     | String   | 是否显示 | 1:显示,0:不显示   |
+| type     | Integer   | 平台类型 |0:GPU,1:CPU,2:效果图|
+| status     | Integer   | 平台状态 |0:未启用,1:正常,2:繁忙,3:爆满 |
+| taskPrefix     | String   | 任务号的平台前缀 |    "W"      |
+| isShow     | Integer   | 是否显示 | 1:显示,0:不显示   |
 
 **请求示例:** 
 
@@ -59,7 +59,11 @@ platform = api.query.platforms()
     "data": [
         {
             "platform": 2,
-            "name": "query_platform_w2"
+            "name": "query_platform_w6",
+            "type": 1,
+            "status": 1,
+            "taskPrefix": "W",
+            "isShow": 1
         }
     ],
     "serverTime": 1535949047370
