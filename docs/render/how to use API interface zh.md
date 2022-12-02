@@ -58,7 +58,7 @@ platform = api.query.platforms()
     "code": 200,
     "data": [
         {
-            "platform": 2,
+            "platform": 6,
             "name": "query_platform_w6",
             "type": 1,
             "status": 1,
