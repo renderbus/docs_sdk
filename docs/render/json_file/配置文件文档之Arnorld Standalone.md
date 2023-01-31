@@ -36,7 +36,8 @@ Arnold 配置文件文档
         "project_id": "426731",
         "input_cg_file": "E:/fang/ass_test/static_ass.ass",
         "task_stop_time": "86400",
-        "cg_id": 2003
+        "cg_id": "2003",
+        "hardwareConfigId": ""
     },
     "additional_info": {},
     "scene_info_render": {

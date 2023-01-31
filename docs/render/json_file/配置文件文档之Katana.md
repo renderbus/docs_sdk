@@ -57,7 +57,8 @@ Katana 配置文件文档
     "cg_id": "2016",
     "user_id": 100150764,
     "input_cg_file": "F:/cache/arnold_test.katana",
-    "os_name": "1"
+    "os_name": "1",
+    "hardwareConfigId": ""
   },
   "software_config": {
     "plugins": {

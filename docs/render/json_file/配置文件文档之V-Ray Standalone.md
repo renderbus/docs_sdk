@@ -35,7 +35,8 @@
 		"cg_id": "2008",
 		"input_cg_file": "D:/houdini/cg_file/test2014vr_vraystandaloneaCopy.vrscene",
         "is_distribute_render": "1",
-		"distribute_render_node": "3"
+		"distribute_render_node": "3",
+        "hardwareConfigId": ""
 	}
 }
 ```

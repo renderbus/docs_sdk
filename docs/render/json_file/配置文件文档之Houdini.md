@@ -23,7 +23,7 @@ Houdini 配置文件文档
                 "option": "-1", 
                 "render": "1",
                 "height": "720",
-				"width": "1280",
+				"width": "1280"
             }
         ], 
         "geo_node": [],
@@ -38,7 +38,8 @@ Houdini 配置文件文档
 				"option": "1",
 				"frames": "1-240[1]",
 				"sliceType": "particle"
-			},
+			}
+        ]
     }, 
     "task_info": {
         "is_layer_rendering": "1", 
@@ -65,7 +66,8 @@ Houdini 配置文件文档
         "task_id": "440149", 
         "task_stop_time": "86400", 
         "time_out": "12",
-        "graphics_cards_num": "2"
+        "graphics_cards_num": "2",
+        "hardwareConfigId": ""
     },  
     "software_config": {
         "cg_version": "16.5.268", 
@@ -205,7 +207,7 @@ server | string | 服务器端相对路径，一般与local保持一致 | "/D/gi
 ```json
 {
     "50001":[
-        "Nodes: /obj/flattank_fluid/compressed_cache/file_mode  File name: $HIP/geo/$HIPNAME.$OS.$F.bgeo.sc  miss file: /geo/flip_test_slice4.compressed_cache.1.bgeo.sc ",
+        "Nodes: /obj/flattank_fluid/compressed_cache/file_mode  File name: $HIP/geo/$HIPNAME.$OS.$F.bgeo.sc  miss file: /geo/flip_test_slice4.compressed_cache.1.bgeo.sc "
     ]
 }
 ```

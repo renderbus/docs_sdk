@@ -192,7 +192,8 @@ Max 配置文件文档
         "tiles": "1",
         "tiles_type": "block",
         "time_out": "43200",
-        "user_id": 100150764
+        "user_id": 100150764,
+        "hardwareConfigId": ""
     },
     "additional_info": {}
 }

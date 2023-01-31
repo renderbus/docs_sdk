@@ -100,7 +100,8 @@ C4D 配置文件文档
     "cg_id": "2005",
     "user_id": "100150764",
     "input_cg_file": "D:/houdini/cg_file/ybt.c4d",
-    "os_name": "1"
+    "os_name": "1",
+    "hardwareConfigId": ""
   },
   "software_config": {
     "plugins": {},
