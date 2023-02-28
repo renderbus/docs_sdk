@@ -242,7 +242,8 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
                       print_log=False, sleep_time=10,
                       download_filename_format="true",
                       local_path=None,
-                      engine_type="aspera", server_ip=None, server_port=None):
+                      engine_type="aspera", server_ip=None, server_port=None,
+                      network_mode=0, is_test_stop=False):
         """Automatic download (complete one frame download).
 
         Wait for all downloads to update undownloaded records.
@@ -268,7 +269,10 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
                 if not set, it is obtained from the default transport profile.
-
+            network_mode (int): network mode： 0: auto selected, default,
+                                               1:tcp
+                                               2:udp
+            is_test_stop(bool): default False, Control test completion status whether to continue downloading
         Returns:
             bool: True is success.
         """
