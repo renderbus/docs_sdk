@@ -45,8 +45,6 @@
 
 -  3ds Max
 
--  Katana
-
 - C4D
 
 - Blender
@@ -58,7 +56,6 @@
 
 - Arnorld Standalone
 
-- Nuke
 
 .. note::
    如果客户自行分析场景，理论上可以支所有瑞云平台客户端和网页端支持的渲染软件。

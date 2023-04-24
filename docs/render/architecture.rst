@@ -40,10 +40,6 @@
 
 集成了对clarisse资源文件的分析功能
 
-- Katana(rayvison_katana)
-
-集成了对katana资源文件的分析功能
-
 - 3ds Max(rayvison_max)
 
 集成了对3ds Max资源文件的分析功能

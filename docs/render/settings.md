@@ -20,12 +20,8 @@ DCC_ID_MAPPINGS = {
         'blender': 2007,
         'vr_standalone': 2008,
         'mr_standalone': 2009,
-        'sketchup': 2010,
-        'vue': 2011,
-        'keyshot': 2012,
         'clarisse': 2013,
-        'octane_render': 2014,
-        'katana': 2016,
+        'octane_render': 2014
     }
 ```
 

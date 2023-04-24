@@ -135,7 +135,6 @@ user_profile = api.user.query_user_profile()
         "houdiniFlag": 0,
         "c4dFlag": 0,
         "blenderFlag": 0,
-        "keyshotFlag": 0,
         "studentEndTime": null
     },
     "serverTime": 1535953580730
@@ -1619,15 +1618,6 @@ support_software = api.query.supported_software()
                 "iconPath": "/img/softimage/VR-standalone.png",
                 "isNeedProjectPath": 3,
                 "isNeedAnalyse": 2,
-                "isSupportLinux": 0
-            },
-            {
-                "cgId": 2012,
-                "cgName": "KeyShot",
-                "cgType": "bip",
-                "iconPath": "/img/softimage/keyshot.png",
-                "isNeedProjectPath": 2,
-                "isNeedAnalyse": 1,
                 "isSupportLinux": 0
             },
             {

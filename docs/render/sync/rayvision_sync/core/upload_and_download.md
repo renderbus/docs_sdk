@@ -196,7 +196,7 @@ custom_info_to_upload = [
     r"D:\houdini\CG file\F"
 ]
 # 2.也可以接收单独的一个字符串
-# custom_info_to_upload = r"D:\houdini\CG file\katana_file"
+# custom_info_to_upload = r"D:\houdini\CG file\houdini_file"
 
 # 需要指定一个存在的upload.json路径
 append_to_upload(custom_info_to_upload, r"D:\test\upload.json")

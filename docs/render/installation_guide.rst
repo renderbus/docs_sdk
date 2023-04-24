@@ -21,9 +21,6 @@ SDK Clarisse:
 SDK 3ds Max:
     - rayvision_max
 
-SDK Katana
-    - rayvision_katana
-
 SDK C4D
     - rayvision_c4d
 
