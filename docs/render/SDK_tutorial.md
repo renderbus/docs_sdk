@@ -45,7 +45,8 @@ analyze_info = {
     "project_name": "Project1",
     "plugin_config": {
         'renderman': '22.6'
-    }
+    },
+    "platform": "21"
 }
 analyze_obj = AnalyzeHoudini(**analyze_info)
 analyze_obj.analyse()
