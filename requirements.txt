@@ -2,7 +2,6 @@
 sphinx_rtd_theme
 recommonmark
 sphinx-markdown-tables
-sphinx_rtd_theme
 rayvision_log
 rayvision_api
 rayvision_utils
