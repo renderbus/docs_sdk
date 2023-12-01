@@ -2,6 +2,8 @@
 sphinx_rtd_theme
 recommonmark
 sphinx-markdown-tables
+sphinx-design
+myst-parser
 rayvision_log
 rayvision_api
 rayvision_utils
