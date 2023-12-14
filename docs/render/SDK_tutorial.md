@@ -41,7 +41,7 @@ from rayvision_houdini.analyze_houdini import AnalyzeHoudini
 analyze_info = {
     "cg_file": r"D:\files\CG FILE\flip_test_slice4.hip",
     "workspace": "c:/workspace",
-    "software_version": "17.5.293",
+    "software_version": "17.5",
     "project_name": "Project1",
     "plugin_config": {
         'renderman': '22.6'
