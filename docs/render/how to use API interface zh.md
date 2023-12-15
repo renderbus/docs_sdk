@@ -1146,6 +1146,40 @@ restart_frame = api.query.restart_frame(task_id=14362099, select_all=1)
 }
 ```
 
+## 停止任务
+
+**接口路径**：  /api/render/handle/stopTaskFrames
+
+**请求参数**：
+
+| **参数**   | **类型**        | 是否必须 | **说明**     | **备注**                                           |
+| ---------- | --------------- | -------- | ------------| -------------------------------------------------- |
+| task_id    | Integer         | Y        | 任务ID      |                                        |
+| ids_list   | List\<Integer\> | N        | 任务ID集合   |  可选                                  |
+| select_all | Integer         | N        | 全选 | 1代表用户全选操作，0代表用户非全选（此时ids必填）                           |
+| status     | List\<Byte>     | N        | 帧状态       | 只有传selectAll=1才生效                                 |
+
+**返回参数**：缺省
+
+**请求示例**：
+
+```python
+stopTaskFrames = api.query.stop_frame(task_id=14362099)
+```
+
+**返回示例**：
+
+```json
+{
+    "version": "2.0.0",
+    "result": true,
+    "message": "success",
+    "code": 200,
+    "data": null,
+    "serverTime": 1702372110592
+}
+```
+
 ## 根据帧序号重提任务指定的帧
 
 [^api]: Add in v2.4.0 
