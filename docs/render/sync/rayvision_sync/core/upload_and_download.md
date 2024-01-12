@@ -243,7 +243,7 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
                       download_filename_format="true",
                       local_path=None,
                       engine_type="aspera", server_ip=None, server_port=None,
-                      network_mode=0, is_test_stop=False):
+                      network_mode=0, is_test_stop=False, proxy_ip=None, proxy_port=None,enable_hash=False):
         """Automatic download (complete one frame download).
 
         Wait for all downloads to update undownloaded records.
@@ -273,6 +273,9 @@ UPLOAD.upload_asset(r"D:\test\upload.json")
                                                1:tcp
                                                2:udp
             is_test_stop(bool): default False, Control test completion status whether to continue downloading
+            proxy_ip(str): proxy ip, only supports raysyncproxy engine eg:10.14.88.66.
+            proxy_port(str): proxy port, only supports raysyncproxy engine eg:5555.
+            enable_hash(bool): Enable hash verification.
         Returns:
             bool: True is success.
         """
@@ -301,7 +304,8 @@ download.auto_download([18164087], download_filename_format="false")
                                   sleep_time=10,
                                   download_filename_format="true",
                                   local_path=None,
-                                  engine_type="aspera", server_ip=None, server_port=None):
+                                  engine_type="aspera", server_ip=None, server_port=None,
+                                  network_mode=0,  is_test_stop=False, proxy_ip=None, proxy_port=None,enable_hash=False):
         """Auto download after the tasks render completed.
 
         Args:
@@ -325,7 +329,13 @@ download.auto_download([18164087], download_filename_format="false")
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
                 if not set, it is obtained from the default transport profile.
-
+            network_mode (int): network mode： 0: auto selected, default;
+                                               1: tcp;
+                                               2: udp;
+            is_test_stop(bool): Stop after test frame completes.
+            proxy_ip(str): proxy ip, only supports raysyncproxy engine eg:10.14.88.66
+            proxy_port(str): proxy port, only supports raysyncproxy engine eg:5555
+            enable_hash(bool): Enable hash verification.
         Returns:
             bool: True is success.
 
@@ -354,7 +364,8 @@ download.auto_download_after_task_completed([18164087], download_filename_format
                  max_speed=None, print_log=True,
                  download_filename_format="true",
                  local_path=None, server_path=None,
-                 engine_type="aspera", server_ip=None, server_port=None):
+                 engine_type="aspera", server_ip=None, server_port=None,
+                 network_mode=0, proxy_ip=None, proxy_port=None):
         """Download and update the undownloaded record.
 
         Args:
@@ -379,6 +390,11 @@ download.auto_download_after_task_completed([18164087], download_filename_format
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
                 if not set, it is obtained from the default transport profile.
+              network_mode (int): network mode: 0: auto selected, default;
+                                               1: tcp;
+                                               2: udp;
+            proxy_ip(str): proxy ip, only supports raysyncproxy engine eg:10.14.88.66.
+            proxy_port(str): proxy port, only supports raysyncproxy engine eg:5555.
 
         Returns:
             bool: True is success.
@@ -445,7 +461,7 @@ download.auto_download([49240085], network_mode=2)
 
 #####    1. 上传自定义传输地址和自定义传输引擎设置
 
-> 传输引擎支持：aspera 和 raysyncweb
+> 传输引擎支持：aspera 和 raysyncproxy
 
 - upload_asset
 
@@ -502,11 +518,12 @@ download.auto_download([49240085], network_mode=2)
   ```
 
   
-##### 3. 选择raysyncweb引擎创建传输任务
+##### 3. 选择raysyncproxy引擎创建传输任务
 ```python
     def start_transfer(self, server_ip, server_port, local_path, server_path, storage_id, 
                        task_type=None, task_id=None, file_type="normal", 
-                       downstorage="output", max_speed=None, max_timeout=18000, network_mode=1):
+                       downstorage="output", max_speed=None, max_timeout=18000, network_mode=1,
+                       proxy_ip=None, proxy_port=None, enable_hash=False):
         """Download and update on the start.
 
         Args:
@@ -528,6 +545,9 @@ download.auto_download([49240085], network_mode=2)
                                 0 is "default";
                                 1 is "tcp-only";
                                 2 is "udp-only"
+           proxy_ip: Proxy ip eg:10.14.88.66
+           proxy_port: Proxy port eg:5555
+           enable_hash: Enable hash verification.
 
         Returns (int): 0 or 100,101,102,500.....
               0: sucess

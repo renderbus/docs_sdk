@@ -193,7 +193,11 @@ api.submit(int(task_id))
 
 ##### 1. 支持自定义下载每个渲染任务底下的层级目录结构
 
-`download(self, task_id_list=None, max_speed=None, print_log=True, download_filename_format="true",local_path=None, server_path=None)`
+`download(self, task_id_list=None, max_speed=None, 
+                print_log=True, download_filename_format="true",
+                local_path=None, server_path=None,
+                engine_type="aspera", server_ip=None, server_port=None,
+                network_mode=0, proxy_ip=None, proxy_port=None)`
 
 ```
 download = RayvisionDownload(api)
@@ -206,7 +210,9 @@ download.download(download_filename_format="true", server_path="18164087_muti_la
 `auto_download(self, task_id_list=None, max_speed=None,
                       print_log=False, sleep_time=10,
                       download_filename_format="true",
-                      local_path=None)`
+                      local_path=None,engine_type="aspera", 
+                      server_ip=None, server_port=None,
+                     network_mode=0, is_test_stop=False, proxy_ip=None, proxy_port=None,enable_hash=False)`
 
 
 ```
@@ -221,7 +227,9 @@ download.auto_download([18164087], download_filename_format="false")
                                            max_speed=None, print_log=True,
                                            sleep_time=10,
                                            download_filename_format="true",
-                                           local_path=None):`
+                                           local_path=None,
+                                           engine_type="aspera", server_ip=None, server_port=None,
+                                           network_mode=0,  is_test_stop=False, proxy_ip=None, proxy_port=None,enable_hash=False):`
 
 ```
 download = RayvisionDownload(api)

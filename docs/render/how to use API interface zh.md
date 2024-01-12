@@ -1199,6 +1199,58 @@ restart_frame = api.query.get_custome_frames(task_id=37439351, restartframes=["6
 
 **返回参数**：None
 
+## 获取渲染日志
+
+**接口路径**： /api/render/handle/showLog
+
+**请求参数**：
+
+| **参数**      | **类型**        | **说明**      | **备注** |
+| ------------- | --------------- |-------------| -------- |
+| renderingType | String | 渲染类型：render |          |
+| pageNum | Integer | 页码      |          |
+| pageSize | Integer| 页数      |          |
+| id | Integer | 帧id      |          |
+
+**返回参数**：List[String]
+
+| **参数**      | **类型**        | **说明** | **备注** |
+| ------------- | --------------- |--------| -------- |
+| items | List[String]| 数据     |          |
+
+**请求示例**：
+
+```python
+log_res = api.query.get_render_log(renderingType="render", pageNum=0, pageSize=1, frame_id=521446373)
+```
+
+**返回示例**：
+
+```json
+{
+"version":"1.0.0",
+"result":true,
+"message":"success",
+"code":200,
+"data":{
+"pageCount":2,
+"pageNum":0,
+"total":29967,
+"size":16384,
+"items":[
+"",
+"",
+"=================================maxlog=================================",
+"",
+"",
+"------------    3ds Max Log File   -------------"
+]
+},
+"serverTime":1581074257712,
+"requestId":"vTKMmj-UHJlLVNlcnZpY2UwNg-1581074257467"
+}
+```
+
 ## 获取任务详情
 
 **接口路径**： /api/render/handle/queryTaskInfo
