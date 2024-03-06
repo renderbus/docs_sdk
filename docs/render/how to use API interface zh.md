@@ -459,11 +459,12 @@ error_detail = api.query.error_detail(code="50001")
 | ARREARAGE_STOP      | 20         | 欠费停止       |
 | TIME_OUT_STOP       | 23         | 超时停止       |
 | FINISHED            | 25         | 已完成         |
-| FINISHED_HAS_FAILED | 30         | 已完成有失败帧 |
+| FINISHED_HAS_FAILED | 30         | 已完成有失败帧  |
 | ABANDON             | 35         | 放弃           |
 | FINISHED_TEST       | 40         | 测试完成       |
 | FAILED              | 45         | 失败           |
 | ANALYSE             | 50         | 分析中         |
+| FINISHED_HAS_STOPPED             | 70         | 已完成有停止帧  |
 
 **返回参数**：List\<TaskInfo\>
 
