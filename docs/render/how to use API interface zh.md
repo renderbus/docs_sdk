@@ -1585,17 +1585,16 @@ tag = api.tag.add_task_tag(tag="test_tag", task_ids=[29445045, 29435295])
 
 **请求参数**：
 
-| **参数** | **类型**         | 是否必须 | **说明**      | **备注** |
-| -------- |----------------| -------- |-------------| -------- |
-| taskIds  | List\<integer> | Y        | 子任务id |          |
-| labelNames  | List\<string>  | Y        | 要删除的标签      |          |
+| **参数** | **类型**       | 是否必须 | **说明**       | **备注** |
+| -------- | -------------- | -------- | -------------- |------|
+| tag_ids  | List\<integer> | Y        | 删除任务标签ID | test |
 
 **返回参数**：缺省
 
 **请求示例**：缺省
 
 ```python
-del_tag = api.tag.delete_task_tag(taskIds=[183222], labelNames=["test labels"])
+del_tag = api.tag.delete_task_tag(tag_ids=[21205])
 ```
 
 **返回示例**：
