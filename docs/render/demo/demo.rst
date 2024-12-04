@@ -53,7 +53,7 @@ Maya demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -156,7 +156,7 @@ Houdini demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -258,7 +258,7 @@ Clarisse demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -359,7 +359,7 @@ Clarisse demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -457,7 +457,7 @@ C4D demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -561,7 +561,7 @@ Blender demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -654,7 +654,7 @@ Arnorld Standalone demo
 
     # Step2: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
