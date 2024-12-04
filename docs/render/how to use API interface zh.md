@@ -1585,17 +1585,16 @@ tag = api.tag.add_task_tag(tag="test_tag", task_ids=[29445045, 29435295])
 
 **请求参数**：
 
-| **参数** | **类型**        | 是否必须 | **说明** | **备注** |
-| -------- |---------------| -------- |--------|--|
-| labelNames  | List[string]  | Y        | 标签名    |  |
-| taskIds | List[integer] | Y        | 子任务ID  |  |
+| **参数** | **类型**       | 是否必须 | **说明**       | **备注** |
+| -------- | -------------- | -------- | -------------- |------|
+| tag_ids  | List\<integer> | Y        | 删除任务标签ID | test |
 
 **返回参数**：缺省
 
 **请求示例**：缺省
 
 ```python
-api.tag.delete_task_tag(taskIds=[183222], labelNames=["test labels"])
+del_tag = api.tag.delete_task_tag(tag_ids=[21205])
 ```
 
 **返回示例**：
@@ -2516,7 +2515,9 @@ start_task = api.task.start_task(task_param_list=[13798105])
 }
 ```
 
-##  获取用户存储文件结构
+##  获取用户存储文件结构 
+
+[^2021/1/18]: Add New Interface
 
 **接口路径**：  /api/render/file/operate/getOutputUserDirFile 
 
@@ -2563,7 +2564,9 @@ paths = api.transmit.get_output_files(task_id=1484861)
 ]
 ```
 
-##  获取任务的所有子任务号
+##  获取任务的所有子任务号 
+
+[^2021/1/18]: Add New Interface
 
 **接口路径**：
 
@@ -2574,8 +2577,10 @@ paths = api.transmit.get_output_files(task_id=1484861)
 | task_id  | Integer or string | Y        | 获取主帐户下的所有子帐户，如果没有子帐户，则返回当前账号ID |
 
 
+
 **请求示例**：
-```Python
+
+```json
 ids = api.query.get_small_task_id(task_id=1521323)
 ```
 
@@ -2587,6 +2592,8 @@ ids = api.query.get_small_task_id(task_id=1521323)
 
 ##  获取平台硬件配置信息 
 
+[^2021/4/12]: add new interface in rayvision_api 2.8.0 
+
 **接口路径**：/api/render/hardwareConfig/list
 
 **请求参数**：
@@ -2597,17 +2604,17 @@ ids = api.query.get_small_task_id(task_id=1521323)
 
 **返回参数[data]**：
 
-| 参数           | 类型      | 说明                                            |
-| -------------- | --------- |-----------------------------------------------|
-| id             | int       | 硬件配置id（hardwareConfigId）                      |
-| type           | int       | 1:CPU;<br>2: GPU                              |
-| model          | string    | 硬件型号                                          |
-| ram            | String    | 内存                                            |
-| gpuNum         | String    | GPU卡数，CPU平台为"null"                            |
-| platform       | int       | 平台号                                           |
-| current        | bool      | false/ true，当传任务号时，查询的是任务当前的硬件配置              |
+| 参数           | 类型      | 说明                                                         |
+| -------------- | --------- | ------------------------------------------------------------ |
+| id             | int       | 硬件配置id（hardwareConfigId）                               |
+| type           | int       | 1:CPU;<br>2: GPU                                             |
+| model          | string    | 硬件型号, 默认"Default"                                      |
+| ram            | String    | 内存                                                         |
+| gpuNum         | String    | GPU卡数，CPU平台为"null"                                     |
+| platform       | int       | 平台号                                                       |
+| current        | bool      | false/ true，当传任务号时，查询的是任务当前的硬件配置        |
 | notSupportCgId | list[int] | 不支持的cgId,（cgid对应软件可以查询“常用参数设置”-->"DCC软件ID映射"） |
-| status         | int       | 状态<br>1: 启用;<br>0: 禁用                         |
+| status         | int       | 状态<br>1: 启用;<br>0: 禁用                                  |
 
 **请求示例**：
 
