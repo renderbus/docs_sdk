@@ -13,7 +13,7 @@ Maya demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "2",
+        "platform": "62",
         "access_id": "xxxx",
         "access_key": "xxxx",
     }
@@ -116,7 +116,7 @@ Houdini demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "2",
+        "platform": "62",
         "access_id": "xxxx",
         "access_key": "xxxx",
     }
@@ -220,7 +220,7 @@ Clarisse demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "2",
+        "platform": "62",
         "access_id": "xxxx",
         "access_key": "xxxx",
     }
@@ -322,7 +322,7 @@ Clarisse demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "2",
+        "platform": "62",
         "access_id": "xxxx",
         "access_key": "xxxx",
     }
@@ -421,7 +421,7 @@ C4D demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "6",
+        "platform": "62",
         "access_id": "xxxxx",
         "access_key": "xxxxxx",
     }
@@ -518,7 +518,7 @@ Blender demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",
-        "platform": "6",
+        "platform": "62",
         "access_id": "xxxx",
         "access_key": "xxxx",
     }
@@ -619,7 +619,7 @@ Arnorld Standalone demo
     # API Parameter
     render_para = {
         "domain": "task.renderbus.com",  # If it doesn't work, you can use "task.foxrenderfarm.com"
-        "platform": "6",
+        "platform": "62",
         "access_id": "xxxxx",
         "access_key": "xxxxx",
     }
