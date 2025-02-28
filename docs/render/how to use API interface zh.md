@@ -157,7 +157,6 @@ user_profile = api.user.query_user_profile()
 | shareMainCapital          | Integer  | 共用主账号资产 0 不共用 1共用           |                |
 | subDeleteTask             | Integer  | 是否允许子账号删除任务 0不允许 1 允许   |                |
 | useMainBalance            | Integer  | 是否允许子账号使用主账号余额或信用额度  | 0不允许 1 允许 |
-| singleNodeRenderFrames    | String   | 一机渲多帧                              |                |
 | maxIgnoreMapFlag          | String   | 是否忽略max错误贴图                     | 0不忽略，1忽略 |
 | autoCommit                | String   | 是否启动场景参数渲染                    | 1不启用，2启用 |
 | separateAccountFlag       | Integer  | 主子账号分离设置                        |                |
