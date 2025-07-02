@@ -84,34 +84,37 @@ TASK_END_STATUS_CODE_LIST = ['10', '20', '23', '25', '30', '35', '45']
 
 ### 任务状态码
 
-| **状态码** | **状态码描述**                               | **备注**            |
-| ---------- | -------------------------------------------- | ------------------- |
-| 0          | 等待中                                       | WAITING             |
-| 5          | 渲染中                                       | RENDERING           |
-| 8          | 针对预处理任务，开始的预处理，状态为预处理中 | PRE_RENDERING       |
-| 10         | 停止                                         | STOP                |
-| 20         | 停止(欠费)                                   | ARREARAGE_STOP      |
-| 23         | 超时停止                                     | TIME_OUT_STOP       |
-| 25         | 已完成                                       | FINISHED            |
-| 30         | 已完成但有失败帧                             | FINISHED_HAS_FAILED |
-| 35         | 放弃                                         | ABANDON             |
-| 40         | 测试完成                                     | FINISHED_TEST       |
-| 45         | 失败                                         | FAILED              |
-| 50         | 分析中                                       | ANALYSE             |
-| 100        | 状态更新中                                   | UPDATING            |
+| **状态码** | **状态码描述**         | **备注**       |
+|---------|-------------------| ------------ |
+| 0       | 等待中               | WAITING      |
+| 5       | 渲染中               | RENDERING    |
+| 8       | 针对预处理任务，开始的预处理，状态为预处理中 | PRE_RENDERING |
+| 10      | 已停止(用户/管理员手动停止)   | STOP         |
+| 20      | 已停止(欠费停止)         | ARREARAGE_STOP |
+| 23      | 已停止(超时停止)         | TIME_OUT_STOP |
+| 25      | 已完成(无异常帧)         | FINISHED     |
+| 30      | 已完成(有失败帧)         | FINISHED_HAS_FAILED |
+| 40      | 测试完成              | FINISHED_TEST |
+| 45      | 失败                | FAILED       |
+| 50      | 等待分析完成            | ANALYSE      |
+| 60      | 提交中               | RENDERING_TASK_SUBMITTING|
+| 65      | 提交失败              | RENDERING_TASK_SUBMIT_FAIL|
+| 70      | 已完成(有停止帧)         | FINISHED_HAS_STOPPED |
+| 100     | 状态更新中             | UPDATING     |
 
 ### 帧状态码
 
-| **状态码** | **状态码描述**       | **备注**          |
-| ---------- | -------------------- | ----------------- |
-| 1          | 等待执行             | WAITING           |
-| 2          | 正在执行             | STARTED           |
-| 3          | 停止                 | ABORTED           |
-| 4          | 完成                 | DONE              |
-| 5          | 错误(失败)           | ERROR             |
-| 6          | 等待预处理完成       | PREDONEWAITING    |
-| 7          | 等待光子帧渲染完成   | PHOTONDONEWAITING |
-| 9          | 等待光子作业渲染完成 | PREDONEJOBWAITING |
-| 10         | 等待结算作业渲染完成 | GOPJOBWAITING     |
-| 11         | 任务超时             | TIMEOUT           |
+| **状态码** | **状态码描述**  | **备注**          |
+|---------|------------| ----------------- |
+| 1       | 等待中        | WAITING           |
+| 2       | 渲染中        | STARTED           |
+| 3       | 停止         | ABORTED           |
+| 4       | 已完成        | DONE              |
+| 5       | 失败         | ERROR             |
+| 6       | 等待预处理完成    | PREDONEWAITING    |
+| 7       | 等待光子帧渲染完成  | PHOTONDONEWAITING |
+| 9       | 等待光子作业渲染完成 | PREDONEJOBWAITING |
+| 10      | 等待解算作业渲染完成 | GOPJOBWAITING     |
+| 11      | 超时停止       | TIMEOUT           |
+| 12      | 副帧等待中      | SUBFRAMEWAITING   |
 

@@ -449,70 +449,72 @@ error_detail = api.query.error_detail(code="50001")
 
 **任务状态说明**：
 
-| **状态**            | **状态码** | **说明**       |
-|---------------------|------------|----------------|
-| WAITING             | 0          | 等待           |
-| RENDERING           | 5          | 渲染中         |
-| PRE_RENDERING       | 8          | 预处理中       |
-| STOP                | 10         | 停止           |
-| ARREARAGE_STOP      | 20         | 欠费停止       |
-| TIME_OUT_STOP       | 23         | 超时停止       |
-| FINISHED            | 25         | 已完成         |
-| FINISHED_HAS_FAILED | 30         | 已完成有失败帧  |
-| ABANDON             | 35         | 放弃           |
-| FINISHED_TEST       | 40         | 测试完成       |
-| FAILED              | 45         | 失败           |
-| ANALYSE             | 50         | 分析中         |
-| FINISHED_HAS_STOPPED             | 70         | 已完成有停止帧  |
+| **状态**               | **状态码** | **说明** |
+|----------------------|---------|-|
+| WAITING              | 0       | 等待中 |
+| RENDERING            | 5       | 渲染中 |
+| PRE_RENDERING        | 8       | 针对预处理任务，开始的预处理，状态为预处理中|
+| STOP                 | 10      |已停止(用户/管理员手动停止)|
+| ARREARAGE_STOP       | 20      |已停止(欠费停止)|
+| TIME_OUT_STOP        | 23      |已停止(超时停止)|
+| FINISHED             | 25      |已完成(无异常帧)|
+| FINISHED_HAS_FAILED  | 30      |已完成(有失败帧)|
+| FINISHED_TEST        | 40      | 测试完成 |
+| FAILED               | 45      | 失败 |
+| ANALYSE              | 50      |等待分析完成|
+| RENDERING_TASK_SUBMITTING | 60      |提交中|
+| RENDERING_TASK_SUBMIT_FAIL| 65      |提交失败|
+| FINISHED_HAS_STOPPED | 70      | 已完成有停止帧|
+| UPDATING             | 100     | 状态更新中|
 
 **返回参数**：List\<TaskInfo\>
 
-| **参数**              | **类型**             | **说明**                   | **备注**                                                     |
-| --------------------- | -------------------- | -------------------------- | ------------------------------------------------------------ |
-| sceneName             | String               | 场景名                     |                                                              |
-| id                    | Integer              | 任务id                     |                                                              |
-| taskAlias             | String               | 任务别名                   |                                                              |
-| taskStatus            | Byte                 | 任务状态                   | 0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中 |
-| statusText            | String               | 任务状态文本               |                                                              |
-| preTaskStatus         | Byte                 | 预处理任务状态             |                                                              |
-| preStatusText         | String               | 预处理状态文本             |                                                              |
-| totalFrames           | Integer              | 总帧数                     |                                                              |
-| abortFrames           | Integer              | 放弃帧数                   |                                                              |
-| executingFrames       | Integer              | 正在运行的帧数             |                                                              |
-| doneFrames            | Integer              | 完成的帧数                 |                                                              |
-| failedFrames          | Integer              | 失败帧数                   |                                                              |
-| framesRange           | String               | 帧范围                     |                                                              |
-| projectName           | String               | 项目名                     |                                                              |
-| renderConsume         | BigDecimal           | 任务渲染消费的总费用       |                                                              |
-| taskArrears           | BigDecimal           | 任务欠费金额               |                                                              |
-| submitDate            | Date                 | 提交时间                   |                                                              |
-| startTime             | Date                 | 开始时间                   |                                                              |
-| completedDate         | Date                 | 完成时间                   |                                                              |
-| renderDuration        | Long                 | 任务渲染总时长             | 单位：秒                                                     |
-| userName              | String               | 用户名                     |                                                              |
-| producer              | String               | 制作人                     |                                                              |
-| taskLevel             | Byte                 | 任务优先级                 |                                                              |
-| taskUserLevel         | Integer              | 用户层面的优先级           |                                                              |
-| taskLimit             | Integer              | 任务机器限制               |                                                              |
-| taskOverTime          | Long                 | 任务超时提醒               |                                                              |
-| outputFileName        | String               | 输出文件名                 |                                                              |
-| munuTaskId            | String               | 调度器id                   |                                                              |
-| layerParentId         | String               | 针对maya任务，层父id       |                                                              |
-| cgId                  | Integer              | 任务类型                   | 2001/maya，2000/max                                          |
-| taskKeyValueVo        | Object               | 任务关键字集合             |                                                              |
-| userAccountConsume    | Bigdecimal           | 用户账户扣费               |                                                              |
-| couponConsume         | Bigdecimal           | 优惠券扣费                 |                                                              |
-| isOpen                | Byte                 | 前端的展开按钮是否展开     |                                                              |
-| taskType              | String               | 任务类型                   | /预处理,/光子渲染,/渲染主图                                  |
-| renderCamera          | String               | 渲染相机                   |                                                              |
-| cloneParentId         | Integer              | 克隆任务挂在那个任务下的id |                                                              |
-| cloneOriginalId       | Integer              | 从哪个任务克隆的           |                                                              |
-| shareMainCapital      | Byte                 | 该任务是否共享主账号资产   | 0 不共享 ,  1 共享                                           |
-| taskRam               | Integer              | 任务渲染内存               |                                                              |
-| respRenderingTaskList | **List\<TaskInfo\>** | 展开的任务的子任务         | 跟此对象一样                                                 |
-| layerName             | String               | 层名                       |                                                              |
-| taskTypeText          | String               | 任务类型                   | 光子/主图                                                    |
-| isDelete              | Byte                 | 是否删除                   | 0：已删除，1：未删除                                         |
+| **参数**              | **类型**             | **说明**                   | **备注**                                                                                                    |
+| --------------------- | -------------------- | -------------------------- |-----------------------------------------------------------------------------------------------------------|
+| sceneName             | String               | 场景名                     |                                                                                                           |
+| id                    | Integer              | 任务id                     |                                                                                                           |
+| taskAlias             | String               | 任务别名                   |                                                                                                           |
+| taskStatus            | Byte                 | 任务状态                   | 0/等待，5/渲染，8/预处理中，10/停止，20/因欠费停止，23/超时停止，25/完成，30/完成包含失败帧，40/测试完成，45/失败，50/等待分析完成，60/提交中，65/提交失败，100/状态更新中 |
+| statusText            | String               | 任务状态文本               |                                                                                                           |
+| preTaskStatus         | Byte                 | 预处理任务状态             |                                                                                                           |
+| preStatusText         | String               | 预处理状态文本             |                                                                                                           |
+| totalFrames           | Integer              | 总帧数                     |                                                                                                           |
+| abortFrames           | Integer              | 放弃帧数                   |                                                                                                           |
+| executingFrames       | Integer              | 正在运行的帧数             |                                                                                                           |
+| doneFrames            | Integer              | 完成的帧数                 |                                                                                                           |
+| failedFrames          | Integer              | 失败帧数                   |                                                                                                           |
+| framesRange           | String               | 帧范围                     |                                                                                                           |
+| projectName           | String               | 项目名                     |                                                                                                           |
+| renderConsume         | BigDecimal           | 任务渲染消费的总费用       |                                                                                                           |
+| taskArrears           | BigDecimal           | 任务欠费金额               |                                                                                                           |
+| submitDate            | Date                 | 提交时间                   |                                                                                                           |
+| startTime             | Date                 | 开始时间                   |                                                                                                           |
+| completedDate         | Date                 | 完成时间                   |                                                                                                           |
+| renderDuration        | Long                 | 任务渲染总时长             | 单位：秒                                                                                                      |
+| userName              | String               | 用户名                     |                                                                                                           |
+| producer              | String               | 制作人                     |                                                                                                           |
+| taskLevel             | Byte                 | 任务优先级                 |                                                                                                           |
+| taskUserLevel         | Integer              | 用户层面的优先级           |                                                                                                           |
+| taskLimit             | Integer              | 任务机器限制               |                                                                                                           |
+| taskOverTime          | Long                 | 任务超时提醒               |                                                                                                           |
+| outputFileName        | String               | 输出文件名                 |                                                                                                           |
+| munuTaskId            | String               | 调度器id                   |                                                                                                           |
+| layerParentId         | String               | 针对maya任务，层父id       |                                                                                                           |
+| cgId                  | Integer              | 任务类型                   | 2001/maya，2000/max                                                                                        |
+| taskKeyValueVo        | Object               | 任务关键字集合             |                                                                                                           |
+| userAccountConsume    | Bigdecimal           | 用户账户扣费               |                                                                                                           |
+| couponConsume         | Bigdecimal           | 优惠券扣费                 |                                                                                                           |
+| isOpen                | Byte                 | 前端的展开按钮是否展开     |                                                                                                           |
+| taskType              | String               | 任务类型                   | /预处理,/光子渲染,/渲染主图                                                                                          |
+| renderCamera          | String               | 渲染相机                   |                                                                                                           |
+| cloneParentId         | Integer              | 克隆任务挂在那个任务下的id |                                                                                                           |
+| cloneOriginalId       | Integer              | 从哪个任务克隆的           |                                                                                                           |
+| shareMainCapital      | Byte                 | 该任务是否共享主账号资产   | 0 不共享 ,  1 共享                                                                                             |
+| taskRam               | Integer              | 任务渲染内存               |                                                                                                           |
+| respRenderingTaskList | **List\<TaskInfo\>** | 展开的任务的子任务         | 跟此对象一样                                                                                                    |
+| layerName             | String               | 层名                       |                                                                                                           |
+| taskTypeText          | String               | 任务类型                   | 光子/主图                                                                                                     |
+| isDelete              | Byte                 | 是否删除                   | 0：已删除，1：未删除                                                                                               |
 
 **taskKeyValueVo实体**
 
@@ -841,29 +843,29 @@ delete_task = api.task.delete_task(task_param_list=[13798105])
 
 **返回参数**：List\<FrameInfo\>
 
-| **参数**         | **类型** | **说明**            | **备注**                                                                                                                                                           |
-|------------------|----------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id               |          |                     |                                                                                                                                                                    |
-| userId           | Long     | 用户ID              |                                                                                                                                                                    |
-| framePrice       | Double   | 渲染价格            |                                                                                                                                                                    |
-| feeType          | Integer  | 扣费类型            | 0 按量，1 包机，2 包项目                                                                                                                                           |
-| platform         | Integer  | 平台                |                                                                                                                                                                    |
-| frameIndex       | String   | 帧序列名            |                                                                                                                                                                    |
-| frameBlock       | String   | 当前帧块数          |                                                                                                                                                                    |
-| frameStatus      | Integer  | 当前帧状态          | 0/等待，5/渲染，10/停止，15/用户停止，20/因欠费停止，25/完成，30/完成包含失败帧，35/放弃，40/测试完成，45/失败，50/分析中，100/状态更新中 |
-| feeAmount        | Double   | 余额扣费            |                                                                                                                                                                    |
-| couponFee        | Double   | 代金券扣费          |                                                                                                                                                                    |
-| startTime        | Long     | 开始时间（毫秒）    |                                                                                                                                                                    |
-| endTime          | Long     | 结束时间（毫秒）    |                                                                                                                                                                    |
-| frameExecuteTime | Long     | 渲染帧耗时          |                                                                                                                                                                    |
-| frameStatusText  | String   | 帧状态描述          |                                                                                                                                                                    |
-| arrearsFee       | Double   | 渲染帧欠费金额      |                                                                                                                                                                    |
-| taskId           | Long     | 任务ID              |                                                                                                                                                                    |
+| **参数**         | **类型** | **说明**            | **备注**                                                                                                       |
+|------------------|----------|---------------------|--------------------------------------------------------------------------------------------------------------|
+| id               |          |                     |                                                                                                              |
+| userId           | Long     | 用户ID              |                                                                                                              |
+| framePrice       | Double   | 渲染价格            |                                                                                                              |
+| feeType          | Integer  | 扣费类型            | 0 按量，1 包机，2 包项目                                                                                              |
+| platform         | Integer  | 平台                |                                                                                                              |
+| frameIndex       | String   | 帧序列名            |                                                                                                              |
+| frameBlock       | String   | 当前帧块数          |                                                                                                              |
+| frameStatus      | Integer  | 当前帧状态          | 1/等待中,2/渲染中,3/停止,4/已完成,5/失败,6/等待预处理完成,7/等待光子帧渲染完成,9/等待光子作业渲染完成，10/等待解算作业渲染完成,11/超时停止,12/副帧等待中|
+| feeAmount        | Double   | 余额扣费            |                                                                                                              |
+| couponFee        | Double   | 代金券扣费          |                                                                                                              |
+| startTime        | Long     | 开始时间（毫秒）    |                                                                                                              |
+| endTime          | Long     | 结束时间（毫秒）    |                                                                                                              |
+| frameExecuteTime | Long     | 渲染帧耗时          |                                                                                                              |
+| frameStatusText  | String   | 帧状态描述          |                                                                                                              |
+| arrearsFee       | Double   | 渲染帧欠费金额      |                                                                                                              |
+| taskId           | Long     | 任务ID              |                                                                                                              |
 | frameType        | Integer  | 帧类型              | 1/预渲染(只有一帧,多相机情况也只有一帧),2/光子帧,3/合并光子帧,4/优先帧,5/渲染主图帧,6/maya/max优先渲染合成帧,7/maya/max渲染主图合成帧,8/houdini结算帧，9/max通道帧 |
-| recommitFlag     | Integer  | 重提次数            | 重提标识默认是0,按次数递增                                                                                                                                         |
-| taskOverTime     | Integer  | 超时时间            | 帧超时时间                                                                                                                                                         |
-| gopName          | String   | houdini结算节点名称 |                                                                                                                                                                    |
-| frameRam         | Integer  | 帧任务渲染内存      | 如果为空说明没有内存要求                                                                                                                                           |
+| recommitFlag     | Integer  | 重提次数            | 重提标识默认是0,按次数递增                                                                                               |
+| taskOverTime     | Integer  | 超时时间            | 帧超时时间                                                                                                        |
+| gopName          | String   | houdini结算节点名称 |                                                                                                              |
+| frameRam         | Integer  | 帧任务渲染内存      | 如果为空说明没有内存要求                                                                                                 |
 
 **请求示例**：
 
