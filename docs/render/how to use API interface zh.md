@@ -276,8 +276,8 @@ user_transfer_bid = api.user.get_transfer_bid()
         "output_bid": "20201",
         "parent_input_bid": "10202",
         "sub_user_output_bids": [{
-            userId:"119776",
-            outputBid:"10401"
+            "userId":"119776",
+            "outputBid":"10401"
         }]
 	},
     "serverTime": 1535957964631
@@ -1575,7 +1575,7 @@ tag = api.tag.add_task_tag(tag="test_tag", task_ids=[29445045, 29435295])
     "result": true,
     "message": "success",
     "code": 200,
-    "data": {},
+    "data": null,
     "serverTime": 1594275174044
 }
 ```
@@ -1606,7 +1606,7 @@ del_tag = api.tag.delete_task_tag(tag_ids=[21205])
     "result": true,
     "message": "success",
     "code": 200,
-    "data": {},
+    "data": null,
     "serverTime": 1594276011046
 }
 ```
