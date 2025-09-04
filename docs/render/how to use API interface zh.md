@@ -1572,11 +1572,11 @@ tag = api.tag.add_task_tag(tag="test_tag", task_ids=[29445045, 29435295])
 ```json
 {
     "version": "1.0.0",
-    "result": True,
+    "result": true,
     "message": "success",
     "code": 200,
-    "data": None,
-    "serverTime": 1594275174044L
+    "data": {},
+    "serverTime": 1594275174044
 }
 ```
 
@@ -1603,11 +1603,11 @@ del_tag = api.tag.delete_task_tag(tag_ids=[21205])
 ```python
 {
     "version": "1.0.0",
-    "result": True,
+    "result": true,
     "message": "success",
     "code": 200,
-    "data": None,
-    "serverTime": 1594276011046L
+    "data": {},
+    "serverTime": 1594276011046
 }
 ```
 
@@ -2581,7 +2581,7 @@ paths = api.transmit.get_output_files(task_id=1484861)
 
 **请求示例**：
 
-```json
+```Python
 ids = api.query.get_small_task_id(task_id=1521323)
 ```
 
@@ -2619,7 +2619,7 @@ ids = api.query.get_small_task_id(task_id=1521323)
 
 **请求示例**：
 
-```json
+```Python
 hardware_config = api.user.get_hardware_config(task_ids=["6306543"])
 ```
 
@@ -2698,7 +2698,7 @@ hardware_config = api.user.get_hardware_config(task_ids=["6306543"])
 
 **请求示例**：
 
-```json
+```Python
 pack_node_info = api.query.get_pack_node_info()
 ```
 
