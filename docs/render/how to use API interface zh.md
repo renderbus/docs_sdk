@@ -2690,3 +2690,37 @@ hardware_config = api.user.get_hardware_config(task_ids=["6306543"])
 ]
 ```
 
+##  获取包机信息
+
+**接口路径**：/api/render/submit/getUserPackNodeInfo
+
+**请求参数**：缺省
+
+**请求示例**：
+
+```json
+pack_node_info = api.query.get_pack_node_info()
+```
+
+**返回参数[data]**：
+
+| 参数    | 类型    | 说明  |
+| ----- | ----- |-----|
+| packNodeId| int   | 包机id |
+| packName  | String| 包机名 |
+
+**返回示例**：
+
+```json
+[
+  {
+    "packNodeId": 809,
+    "packName": "包机计划1"
+  },
+  {
+    "packNodeId": 811,
+    "packName": "包机计划2"
+  }
+]
+```
+

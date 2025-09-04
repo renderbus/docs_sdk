@@ -90,6 +90,7 @@ from rayvision_api.utils import update_task_info, append_to_task, append_to_uplo
 update_task = {
     "pre_frames": "100",  # 设置优先渲染首帧
     "stop_after_test": "1"  # 渲染完优先帧后停止渲染
+    "pack_node_id": "623"  # 包机id。如有包机可通过接口查询包机id
 }
 update_task_info(update_task, analyze_obj.task_json)
 ```
