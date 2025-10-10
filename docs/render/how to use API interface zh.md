@@ -2690,6 +2690,41 @@ hardware_config = api.user.get_hardware_config(task_ids=["6306543"])
 ]
 ```
 
+## 修改任务硬件配置 
+
+**接口路径**：/api/render/handle/editTaskHardwareConfig
+
+**请求参数**
+
+| **Parameter**    | **Type**  | Necessary    | **Description**   |
+|------------------|-----------|--------------|-------------------|
+| task_ids         | List[str] | Y            | 任务号集合，修改指定任务的配置参数 |
+| hardwareConfigId | int       | Y            | 硬件配置id            |
+| model            | String    | Y            | 型号                |
+| gpuNum           | String    | Y            | GPU卡数             |
+| ram              | String    | Y            | 内存                |
+
+**返回参数**：
+
+**请求示例**：
+
+```python
+edit_hardware_config = api.task.edit_task_hardware_config([2191725], 496, '28C', '', '64GB')
+```
+
+**返回示例**：
+
+```json
+{
+    "version": "1.0.0",
+    "result": true,
+    "message": "success",
+    "code": 200,
+    "data": null,
+    "serverTime": 1536027063801
+}
+```
+
 ##  获取包机信息
 
 **接口路径**：/api/render/submit/getUserPackNodeInfo
