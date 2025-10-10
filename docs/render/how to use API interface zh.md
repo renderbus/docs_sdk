@@ -2698,7 +2698,7 @@ hardware_config = api.user.get_hardware_config(task_ids=["6306543"])
 
 | **Parameter**    | **Type**  | Necessary    | **Description**   |
 |------------------|-----------|--------------|-------------------|
-| task_ids         | List[str] | Y            | 任务号集合，修改指定任务的配置参数 |
+| taskIds          | List[str] | Y            | 任务号集合，修改指定任务的配置参数 |
 | hardwareConfigId | int       | Y            | 硬件配置id            |
 | model            | String    | Y            | 型号                |
 | gpuNum           | String    | Y            | GPU卡数             |
