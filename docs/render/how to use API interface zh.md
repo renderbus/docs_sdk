@@ -2759,3 +2759,126 @@ pack_node_info = api.query.get_pack_node_info()
 ]
 ```
 
+##  获取任务操作日志
+
+**接口路径**：/api/render/handle/operate/sdk/taskRecord
+
+**请求参数**：
+
+| **Parameter** | **Type** | Necessary    | **Description** |
+|---------------|----------|--------------|-------------|
+| platform      | int      | Y            | 平台号         |
+| pageNum       | int      | Y            | 页码      |
+| pageSize      | int      | Y            |  每页条数       |
+| startDate     | String   | Y            | 开始时间       |
+| endDate       | String   | Y            | 结束时间          |
+
+**请求示例**：
+
+```Python
+task_record_info = api.user.task_record()
+```
+
+**返回参数[data]**：
+
+| **参数**                       | **类型**         | **说明**          | **备注** |
+|------------------------------|----------------|-----------------|-----|
+| data                         | Object\        | 数据              |     |
+| Object.items                 | List\<Object\> | 数据项             |     |
+| Object.items.userName        | String         | 用户名              |     |
+| Object.items.taskType        | String         |模块            |     |
+| Object.items.buttonName      | String         | 操作项             |     |
+| Object.items.taskIds         | String         | 作业ID            |     |
+| Object.items.channel         | String         | 用户端            |     |
+| Object.items.createTime      | String         | 操作日期           |     |
+| Object.items.details         | String         | 详情 |     |
+| Object.items.operateSource   | int            | 操作来源，(1.主账号 2.子账号 3.临时授权 4.钉钉子账号)          |     |
+
+**返回示例**：
+
+```json
+{
+    "pageCount": 3018,
+    "pageNum": 1,
+    "total": 30180,
+    "size": 1,
+    "items": [
+        {
+            "userName": "halley",
+            "taskType": "render",
+            "buttonName": "btn_restart",
+            "taskIds": "[\"2W1732707\",\"2W1732709\"]",
+            "channel": "2",
+            "createTime": "2021-02-07 11:32:08",
+            "details": "重提错误(失败)作业",
+            "operateSource": 1,
+            "userId": "10001775",
+            "requestIp": "121.201.121.142",
+            "requestURI": "/api/rendering/task/renderingTask/recommitFailFrame",
+            "requestParam": "[{\"status\":[5],\"taskIds\":[1732707,1732709]}]"
+        }
+    ]
+}
+```
+
+##  获取登录日志
+
+**接口路径**：/api/render/handle/operate/sdk/loginRecord
+
+**请求参数**：
+
+| **Parameter** | **Type**  | Necessary    | **Description** |
+|---------------|-----------|--------------|-----------------|
+| pageNum       | int       | Y            | 页码              |
+| pageSize      | int    | Y            | 型号              |
+| startDate     | String    | Y            | 开始时间           |
+| endDate       | String    | Y            | 结束时间              |
+
+**请求示例**：
+
+```Python
+login_record_info = api.user.login_record()
+```
+
+**返回参数[data]**：
+
+| **参数**                    | **类型**         | **说明**          | **备注** |
+|---------------------------|----------------|-----------------|-----|
+| data                      | Object\        | 数据              |     |
+| Object.items              | List\<Object\> | 数据项             |     |
+| Object.items.id           | String         | id              |     |
+| Object.items.userId       | String         | 用户id            |     |
+| Object.items.userName     | String         | 用户名             |     |
+| Object.items.userUa       | String         | 用户ua            |     |
+| Object.items.traceId      | String         | 会话ua            |     |
+| Object.items.loginType    | String         | 登录类型            |     |
+| Object.items.loginStatus  | int            | 登录状态 200成功非200失败 |     |
+| Object.items.loginStaDesc | int            | 登陆状态描述          |     |
+| Object.items.loginTime    | String         | 登录时间            |     |
+| Object.items.loginIp      | String         | 登录ip            |     |
+
+**返回示例**：
+
+```json
+{
+    "pageCount": 3018,
+    "pageNum": 1,
+    "total": 30180,
+    "size": 1,
+    "items": [
+        {
+            "id": 3,
+            "userId": 100200997,
+            "userName": "fgfvfhfg",
+            "userUa": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+            "traceId": "qQgSu2-ZHVhbmZhbmdjaGFv-1726051637974",
+            "loginType": "用户名密码登录",
+            "loginStatus": "804",
+            "loginStaDesc": "账号已被禁用",
+            "moduleType": "登录",
+            "ip": "127.0.0.1",
+            "loginTime": 1725120000000
+        }
+    ]
+}
+```
