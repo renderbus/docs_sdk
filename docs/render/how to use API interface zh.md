@@ -2830,7 +2830,7 @@ task_record_info = api.user.task_record()
 | **Parameter** | **Type**  | Necessary    | **Description** |
 |---------------|-----------|--------------|-----------------|
 | pageNum       | int       | Y            | 页码              |
-| pageSize      | int    | Y            | 型号              |
+| pageSize      | int    | Y            | 每页条数              |
 | startDate     | String    | Y            | 开始时间           |
 | endDate       | String    | Y            | 结束时间              |
 
@@ -2850,7 +2850,7 @@ login_record_info = api.user.login_record()
 | Object.items.userId       | String         | 用户id            |     |
 | Object.items.userName     | String         | 用户名             |     |
 | Object.items.userUa       | String         | 用户ua            |     |
-| Object.items.traceId      | String         | 会话ua            |     |
+| Object.items.traceId      | String         | 会话ID            |     |
 | Object.items.loginType    | String         | 登录类型            |     |
 | Object.items.loginStatus  | int            | 登录状态 200成功非200失败 |     |
 | Object.items.loginStaDesc | int            | 登陆状态描述          |     |
