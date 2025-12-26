@@ -51,9 +51,9 @@ Maya demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # Step3: Set platform hardware configuration information
+    # Step3: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -154,9 +154,9 @@ Houdini demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # Step3: Set platform hardware configuration information
+    # Step3: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -256,9 +256,9 @@ Clarisse demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # Step3: Set platform hardware configuration information
+    # Step3: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -357,9 +357,9 @@ Clarisse demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # Step3: Set platform hardware configuration information
+    # Step3: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -455,9 +455,9 @@ C4D demo
     custom_info_to_upload = []
     append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
-    # Step3: Set platform hardware configuration information
+    # Step3: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -559,9 +559,9 @@ Blender demo
 
     append_to_upload(custom_info_to_upload, upload_json_path)
 
-    # Step3: Set platform hardware configuration information
+    # Step3: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
@@ -652,9 +652,9 @@ Arnorld Standalone demo
     ]
     append_to_upload(custom_info_to_upload, CONFIG_PATH['upload_json_path'])
 
-    # Step2: Set platform hardware configuration information
+    # Step2: Set platform hardware configuration information. (Multiple models can be entered; Default is to select all)
     hardware_config = {
-        "model": "28C",  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
         "ram": "128GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }

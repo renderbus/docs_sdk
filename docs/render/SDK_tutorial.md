@@ -124,12 +124,12 @@ append_to_upload(custom_info_to_upload, analyze_obj.upload_json)
 
 ### 四. 设置硬件配置和校验json文件
 
-硬件配置由参数"hardwareConfigId"控制, 可以通过api接口获取("API接口使用方法" --> "获取平台硬件配置信息")
+硬件配置由参数"hardwareConfigIds"控制, 可以通过api接口获取("API接口使用方法" --> "获取平台硬件配置信息")
 
 通过设置hardware_config的 `model`, `ram`, `gpuNum` 来指定硬件配置
 ```
 hardware_config = {
-    "model": "Default",  # CPU平台: 填Default , GPU平台: 填 1080Ti 或 2080Ti
+    "model": ["28C"],  #CPU平台: 填28C , GPU平台: 填 1080Ti 或 2080Ti (Default为全选，硬件型号可多选)
     "ram": "64GB",  # 内存: 64GB or 128GB
     "gpuNum": None  # GPU平台需要输入参数 例："2*GPU", CPU平台则填写 None
 }
