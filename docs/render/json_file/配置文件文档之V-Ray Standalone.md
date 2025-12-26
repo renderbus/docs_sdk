@@ -44,20 +44,20 @@
 **task.json参数解析**
 
 
-参数 | 类型 | 是否必须 | 说明 | 示例
----|---|---|---|---
-software_config | object | Y | 渲染环境（软件类型、版本和用到的插件等） | [见software_config对象解析](#software_config) 
-task_info | object | Y | 渲染设置（优先帧、渲染帧数、超时时间等） | [见task_info对象解析](#task_info)
-scene_info | object | Y | VR Standalone 提交此参数置空字典即可 |  
+| 参数                | 类型     | 是否必须 | 说明                        | 示例                                   |
+|-------------------|--------|---|---------------------------|--------------------------------------|
+| software_config   | object | Y | 渲染环境（软件类型、版本和用到的插件等）      | [见software_config对象解析](#software_config) |
+| task_info         | object | Y | 渲染设置（优先帧、渲染帧数、超时时间等）      | [见task_info对象解析](#task_info)         |
+| scene_info        | object | Y | VR Standalone 提交此参数置空字典即可 |  
 
 **<span id="software_config">software_config对象解析</span>**
 
 
-参数 | 类型 | 是否必须 | 说明 | 示例
----|---|---|---|---
-cg_name | string | Y | 软件名称 | "VR Standalone" 
-cg_version | string | Y | 软件版本 | "standalone_vray5.00.05" 
-plugins | object | N | 插件对象。<br> 为插件名称，value为插件版本 | {}
+| 参数         | 类型     | 是否必须 | 说明                         | 示例                       |
+|------------|--------|------|----------------------------|--------------------------|
+| cg_name    | string | Y    | 软件名称                       | "VR Standalone"          |
+| cg_version | string | Y    | 软件版本                       | "standalone_vray5.00.05" |
+| plugins    | object | N    | 插件对象。<br> 为插件名称，value为插件版本 | {}                       |
 
 **<span id="task_info">task_info对象解析</span>**
 
