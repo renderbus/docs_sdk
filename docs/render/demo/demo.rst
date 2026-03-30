@@ -741,8 +741,8 @@ Unreal Engine demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
-        "ram": "128GB",  # memory: 64GB or 128GB
+        "model": ["28C"],  # Platform CPU: 28C or Platform GPU: 1080Ti or 2080Ti
+        "ram": "64GB",  # memory: 64GB or 128GB
         "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
 
