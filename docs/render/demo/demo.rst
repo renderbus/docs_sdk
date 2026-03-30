@@ -714,13 +714,13 @@ Unreal Engine demo
 
     # Step1:Analyze CG File
     analyze_info = {
-     "cg_file": "D:/files/CG file/test.uproject",
-     "workspace": "c:/workspace",
-     "software_version": "5.6.1",
-     "project_name": "Project1",
-     "plugin_config": {},
-     "platform": render_para['platform'],
-     "software_install_dir": "C:/Program Files/Epic Games/UE_5.6"
+        "cg_file": "D:/files/CG file/test.uproject",
+        "workspace": "c:/workspace",
+        "software_version": "5.6.1",
+        "project_name": "Project1",
+        "plugin_config": {},
+        "platform": render_para['platform'],
+        "software_install_dir": "C:/Program Files/Epic Games/UE_5.6"
     }
     analyze_obj = AnalyzeUe(**analyze_info)
     analyze_obj.analyse()
@@ -728,8 +728,8 @@ Unreal Engine demo
 
     # Step2: Add some custom parameters, or update the original parameter value
     update_task = {
-     "pre_frames": "100",
-     "stop_after_test": "1"
+        "pre_frames": "100",
+        "stop_after_test": "1"
     }
     update_task_info(update_task, analyze_obj.task_json)
 
@@ -741,9 +741,9 @@ Unreal Engine demo
 
     # Step3: Set platform hardware configuration information
     hardware_config = {
-     "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
-     "ram": "128GB",  # memory: 64GB or 128GB
-     "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
+        "model": "Default",  # Platform CPU: Default or Platform GPU: 1080Ti or 2080Ti
+        "ram": "128GB",  # memory: 64GB or 128GB
+        "gpuNum": None  # GPU platform requires input like 2*GPU, if CPU platform it is None
     }
 
     # Step4:Check json files
@@ -758,10 +758,10 @@ Unreal Engine demo
                 2: json files and resources are uploaded separately;
     """
     CONFIG_PATH = {
-     "tips_json_path": analyze_obj.tips_json,
-     "task_json_path": analyze_obj.task_json,
-     "asset_json_path": analyze_obj.asset_json,
-     "upload_json_path": analyze_obj.upload_json,
+        "tips_json_path": analyze_obj.tips_json,
+        "task_json_path": analyze_obj.task_json,
+        "asset_json_path": analyze_obj.asset_json,
+        "upload_json_path": analyze_obj.upload_json,
     }
     upload_obj = RayvisionUpload(api)
     """
@@ -770,12 +770,12 @@ Unreal Engine demo
     """
     upload_method = 1
     if upload_method == 1:
-     # step5.1:Json files are uploaded in conjunction with CG resources
-     upload_obj.upload(str(task_id), **CONFIG_PATH)
+        # step5.1:Json files are uploaded in conjunction with CG resources
+        upload_obj.upload(str(task_id), **CONFIG_PATH)
     elif upload_method == 2:
-     # step5.2:CG resource files and json are uploaded separately
-     upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
-     upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
+        # step5.2:CG resource files and json are uploaded separately
+        upload_obj.upload_asset(upload_json_path=CONFIG_PATH["upload_json_path"])
+        upload_obj.upload_config(str(task_id), list(CONFIG_PATH.values()))
 
 
     # Step6:Submit Task
