@@ -321,3 +321,57 @@ UPLOAD = RayvisionUpload(api, db_config_path=r"D:\test\upload\db_config.ini")
   >     window: 环境变量"USERPROFILE"位置/<renderfarm_sdk>  
   >     Linux：环境变量"HOME"位置/<renderfarm_sdk> 
 
+
+
+### 九. 内网提交
+
+
+**1. 上网机代理设置**
+
+- 下载代理程序：[点击下载](https://cdl.renderbus.com/client/desktop/qclient/web/RayProxy.zip)
+- 打开应用程序“RayProxy.exe”
+- 直接点击“启动”即可，无需查询平台对应IP，端口保持默认（如果端口被占用可以修改）
+
+**2. 登录认证示例**
+
+通过设置环境变量实现，python环境需提前安装PySocks第三方模块
+
+```python
+proxy_ip = "xxx.xxx.xxx.xxx"        # 外网机ip
+proxy_port = 3000                   # 代理程序默认端口(RayProxy的Client设置中的端口)
+os.environ['HTTP_PROXY'] = f'socks5://{proxy_ip}:{proxy_port}'
+os.environ['HTTPS_PROXY'] = f'socks5://{proxy_ip}:{proxy_port}'
+
+render_para = {
+    "domain": "task.renderbus.com",
+    "platform": "62",
+    "access_id": "xxxx",
+    "access_key": "xxxx",
+}
+
+api = RayvisionAPI(
+        access_id=render_para['access_id'],
+        access_key=render_para['access_key'],
+        domain=render_para['domain'],
+        platform=render_para['platform']
+    )
+```
+
+**3. 文件传输示例**
+
+传输引擎仅支持"raysyncproxy"
+
+```python
+raysync_proxy_ip = "xxx.xxx.xxx.xxx"        # 外网机ip
+raysync_proxy_port = 3100                   # 代理程序默认端口(RayProxy的管理设置中的端口)
+CONFIG_PATH = [
+    r"C:\workspace\work\tips.json",
+    r"C:\workspace\work\task.json",
+    r"C:\workspace\work\asset.json",
+    r"C:\workspace\work\upload.json",
+]
+upload_obj = RayvisionUpload(api)
+upload_obj.upload(str(task_id), *CONFIG_PATH, engine_type='raysyncproxy', proxy_ip=raysync_proxy_ip, proxy_port=raysync_proxy_port)
+```
+
+
