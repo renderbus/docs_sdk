@@ -365,7 +365,8 @@ download.auto_download_after_task_completed([18164087], download_filename_format
                  download_filename_format="true",
                  local_path=None, server_path=None,
                  engine_type="aspera", server_ip=None, server_port=None,
-                 network_mode=0, proxy_ip=None, proxy_port=None):
+                 network_mode=0, proxy_ip=None, proxy_port=None,
+                 enable_hash=False, asset=False, download_num=2):
         """Download and update the undownloaded record.
 
         Args:
@@ -390,11 +391,14 @@ download.auto_download_after_task_completed([18164087], download_filename_format
                 if not set, it is obtained from the default transport profile.
             server_port (str, optional): transmit server port,
                 if not set, it is obtained from the default transport profile.
-              network_mode (int): network mode: 0: auto selected, default;
+            network_mode (int): network mode: 0: auto selected, default;
                                                1: tcp;
                                                2: udp;
             proxy_ip(str): proxy ip, only supports raysyncproxy engine eg:10.14.88.66.
             proxy_port(str): proxy port, only supports raysyncproxy engine eg:5555.
+            enable_hash(bool): Enable hash verification.
+            asset(bool): Download assets or render images True: render images False: assets default False.
+            download_num(int): Maximum number of downloads, default is 2.
 
         Returns:
             bool: True is success.
@@ -415,6 +419,9 @@ api = RayvisionAPI(access_id="xxx",
 
 download = RayvisionDownload(api)
 download.download(download_filename_format="true", server_path="18164087_muti_layer_test/l_ayer2")
+
+# download asset
+download.download(server_path="D/dir/dir", local_path="D:/dir/dir", asset=True, engine_type='raysyncproxy')
 ```
 
 ### 自动获取传输线路、指定网络提供商
