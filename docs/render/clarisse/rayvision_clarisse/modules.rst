@@ -3,5 +3,5 @@
    :maxdepth: 2
    :caption: Contents:
 
-   core/analyse_clarisse.rst
+   .. core/analyse_clarisse.rst
 

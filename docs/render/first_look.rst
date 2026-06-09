@@ -89,7 +89,7 @@
 参数设置请参考
 --------------
 
--  `详细参数配置 <para_configration.html>`_
+-  `软件参数配置 <para_configration.html>`_
 
 .. _header-n37:
 

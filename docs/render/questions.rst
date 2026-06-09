@@ -45,7 +45,7 @@ RenderBus SDK 目前支持Python2.7.10+ 和Python 3.6, 3.7
    update_task_info(update_task, task_path=r"C:\workspace\1586932339\task.json")
 
 
-详细配置请参考 `详细参数配置 <json_file>`__
+详细配置请参考 `软件参数配置 <json_file>`__
 
 
 
