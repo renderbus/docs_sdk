@@ -62,8 +62,8 @@ platform = api.query.platforms()
         {
             "platform": 62,
             "name": "query_platform_w62",
-            'chineseName': 'CPU 3 区（24核 48线程-高性能 | 28核 56线程）', 
-            'englishName': 'CPU 3 Region(48Tplus | 56 threads)',
+            'chineseName': "CPU 3 区（24核 48线程-高性能 | 28核 56线程）", 
+            'englishName': "CPU 3 Region(48Tplus | 56 threads)",
             "type": 1,
             "status": 1,
             "taskPrefix": "3W",
