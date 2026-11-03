@@ -95,6 +95,8 @@ update_task = {
 update_task_info(update_task, analyze_obj.task_json)
 ```
 
+【注意】`task_info` 里的 `job_stop_time`、`task_stop_time`、`time_out` 单位都是秒，并且必须大于 300。
+
 ##### 2. task.json添加自定义参数
 
 > 添加的自定义参数将会集成到key为"additional_info"的字典中  
