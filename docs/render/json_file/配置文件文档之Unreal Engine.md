@@ -107,7 +107,7 @@ Unreal Engine 配置文件文档
         "input_project_path": "", 
         "task_id": "439800", 
         "task_stop_time": "86400", 
-        "time_out": "12"
+        "time_out": "43200"
     }, 
     "software_config": {
         "cg_version": "5.4.4", 
@@ -152,7 +152,7 @@ Unreal Engine 配置文件文档
 | render_layer_type      | string | 渲染层方式选择。<br/>"0"：renderlayer方式<br/>"1"：rendersetup方式 | "0"                                      |
 | is_distribute_render   | string | 是否开启分布式渲染。<br/>"0":关闭<br/>"1":开启         | "0"                                      |
 | input_cg_file          | string | 渲染场景本地路径                                 |                                          |
-| job_stop_time          | string | 小任务超时停止, 单位秒                             | "28800"                                  |
+| job_stop_time          | string | 小任务超时停止，单位秒，必须大于 300                             | "28800"                                  |
 | user_id                | string | 用户ID                                     |                                          |
 | pre_frames             | string | 优先渲染                                     | "000:1,3-4[1]" 表示：<br>优先渲染首帧：否<br>优先渲染中间帧：否<br>优先渲染末帧：否<br>优先渲染自定义帧：1,3-4[1] |
 | platform               | string | 提交平台                                     | "2"                                      |
@@ -167,8 +167,8 @@ Unreal Engine 配置文件文档
 | stop_after_test        | string | 优先渲染完成后是否暂停任务<br>"1":优先渲染完成后暂停任务<br>"2".优先渲染完成后不暂停任务 |                                          |
 | input_project_path     | string | 项目路径，如用户未设置传空字符串                         |                                          |
 | task_id                | string | 任务号                                      |                                          |
-| task_stop_time         | string | 大任务超时停止 单位秒                              | "86400"                                  |
-| time_out               | string | 超时时间 单位小时                                | "12"                                     |
+| task_stop_time         | string | 大任务超时停止，单位秒，必须大于 300                              | "86400"                                  |
+| time_out               | string | 超时时间，单位秒，必须大于 300                      | "43200"                                     |
 
 
 **<span id="scene_info_render">scene_info_render对象解析</span>**

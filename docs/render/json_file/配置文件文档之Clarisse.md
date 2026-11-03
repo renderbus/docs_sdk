@@ -135,7 +135,7 @@ plugins | object | 插件对象: <br>key为插件名称，value为插件版本 |
 | is_distribute_render   | string | N        | 是否开启分布式渲染:  "0":关闭 "1":开启                       | “0”      | "0"                                                          |
 | input_cg_file          | string | Y        | 渲染场景本地路径                                             |          | "E:/copy/DHGB_sc05_zhuta_610-1570_v0102.project"             |
 | input_project_path     | string | Y        | 项目路径，如用户未设置传空字符串                             | " "      |                                                              |
-| job_stop_time          | string | Y        | 设置帧的超时时间，只会影响当前帧, 单位秒                     | “259200” | "28800"                                                      |
+| job_stop_time          | string | Y        | 设置帧的超时时间，只会影响当前帧，单位秒，必须大于 300                     | “259200” | "28800"                                                      |
 | user_id                | string | Y        | 用户ID                                                       |          |                                                              |
 | pre_frames             | string | Y        | 优先渲染(优先帧不建议自定义多个单独帧)                       | “000”    | "000:1,3-4[1]" 表示： 优先渲染首帧：否 优先渲染中间帧：否 优先渲染末帧：否 优先渲染自定义帧：1,3-4[1] |
 | platform               | string | Y        | 提交平台: "2": "www2", "3": "www3", "6": "www4", "21": "gpu", |          | "2"                                                          |
@@ -149,8 +149,8 @@ plugins | object | 插件对象: <br>key为插件名称，value为插件版本 |
 | frames_per_task        | string | Y        | 一机渲多帧的帧数量                                           | "1"      | "1"                                                          |
 | stop_after_test        | string | Y        | 优先渲染完成后是否暂停任务 "1":优先渲染完成后暂停任务 "2".优先渲染完成后不暂停任务 | "2"      | “2”                                                          |
 | task_id                | string | Y        | 任务号                                                       |          |                                                              |
-| task_stop_time         | string | Y        | 大任务超时停止 单位秒,"0"表示不限制                          | "0"      | "86400"                                                      |
-| time_out               | string | Y        | 超时时间 单位秒                                              | “43200”  | "43200"                                                      |
+| task_stop_time         | string | Y        | 大任务超时停止，单位秒，必须大于 300                        | "86400"  | "86400"                                                      |
+| time_out               | string | Y        | 超时时间，单位秒，必须大于 300                                              | “43200”  | "43200"                                                      |
 
 >  **注意:** Clarisse暂时不支持分布式渲染(is_distribute_render)和分块渲染(tiles)
 
